@@ -1,0 +1,312 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * VeeTech Automation FZE — industrial engineering design system.
+ * Palette: deep navy / graphite / white with an electric-cyan accent
+ * and a restrained amber signal colour.
+ */
+
+@theme inline {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --radius-sm: calc(var(--radius) - 2px);
+  --radius-md: var(--radius);
+  --radius-lg: calc(var(--radius) + 2px);
+  --radius-xl: calc(var(--radius) + 6px);
+  --radius-2xl: calc(var(--radius) + 10px);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-navy: var(--navy);
+  --color-navy-deep: var(--navy-deep);
+  --color-graphite: var(--graphite);
+  --color-steel: var(--steel);
+  --color-signal: var(--signal);
+  --color-surface: var(--surface);
+  --color-on-navy: var(--on-navy);
+  --color-on-navy-muted: var(--on-navy-muted);
+  --color-hairline: var(--hairline);
+}
+
+:root {
+  --radius: 0.25rem;
+
+  --navy-deep: #1c2a5e;
+  --navy: #253b80;
+  --graphite: #334155;
+  --steel: #607094;
+  --signal: #fcee21;
+
+  --background: #ffffff;
+  --foreground: #1c2a5e;
+  --surface: #f8fafc;
+  --card: #ffffff;
+  --card-foreground: #1c2a5e;
+  --popover: #ffffff;
+  --popover-foreground: #1c2a5e;
+
+  --primary: #253b80;
+  --primary-foreground: #ffffff;
+  --secondary: #f8ef22;
+  --secondary-foreground: #1c2a5e;
+  --muted: #f1f5f9;
+  --muted-foreground: #64748b;
+  --accent: #f8ef22;
+  --accent-foreground: #1c2a5e;
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  --border: #e2e8f0;
+  --input: #e2e8f0;
+  --ring: #f8ef22;
+
+  --on-navy: #ffffff;
+  --on-navy-muted: #cbd5e1;
+  --hairline: rgba(255, 255, 255, 0.12);
+
+  --shadow-panel: 0 1px 2px rgba(37, 59, 128, 0.06), 0 12px 32px -18px rgba(37, 59, 128, 0.28);
+  --shadow-lift: 0 2px 4px rgba(37, 59, 128, 0.06), 0 26px 60px -28px rgba(37, 59, 128, 0.38);
+  --grid-line: rgba(248, 239, 34, 0.14);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    font-feature-settings: "cv11", "ss01";
+    -webkit-font-smoothing: antialiased;
+  }
+
+  p {
+    text-align: justify;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.022em;
+    text-wrap: balance;
+  }
+
+  ::selection {
+    background: var(--accent);
+    color: var(--accent-foreground);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.001ms !important;
+      transition-duration: 0.001ms !important;
+    }
+  }
+}
+
+/* ---------- Layout utilities ---------- */
+
+@utility container-vt {
+  width: 100%;
+  margin-inline: auto;
+  max-width: 84rem;
+  padding-inline: 1.25rem;
+  @media (width >= 768px) {
+    padding-inline: 2rem;
+  }
+  @media (width >= 1280px) {
+    padding-inline: 3rem;
+  }
+}
+
+@utility section-y {
+  padding-block: 3.5rem;
+  @media (width >= 768px) {
+    padding-block: 4.5rem;
+  }
+  @media (width >= 1280px) {
+    padding-block: 5.5rem;
+  }
+}
+
+@utility eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+@utility rule-x {
+  display: block;
+  height: 1px;
+  width: 2.25rem;
+  background: currentColor;
+  opacity: 0.5;
+}
+
+@utility surface-dark {
+  background:
+    radial-gradient(120% 90% at 15% 0%, oklch(0.32 0.07 250) 0%, transparent 60%),
+    var(--navy-deep);
+  color: var(--on-navy);
+}
+
+@utility tech-grid {
+  background-image:
+    linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
+  background-size: 72px 72px;
+}
+
+/* ---------- Components ---------- */
+
+@utility btn-base {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  min-height: 2.875rem;
+  padding-inline: 1.35rem;
+  border-radius: var(--radius);
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  transition:
+    background-color 0.22s ease,
+    color 0.22s ease,
+    border-color 0.22s ease,
+    transform 0.22s ease;
+  white-space: nowrap;
+}
+
+@utility btn-accent {
+  background: var(--accent);
+  color: var(--accent-foreground);
+}
+@utility btn-accent-hover {
+  filter: brightness(1.06);
+}
+
+@utility btn-solid {
+  background: var(--navy);
+  color: var(--on-navy);
+}
+
+@utility btn-outline-dark {
+  border: 1px solid var(--hairline);
+  color: var(--on-navy);
+  background: oklch(1 0 0 / 4%);
+}
+
+@utility btn-outline-light {
+  border: 1px solid var(--border);
+  color: var(--foreground);
+  background: transparent;
+}
+
+@utility link-arrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+@utility hairline-card {
+  border: 1px solid var(--border);
+  background: var(--card);
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    transform 0.25s ease;
+}
+
+/* ---------- Motion ---------- */
+
+@keyframes vt-rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes vt-sweep {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes vt-pulse-dot {
+  0%,
+  100% {
+    opacity: 0.35;
+    transform: scale(0.85);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.15);
+  }
+}
+
+@utility reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition:
+    opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@utility reveal-in {
+  opacity: 1;
+  transform: none;
+}

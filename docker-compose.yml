@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: veetech-app
+    ports:
+      # Port 5173 is for dev, 4173 is for preview (production build testing)
+      - "5173:5173"
+      - "4173:4173"
+    environment:
+      - NODE_ENV=development
+    volumes:
+      # Mount the current directory into the container to enable hot-reloading
+      - .:/app
+      # Exclude the host node_modules from overriding the container's node_modules
+      - /app/node_modules
+    # Run the dev server instead of the default CMD in the Dockerfile
+    command: npm run dev -- --host 0.0.0.0
