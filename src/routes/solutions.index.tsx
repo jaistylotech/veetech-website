@@ -37,7 +37,7 @@ const solutions = [
   {
     to: "/solutions/chemical-injection-packages",
     title: "Chemical Injection Packages",
-    image: chemicalSkid,
+    image: "/client-media/products/cis/chemical-injection-skid.jpg",
     alt: "Chemical injection skid with tank, dosing pumps and instrumentation",
     overview:
       "A chemical injection skid is a customized and integrated solution used to control the dosing of chemicals used for different applications. Its key function is safeguarding process pipelines and reservoirs from corrosion, wax formation, foam, scales, hydrates and similar issues.",
@@ -52,7 +52,7 @@ const solutions = [
   {
     to: "/solutions/wellhead-control-systems",
     title: "Wellhead Control Panels, Valve Control Systems & HPUs",
-    image: wellheadPanel,
+    image: "/client-media/products/wellhead/dsc-7917.jpg",
     alt: "Stainless steel hydraulic wellhead control panel",
     overview:
       "A typical wellhead control panel incorporates pneumatic, hydraulic and/or electric valve controls for sequential valve operation, manual override, emergency and safety shutdown. Multi-well control panels are single well modules set together in a single panel to control multiple wells.",
@@ -72,7 +72,7 @@ const solutions = [
   {
     to: "/solutions/modular-packages",
     title: "Modular Packages",
-    image: modularSkid,
+    image: "/client-media/products/dry-gas-seal/dry-gas-seal-system.jpg",
     alt: "Modular wellsite skid package with structural steel frame and piping",
     overview:
       "A modular wellsite package is an integrated skid-based unit containing all wellsite equipment and components required between the X-mas tree and the main flow line, configured to the customer's requirements.",

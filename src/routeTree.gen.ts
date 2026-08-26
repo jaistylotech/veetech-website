@@ -13,10 +13,8 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as CareersRouteImport } from './routes/careers'
 import { Route as ContactRouteImport } from './routes/contact'
-import { Route as FacilityRouteImport } from './routes/facility'
 import { Route as IndustriesRouteImport } from './routes/industries'
 import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
-import { Route as ProjectsRouteImport } from './routes/projects'
 import { Route as ServicesRouteImport } from './routes/services'
 import { Route as TermsRouteImport } from './routes/terms'
 import { Route as SolutionsIndexRouteImport } from './routes/solutions.index'
@@ -51,11 +49,6 @@ const ContactRoute = ContactRouteImport.update({
   path: '/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
-const FacilityRoute = FacilityRouteImport.update({
-  id: '/facility',
-  path: '/facility',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const IndustriesRoute = IndustriesRouteImport.update({
   id: '/industries',
   path: '/industries',
@@ -64,11 +57,6 @@ const IndustriesRoute = IndustriesRouteImport.update({
 const PrivacyPolicyRoute = PrivacyPolicyRouteImport.update({
   id: '/privacy-policy',
   path: '/privacy-policy',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ProjectsRoute = ProjectsRouteImport.update({
-  id: '/projects',
-  path: '/projects',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ServicesRoute = ServicesRouteImport.update({
@@ -152,10 +140,8 @@ export interface FileRoutesByFullPath {
   '/about': typeof AboutRoute
   '/careers': typeof CareersRoute
   '/contact': typeof ContactRoute
-  '/facility': typeof FacilityRoute
   '/industries': typeof IndustriesRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
-  '/projects': typeof ProjectsRoute
   '/services': typeof ServicesRoute
   '/terms': typeof TermsRoute
   '/solutions/chemical-injection-packages': typeof SolutionsChemicalInjectionPackagesRoute
@@ -175,10 +161,8 @@ export interface FileRoutesByTo {
   '/about': typeof AboutRoute
   '/careers': typeof CareersRoute
   '/contact': typeof ContactRoute
-  '/facility': typeof FacilityRoute
   '/industries': typeof IndustriesRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
-  '/projects': typeof ProjectsRoute
   '/services': typeof ServicesRoute
   '/terms': typeof TermsRoute
   '/solutions/chemical-injection-packages': typeof SolutionsChemicalInjectionPackagesRoute
@@ -199,10 +183,8 @@ export interface FileRoutesById {
   '/about': typeof AboutRoute
   '/careers': typeof CareersRoute
   '/contact': typeof ContactRoute
-  '/facility': typeof FacilityRoute
   '/industries': typeof IndustriesRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
-  '/projects': typeof ProjectsRoute
   '/services': typeof ServicesRoute
   '/terms': typeof TermsRoute
   '/solutions/chemical-injection-packages': typeof SolutionsChemicalInjectionPackagesRoute
@@ -224,10 +206,8 @@ export interface FileRouteTypes {
     | '/about'
     | '/careers'
     | '/contact'
-    | '/facility'
     | '/industries'
     | '/privacy-policy'
-    | '/projects'
     | '/services'
     | '/terms'
     | '/solutions/chemical-injection-packages'
@@ -247,10 +227,8 @@ export interface FileRouteTypes {
     | '/about'
     | '/careers'
     | '/contact'
-    | '/facility'
     | '/industries'
     | '/privacy-policy'
-    | '/projects'
     | '/services'
     | '/terms'
     | '/solutions/chemical-injection-packages'
@@ -270,10 +248,8 @@ export interface FileRouteTypes {
     | '/about'
     | '/careers'
     | '/contact'
-    | '/facility'
     | '/industries'
     | '/privacy-policy'
-    | '/projects'
     | '/services'
     | '/terms'
     | '/solutions/chemical-injection-packages'
@@ -294,10 +270,8 @@ export interface RootRouteChildren {
   AboutRoute: typeof AboutRoute
   CareersRoute: typeof CareersRoute
   ContactRoute: typeof ContactRoute
-  FacilityRoute: typeof FacilityRoute
   IndustriesRoute: typeof IndustriesRoute
   PrivacyPolicyRoute: typeof PrivacyPolicyRoute
-  ProjectsRoute: typeof ProjectsRoute
   ServicesRoute: typeof ServicesRoute
   TermsRoute: typeof TermsRoute
   SolutionsChemicalInjectionPackagesRoute: typeof SolutionsChemicalInjectionPackagesRoute
@@ -337,13 +311,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ContactRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/facility': {
-      id: '/facility'
-      path: '/facility'
-      fullPath: '/facility'
-      preLoaderRoute: typeof FacilityRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/industries': {
       id: '/industries'
       path: '/industries'
@@ -356,13 +323,6 @@ declare module '@tanstack/react-router' {
       path: '/privacy-policy'
       fullPath: '/privacy-policy'
       preLoaderRoute: typeof PrivacyPolicyRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/projects': {
-      id: '/projects'
-      path: '/projects'
-      fullPath: '/projects'
-      preLoaderRoute: typeof ProjectsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/services': {
@@ -494,10 +454,8 @@ const rootRouteChildren: RootRouteChildren = {
   AboutRoute: AboutRoute,
   CareersRoute: CareersRoute,
   ContactRoute: ContactRoute,
-  FacilityRoute: FacilityRoute,
   IndustriesRoute: IndustriesRoute,
   PrivacyPolicyRoute: PrivacyPolicyRoute,
-  ProjectsRoute: ProjectsRoute,
   ServicesRoute: ServicesRoute,
   TermsRoute: TermsRoute,
   SolutionsChemicalInjectionPackagesRoute:

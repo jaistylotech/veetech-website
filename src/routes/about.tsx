@@ -22,7 +22,7 @@ export const Route = createFileRoute("/about")({
       {
         name: "description",
         content:
-          "VeeTech Automation FZE, formerly Versatech Automation FZE, has over four decades of energy-sector experience, a UAE presence since 2009 and 1000+ projects delivered.",
+          "VeeTech Automation FZE, formerly Versatech Automation FZE, has over four decades of energy-sector experience, a COE Middle East presence from 2009 and 2000+ projects delivered.",
       },
       { property: "og:title", content: "About VeeTech Automation FZE" },
       {
@@ -95,8 +95,8 @@ function AboutPage() {
             <SectionHeading eyebrow="Company Overview" title="Specialized and reliable solutions for the industry" />
             <div className="mt-6 space-y-5 text-base leading-relaxed text-muted-foreground">
               <p>
-                VeeTech Automation FZE has proven expertise and over four decades of experience in
-                handling complex projects, right from concept to successful implementation. Located
+                VeeTech Automation FZE has proven expertise over four decades of experience in
+                delivering complex projects, right from concept to successful implementation. Located
                 in Jebel Ali Free Zone, Dubai, UAE, the company offers specialized and reliable
                 solutions for the industry.
               </p>
@@ -107,15 +107,15 @@ function AboutPage() {
                 become prominent in the energy sector.
               </p>
               <p>
-                VeeTech Automation FZE's capabilities in industrial control automation and packaged
-                solutions are unrivalled in the region. A proven track record of 1000+ projects is a
+                VeeTech Automation FZE offers capabilities in industrial control automation and packaged
+                solutions to the energy industry. A proven track record of 2000+ projects is a
                 testimony to the company's success.
               </p>
             </div>
             <div className="mt-10 grid grid-cols-3 gap-5">
               <Stat value={<Counter value={40} suffix="+" />} label="Years of experience" />
-              <Stat value={<Counter value={1000} suffix="+" />} label="Projects" />
-              <Stat value="2009" label="UAE presence since" />
+              <Stat value={<Counter value={2000} suffix="+" />} label="Projects" />
+              <Stat value="2009" label="COE Middle East" />
             </div>
           </Reveal>
           <Reveal delay={80} className="relative h-full min-h-[300px]">

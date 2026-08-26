@@ -60,7 +60,7 @@ const solutionCards = [
   {
     title: "Wellhead Control Systems",
     to: "/solutions/wellhead-control-systems",
-    image: "/client-media/products/wellhead/wellhead-control-panel.jpg",
+    image: "/client-media/products/wellhead/dsc-7917.jpg",
     alt: "Stainless steel hydraulic wellhead control panel with pressure gauges and tubing manifold",
     body: "Pneumatic, hydraulic and electric valve controls for sequential valve operation, manual override, emergency and safety shutdown — including multi-well modular panels.",
     specs: ["Single & multi-slot WHCP", "ESD systems", "HIPPS / IPF", "Hydraulic power units"],
@@ -84,12 +84,13 @@ const solutionCards = [
 ];
 
 function HomePage() {
-  const [isMuted, setIsMuted] = useState(true);
+  const [isMuted, setIsMuted] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
     if (videoRef.current) {
       videoRef.current.muted = isMuted;
+      videoRef.current.playbackRate = 1.0;
     }
   }, [isMuted]);
 
@@ -121,23 +122,17 @@ function HomePage() {
 
         <div className="container-vt w-full pt-36 pb-14 md:pt-44 md:pb-20">
           <Reveal>
-            <Eyebrow tone="dark">Industrial Control Automation · Dubai, UAE</Eyebrow>
             <h1 className="mt-7 max-w-4xl text-[clamp(2.4rem,6.2vw,5rem)] leading-[1.02] font-semibold text-on-navy">
-              Engineering Control.
+              Engineering Excellence.
               <br />
-              Powering Energy.
+              Trusted Performance for Energy
             </h1>
             <p className="mt-7 max-w-2xl text-base leading-relaxed text-on-navy-muted md:text-lg">
-              VeeTech Automation delivers engineered industrial control and packaged solutions for
-              demanding energy-sector applications — from design and manufacturing to testing,
-              commissioning and after-market support.
+              Delivering integrated engineered packages, automation and control solutions for the global energy sector.
             </p>
             <div className="mt-10 flex flex-wrap gap-3">
-              <Btn to="/solutions" variant="accent">
-                Explore Our Solutions
-              </Btn>
-              <Btn to="/contact" variant="outlineDark">
-                Talk to Our Engineers
+              <Btn to="/contact" variant="accent">
+                Talk to Our Experts
               </Btn>
             </div>
           </Reveal>
@@ -153,7 +148,7 @@ function HomePage() {
             <img
               src={manufacturing}
               alt="Fabrication workshop with overhead crane and steel skid frames under assembly"
-              className="absolute inset-0 h-full w-full object-cover rounded-2xl"
+              className="absolute inset-0 h-full w-full object-cover rounded-2xl brightness-125"
               loading="lazy"
               width={1600}
               height={1008}
@@ -165,33 +160,26 @@ function HomePage() {
               eyebrow="Who We Are"
               eyebrowClassName="text-[0.85rem] md:text-[0.95rem] font-bold"
               title="Engineering Expertise Built Over Four Decades"
-              lead="VeeTech Automation FZE (formerly Versatech Automation FZE) has proven expertise and over four decades of experience in handling complex projects, right from concept to successful implementation."
+              lead="VeeTech Automation FZE (formerly Versatech Automation FZE) has proven expertise over four decades of experience in delivering complex projects, right from concept to successful implementation."
             />
             <p className="mt-5 max-w-xl text-base leading-relaxed text-muted-foreground">
               Located in Jebel Ali Free Zone, Dubai, UAE, the company offers specialized and reliable
-              solutions for the industry. Armed with a team of experienced professionals and a
+              solutions for the industry. Backed by a team of experienced professionals and a
               world-class manufacturing facility, its capabilities in industrial control automation
-              and packaged solutions are unrivalled in the region.
+              and packaged solutions to the energy industry.
             </p>
 
             <div className="mt-12 grid grid-cols-1 gap-y-8 gap-x-6 md:grid-cols-3">
               <Stat value={<Counter value={40} suffix="+" />} label="Years of experience" />
-              <Stat value={<Counter value={1000} suffix="+" />} label="Projects" />
+              <Stat value={<Counter value={2000} suffix="+" />} label="Projects" />
               <Stat 
                 value={
                   <div className="flex flex-col gap-0.5 leading-none">
-                    <span className="text-xl font-medium tracking-tight text-navy/70 md:text-2xl">Since</span>
                     <span>2009</span>
                   </div>
                 } 
-                label="UAE presence" 
+                label="COE Middle East" 
               />
-            </div>
-
-            <div className="mt-10">
-              <Btn to="/about" variant="solid">
-                Discover VeeTech
-              </Btn>
             </div>
           </Reveal>
         </div>
@@ -203,8 +191,8 @@ function HomePage() {
           <Reveal>
             <SectionHeading
               eyebrow="Capabilities"
-              title="From Concept to Commissioning"
-              lead="Leading-edge services in design, engineering, manufacturing, testing, commissioning and after-market support of chemical injection systems, wellhead control systems, modular skid packages and bespoke engineered solutions."
+              title="From Design to Deployment"
+              lead="At VeeTech, Engineering excellence drives everything we do. From design and manufacturing to site installation and commissioning, we deliver reliable solutions for the energy sector."
             />
           </Reveal>
           <Reveal delay={80}>
@@ -213,113 +201,7 @@ function HomePage() {
         </div>
       </section>
 
-      {/* SOLUTIONS */}
-      <section className="section-y">
-        <div className="container-vt">
-          <Reveal>
-            <SectionHeading
-              eyebrow="Products & Solutions"
-              title="Solutions for Critical Energy Operations"
-              lead="The entire range of chemical injection systems, wellhead control systems, modular skid packages and customized engineered solutions."
-            />
-          </Reveal>
 
-          <div className="mt-14 space-y-6">
-            {solutionCards.map((s, i) => (
-              <Reveal key={s.title} delay={i * 60}>
-                <Link
-                  to={s.to}
-                  className="group grid items-stretch gap-0 border border-border transition-colors hover:border-accent/60 lg:grid-cols-[1.05fr_1fr]"
-                >
-                  <div className={`relative overflow-hidden ${i % 2 ? "lg:order-2" : ""}`}>
-                    <img
-                      src={s.image}
-                      alt={s.alt}
-                      className="aspect-16/10 size-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
-                      loading="lazy"
-                      width={1600}
-                      height={1000}
-                    />
-                    <span className="absolute top-5 left-5 bg-navy-deep/85 px-3 py-1.5 font-mono text-[0.65rem] tracking-[0.2em] text-on-navy">
-                      {String(i + 1).padStart(2, "0")}
-                    </span>
-                  </div>
-                  <div className="flex flex-col justify-center p-7 md:p-12">
-                    <h3 className="font-display text-[clamp(1.35rem,2.4vw,2rem)] font-semibold">
-                      {s.title}
-                    </h3>
-                    <p className="mt-4 text-sm leading-relaxed text-muted-foreground md:text-base">
-                      {s.body}
-                    </p>
-                    <ul className="mt-6 grid grid-cols-2 gap-x-6 gap-y-2.5">
-                      {s.specs.map((spec) => (
-                        <li
-                          key={spec}
-                          className="flex items-start gap-2 font-mono text-[0.7rem] tracking-wide text-graphite"
-                        >
-                          <span className="mt-1.5 block size-1 shrink-0 bg-accent" />
-                          {spec}
-                        </li>
-                      ))}
-                    </ul>
-                    <span className="link-arrow mt-8">
-                      Explore Solution
-                      <ArrowUpRight className="size-4 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
-                    </span>
-                  </div>
-                </Link>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* FEATURED ENGINEERED SOLUTION */}
-      <section className="relative isolate overflow-hidden surface-dark">
-        <img
-          src={hpu}
-          alt="Hydraulic power unit skid with reservoir, pumps and control cabinet in a testing bay"
-          className="absolute inset-0 -z-10 size-full object-cover opacity-25"
-          loading="lazy"
-          width={1600}
-          height={1008}
-        />
-        <div className="absolute inset-0 -z-10 bg-gradient-to-r from-navy-deep via-navy-deep/90 to-transparent" />
-        <div className="container-vt section-y">
-          <Reveal className="max-w-2xl">
-            <Eyebrow tone="dark">Engineered Solutions</Eyebrow>
-            <h2 className="mt-5 text-[clamp(1.9rem,4vw,3.1rem)] leading-[1.06] font-semibold text-on-navy">
-              Built Around Your Operational Requirements
-            </h2>
-            <p className="mt-6 text-base leading-relaxed text-on-navy-muted md:text-lg">
-              Systems are designed, engineered, assembled and tested according to international
-              standards and the requirements of the customer. Decades of experience, intense
-              knowledge of the field and the availability of the right resources make VeeTech a
-              preferred partner across upstream energy-sector markets.
-            </p>
-            <dl className="mt-10 grid max-w-lg grid-cols-2 gap-6 border-t border-hairline pt-8">
-              {[
-                ["Design basis", "Customer specification & process conditions"],
-                ["Control media", "Pneumatic · Hydraulic · Electric"],
-                ["Integration", "Skid-mounted or containerized"],
-                ["Verification", "Assembled & tested before despatch"],
-              ].map(([k, v]) => (
-                <div key={k}>
-                  <dt className="font-mono text-[0.6rem] tracking-[0.18em] text-accent uppercase">
-                    {k}
-                  </dt>
-                  <dd className="mt-2 text-sm text-on-navy-muted">{v}</dd>
-                </div>
-              ))}
-            </dl>
-            <div className="mt-10">
-              <Btn to="/solutions/engineered-solutions" variant="accent">
-                Explore Engineered Solutions
-              </Btn>
-            </div>
-          </Reveal>
-        </div>
-      </section>
 
       {/* FACILITY */}
       <section className="section-y">
@@ -353,11 +235,7 @@ function HomePage() {
                 </div>
               </div>
             </div>
-            <div className="mt-10">
-              <Btn to="/facility" variant="solid">
-                Explore Our Facility
-              </Btn>
-            </div>
+
           </Reveal>
 
           <Reveal delay={80} className="grid grid-cols-2 gap-4">
@@ -441,11 +319,7 @@ function HomePage() {
             <Reveal>
               <SectionHeading eyebrow="Case Studies" title="Recent Projects" />
             </Reveal>
-            <Reveal delay={100}>
-              <Btn to="/projects" variant="outlineDark">
-                View All Projects
-              </Btn>
-            </Reveal>
+
           </div>
           <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {[
@@ -575,6 +449,8 @@ function WorldMap() {
   return (
     <div className="relative aspect-16/9 w-full border border-hairline bg-[oklch(0.22_0.05_252)]">
       <div className="absolute inset-0 tech-grid opacity-50" aria-hidden="true" />
+      
+      {/* SVG for lines and base dots */}
       <svg viewBox="0 0 100 56" className="absolute inset-0 size-full" role="img" aria-label="Map of global markets served by VeeTech Automation, centred on the UAE">
         {nodes.slice(1).map((n) => (
           <line
@@ -589,38 +465,43 @@ function WorldMap() {
             strokeDasharray="1.2 1"
           />
         ))}
-        {nodes.map((n) => (
-          <g key={n.label}>
-            <circle
-              cx={n.x}
-              cy={n.y * 0.56}
-              r={n.primary ? 1.1 : 0.65}
-              fill="var(--accent)"
-              opacity={n.primary ? 1 : 0.8}
-            />
-            {n.primary ? (
-              <circle
-                cx={n.x}
-                cy={n.y * 0.56}
-                r="2.6"
-                fill="none"
-                stroke="var(--accent)"
-                strokeWidth="0.15"
-                opacity="0.6"
-              />
-            ) : null}
-            <text
-              x={n.x + 1.8}
-              y={n.y * 0.56 + 0.7}
-              fontSize="1.5"
-              fill="oklch(0.86 0.02 250)"
-              fontFamily="var(--font-mono)"
-            >
-              {n.label}
-            </text>
-          </g>
-        ))}
       </svg>
+
+      {/* HTML overlay for interactive dots and popups */}
+      <div className="absolute inset-0 size-full">
+        {nodes.map((n) => (
+          <div
+            key={n.label}
+            className="group absolute flex items-center justify-center cursor-pointer"
+            style={{
+              left: `${n.x}%`,
+              top: `${n.y}%`,
+              transform: 'translate(-50%, -50%)',
+              width: n.primary ? '12%' : '8%',
+              height: n.primary ? '12%' : '8%',
+            }}
+          >
+            {/* The Dot */}
+            <div 
+              className={`rounded-full bg-accent transition-transform duration-300 group-hover:scale-150 ${n.primary ? 'size-2.5 opacity-100 shadow-[0_0_10px_rgba(255,140,0,0.8)]' : 'size-1.5 opacity-80'}`}
+            />
+            {n.primary && (
+              <div className="absolute inset-0 rounded-full border border-accent/60 size-6 m-auto animate-ping" style={{ animationDuration: '3s' }} />
+            )}
+
+            {/* The Popup Tooltip */}
+            <div className="pointer-events-none absolute bottom-full left-1/2 z-10 mb-2 -translate-x-1/2 translate-y-2 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+              <div className="relative rounded bg-navy-deep px-3 py-1.5 text-center shadow-lg border border-border">
+                <span className="whitespace-nowrap font-display text-sm font-medium text-on-navy">
+                  {n.label}
+                </span>
+                {/* Arrow */}
+                <div className="absolute -bottom-1 left-1/2 h-2 w-2 -translate-x-1/2 rotate-45 border-b border-r border-border bg-navy-deep" />
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
       <span className="absolute bottom-3 left-4 font-mono text-[0.6rem] tracking-[0.18em] text-on-navy-muted uppercase">
         UAE → Middle East → Asia → Africa → Global
       </span>
