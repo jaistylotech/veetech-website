@@ -1247,3 +1247,122 @@ cd <repository-name>
 npm i
 npm run dev
 ```
+
+---
+
+## Docker & Containerization Guide
+
+The VeeTech Automation application is fully containerized using multi-stage Docker builds and Docker Compose, supporting both live hot-reloading in development and a hardened Nginx reverse-proxy setup for production.
+
+### Architecture Diagram
+
+```text
+Client (Browser)
+       │
+       ▼ (Port 80 / HTTP)
+┌──────────────────────────────────────────────┐
+│        Nginx Reverse Proxy Container         │
+│          (Service: veetech-proxy)            │
+└──────────────────────┬───────────────────────┘
+                       │ HTTP Proxy Pass (Port 3000)
+                       ▼
+┌──────────────────────────────────────────────┐
+│       Node.js Nitro App Server Container     │
+│           (Service: veetech-app)             │
+│        (Non-root runner user: node)          │
+└──────────────────────────────────────────────┘
+```
+
+---
+
+### Quick Start Commands
+
+#### 1. Development Mode (Live Hot-Reloading)
+Runs Vite dev server with volume mounts on host port `5173`:
+```bash
+# Build and start development stack
+docker compose up --build
+
+# Run in detached background mode
+docker compose up -d
+
+# View real-time logs
+docker compose logs -f
+
+# Check container status
+docker compose ps
+
+# Stop development stack
+docker compose down
+```
+
+#### 2. Production Mode (Hardened Nitro App + Nginx Reverse Proxy)
+Runs multi-stage optimized production image behind Nginx reverse proxy on host port `80`:
+```bash
+# Build and start production stack
+docker compose -f docker-compose.prod.yml up --build -d
+
+# View production logs
+docker compose -f docker-compose.prod.yml logs -f
+
+# Check production service health
+docker compose -f docker-compose.prod.yml ps
+
+# Restart production stack
+docker compose -f docker-compose.prod.yml restart
+
+# Stop production stack
+docker compose -f docker-compose.prod.yml down
+```
+
+---
+
+### Environment Variables (`.env`)
+
+Copy `.env.example` to `.env` to customize runtime configuration:
+
+```bash
+cp .env.example .env
+```
+
+| Variable | Default Value | Description |
+| :--- | :--- | :--- |
+| `NODE_ENV` | `development` / `production` | Environment mode |
+| `HOST` | `0.0.0.0` | Host binding for server process |
+| `PORT` | `3000` | Internal application port for Nitro server |
+| `VITE_PORT` | `5173` | Exposed host port for local development |
+| `HTTP_PORT` | `80` | Exposed host port for production Nginx reverse proxy |
+
+---
+
+### Container Details & Best Practices
+
+- **Multi-stage Dockerfile**:
+  - `deps`: Clean installation of npm dependencies.
+  - `builder`: Compiles client & Nitro SSR server bundle into `.output/`.
+  - `dev`: Lightweight target for development with host file bind mounts.
+  - `runner`: Hardened production image executing `node .output/server/index.mjs` under non-root `node` user (UID 1000).
+- **Health Checks**: Included in both app container (`http://localhost:3000/`) and Nginx proxy (`http://localhost:80/`).
+- **Nginx Configuration (`nginx/default.conf`)**:
+  - Reverse proxy to Nitro app container on internal network (`veetech-net`).
+  - Enabled gzip compression for CSS, JS, HTML, SVG, and JSON assets.
+  - Injected security headers (`X-Frame-Options`, `X-Content-Type-Options`, `X-XSS-Protection`).
+  - Full WebSocket (`Upgrade` / `Connection`) header proxying.
+
+---
+
+### Backup & Persistence Considerations
+- The current application operates on static structured domain datasets located in `src/lib/site-data.ts`.
+- No database volume backups are required. For persistent media assets, ensure uploads are checked into `src/assets/` or `public/`.
+
+---
+
+### Troubleshooting Common Issues
+
+1. **Port 5173 or 80 Already in Use**:
+   - Change `VITE_PORT` or `HTTP_PORT` in your `.env` file (e.g. `HTTP_PORT=8080`).
+2. **Container Health Check Failures**:
+   - Inspect container logs: `docker compose logs app` or `docker compose -f docker-compose.prod.yml logs veetech-app`.
+3. **Rebuilding Stale Containers**:
+   - Force complete rebuild without cache: `docker compose build --no-cache`.
+
