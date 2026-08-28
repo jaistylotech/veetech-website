@@ -359,34 +359,5 @@ export function CtaSection({
   title?: string;
   lead?: string;
 }) {
-  return (
-    <section className="relative isolate overflow-hidden surface-dark">
-      <img
-        src={image}
-        alt="Industrial gas processing plant illuminated at night"
-        className="absolute inset-0 -z-10 size-full object-cover opacity-25"
-        loading="lazy"
-        width={1920}
-        height={912}
-      />
-      <div className="absolute inset-0 -z-10 bg-navy-deep/70" />
-      <div className="container-vt section-y">
-        <Reveal className="max-w-3xl">
-          <Eyebrow tone="dark">Get in touch</Eyebrow>
-          <h2 className="mt-5 text-[clamp(1.9rem,4vw,3.2rem)] leading-[1.06] font-semibold text-on-navy">
-            {title}
-          </h2>
-          <p className="mt-5 text-base text-on-navy-muted md:text-lg">{lead}</p>
-          <div className="mt-9 flex flex-wrap gap-3">
-            <Btn to="/contact" variant="accent">
-              Request a Consultation
-            </Btn>
-            <Btn to="/contact" variant="outlineDark">
-              Contact VeeTech
-            </Btn>
-          </div>
-        </Reveal>
-      </div>
-    </section>
-  );
+  return null;
 }

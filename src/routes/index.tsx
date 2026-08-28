@@ -97,7 +97,7 @@ function HomePage() {
   return (
     <>
       {/* HERO */}
-      <section className="group relative isolate flex min-h-[calc(100svh-5rem)] items-end overflow-hidden surface-dark mt-20 md:min-h-[calc(100svh-6rem)] md:mt-24">
+      <section className="group relative isolate flex min-h-svh items-end overflow-hidden surface-dark">
         <video
           ref={videoRef}
           src="/factory-demo.mp4"
@@ -312,45 +312,6 @@ function HomePage() {
         </div>
       </section>
 
-      {/* RECENT PROJECTS */}
-      <section className="section-y">
-        <div className="container-vt">
-          <div className="flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
-            <Reveal>
-              <SectionHeading eyebrow="Case Studies" title="Recent Projects" />
-            </Reveal>
-
-          </div>
-          <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {[
-              { client: "ADNOC ONSHORE", title: "SPECTO", img: "/client-media/projects/adnoc/16-x-slot-whcp-adnoc-onshore.jpg" },
-              { client: "ADNOC", title: "HAIL AND GASHA", img: "/client-media/projects/hail-and-gasha-cis/dsc-6103.jpg" },
-              { client: "TOTAL ENERGIES", title: "AGUP-1", img: "/client-media/projects/total-energies/whatsapp-image-2026-02-03-at-6.34.22-pm.jpeg" },
-            ].map((p, i) => (
-              <Reveal key={p.title} delay={i * 50}>
-                <div className="group relative block overflow-hidden bg-surface">
-                  <div className="aspect-4/3 overflow-hidden">
-                    <img
-                      src={p.img}
-                      alt={p.title}
-                      className="size-full object-cover transition-transform duration-700 group-hover:scale-105"
-                      loading="lazy"
-                    />
-                  </div>
-                  <div className="border-t border-border p-6">
-                    <span className="font-mono text-[0.62rem] font-semibold uppercase tracking-widest text-accent">
-                      {p.client}
-                    </span>
-                    <h3 className="mt-2 font-display text-xl font-semibold text-navy">
-                      {p.title}
-                    </h3>
-                  </div>
-                </div>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* GLOBAL PRESENCE */}
       <section className="relative isolate overflow-hidden surface-dark">
@@ -391,42 +352,6 @@ function HomePage() {
         </div>
       </section>
 
-      {/* QUALITY */}
-      <section className="section-y">
-        <div className="container-vt">
-          <Reveal>
-            <SectionHeading
-              eyebrow="Quality & Compliance"
-              title="Built Around Quality, Safety & Compliance"
-              lead="VeeTech Automation FZE has established strong systems and processes to maintain superior standards in quality management, environmental management, health and occupational safety, and takes pride in ethical business conduct across all aspects of its operations."
-            />
-          </Reveal>
-
-          <div className="mt-14 grid gap-px border border-border bg-border sm:grid-cols-2 lg:grid-cols-3">
-            {CERTIFICATIONS.map((c, i) => (
-              <Reveal key={c.title} delay={i * 40}>
-                <div className="h-full bg-background p-8 transition-colors hover:bg-surface">
-                  <span className="font-mono text-[0.6rem] tracking-[0.2em] text-accent uppercase">
-                    Certification
-                  </span>
-                  <h3 className="mt-4 font-display text-lg font-semibold">{c.title}</h3>
-                  <p className="mt-2 text-sm text-muted-foreground">{c.note}</p>
-                </div>
-              </Reveal>
-            ))}
-          </div>
-
-          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {["Quality", "Health & Safety", "Environmental Responsibility", "Continuous Improvement"].map(
-              (v) => (
-                <div key={v} className="border-l-2 border-accent/70 py-2 pl-4 text-sm font-medium">
-                  {v}
-                </div>
-              ),
-            )}
-          </div>
-        </div>
-      </section>
 
       <CtaSection image={ctaPlant} />
     </>

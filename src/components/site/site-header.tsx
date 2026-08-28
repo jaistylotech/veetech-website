@@ -1,5 +1,5 @@
-import { Link } from "@tanstack/react-router";
-import { Menu, X, Phone } from "lucide-react";
+import { Link, useLocation } from "@tanstack/react-router";
+import { Menu, X, Search, User } from "lucide-react";
 import { useEffect, useState } from "react";
 import { COMPANY, NAV } from "@/lib/site-data";
 import { cn } from "@/lib/utils";
@@ -7,6 +7,11 @@ import { cn } from "@/lib/utils";
 export function SiteHeader() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const location = useLocation();
+
+  // If we are not on the homepage, we might want a solid background immediately,
+  // but let's assume we want the transparent effect universally or it falls back gracefully.
+  const isHome = location.pathname === "/";
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -22,104 +27,78 @@ export function SiteHeader() {
     };
   }, [open]);
 
+  // If menu is open, or if we've scrolled, make it solid dark. Otherwise transparent.
+  const isSolid = scrolled || open || !isHome;
+
   return (
     <header
       className={cn(
-        "fixed inset-x-0 top-0 z-50 bg-white transition-[height,box-shadow] duration-300 border-b border-border",
-        scrolled ? "shadow-sm" : ""
+        "fixed inset-x-0 top-0 z-50 transition-all duration-300",
+        isSolid ? "bg-[#1f232a] text-white shadow-md" : "bg-transparent text-white"
       )}
     >
       <div
         className={cn(
           "container-vt flex items-center justify-between transition-all duration-300",
-          scrolled ? "h-16" : "h-20 md:h-24",
+          scrolled ? "h-16" : "h-[4.5rem] md:h-20",
         )}
       >
         <Link to="/" className="group flex items-center transition-transform hover:scale-105" onClick={() => setOpen(false)}>
           <img 
             src="/veetech-logo.png" 
             alt="VeeTech Automation FZE Logo" 
-            className="h-12 w-auto object-contain md:h-16 lg:h-[4.5rem]"
+            className="h-10 md:h-12 w-auto object-contain transition-opacity hover:opacity-100"
           />
         </Link>
 
-        <nav className="hidden items-center gap-7 xl:flex" aria-label="Primary">
-          {NAV.map((item) => (
-            <Link
-              key={item.to}
-              to={item.to}
-              className="group relative py-1 text-[0.8125rem] font-semibold text-navy transition-colors"
-              activeOptions={{ exact: item.to === "/" }}
-            >
-              {({ isActive }) => (
-                <>
-                  {item.label}
-                  <span 
-                    className={cn(
-                      "absolute -bottom-1 left-0 h-[2px] bg-[#fcee21] transition-all duration-300",
-                      isActive ? "w-full" : "w-0 group-hover:w-full"
-                    )} 
-                  />
-                </>
-              )}
-            </Link>
-          ))}
-        </nav>
+        {/* Removed inline desktop navigation, now relies entirely on the Menu button */}
 
-        <div className="flex items-center gap-3">
-          <a
-            href={`tel:${COMPANY.phoneHref}`}
-            className="hidden items-center gap-2 font-mono text-xs tracking-wider text-foreground/70 transition-colors hover:text-accent lg:flex"
+        <div className="flex items-center gap-6 sm:gap-8">
+          <button 
+            type="button" 
+            aria-label="Search" 
+            className="flex items-center justify-center transition-opacity hover:opacity-75"
           >
-            <Phone className="size-3.5" />
-            {COMPANY.phone}
-          </a>
-          <Link to="/contact" className="btn-base btn-accent hidden hover:brightness-110 sm:inline-flex">
-            Request a Consultation
+            <Search className="size-5" strokeWidth={1.5} />
+          </button>
+          
+          <Link
+            to="/contact"
+            className="hidden sm:flex items-center justify-center transition-opacity hover:opacity-75"
+            aria-label="User / Contact"
+          >
+            <User className="size-5" strokeWidth={1.5} />
           </Link>
+
           <button
             type="button"
             aria-label={open ? "Close menu" : "Open menu"}
             aria-expanded={open}
             onClick={() => setOpen((v) => !v)}
-            className="grid size-11 place-items-center border border-border text-navy xl:hidden"
+            className="flex items-center gap-2.5 font-medium tracking-wide transition-opacity hover:opacity-75 text-sm"
           >
-            {open ? <X className="size-5" /> : <Menu className="size-5" />}
+            <span className="hidden sm:inline-block">Menu</span>
+            {open ? <X className="size-6" strokeWidth={1.5} /> : <Menu className="size-6" strokeWidth={1.5} />}
           </button>
         </div>
       </div>
 
       {open ? (
-        <div className="fixed inset-x-0 top-16 bottom-0 z-40 overflow-y-auto bg-white xl:hidden">
-          <nav className="container-vt flex flex-col py-6" aria-label="Mobile">
-            {NAV.map((item, i) => (
-              <Link
-                key={item.to}
-                to={item.to}
-                onClick={() => setOpen(false)}
-                className="flex items-baseline gap-4 border-b border-border py-4 font-display text-xl font-semibold text-navy hover:text-accent transition-colors"
-              >
-                <span className="font-mono text-[0.65rem] text-accent">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-                {item.label}
-              </Link>
-            ))}
-            <Link
-              to="/contact"
-              onClick={() => setOpen(false)}
-              className="btn-base btn-accent mt-7 w-full"
-            >
-              Request a Consultation
-            </Link>
-            <div className="mt-6 space-y-1 font-mono text-xs text-foreground/70">
-              <a className="block hover:text-accent transition-colors" href={`tel:${COMPANY.phoneHref}`}>
-                {COMPANY.phone}
-              </a>
-              <a className="block hover:text-accent transition-colors" href={`mailto:${COMPANY.email}`}>
-                {COMPANY.email}
-              </a>
-              <p>{COMPANY.city}</p>
+        <div className="fixed inset-x-0 top-[4.5rem] md:top-20 bottom-0 z-40 overflow-y-auto bg-white text-navy transition-all">
+          <nav className="container-vt flex flex-col py-10" aria-label="Main Menu">
+            <div className="w-full max-w-[280px]">
+              <div className="flex flex-col gap-3">
+                {NAV.map((item) => (
+                  <Link
+                    key={item.to}
+                    to={item.to}
+                    onClick={() => setOpen(false)}
+                    className="group flex w-full items-center justify-between py-3 text-[0.95rem] font-semibold text-navy hover:text-accent transition-colors duration-200"
+                  >
+                    <span>{item.label}</span>
+                  </Link>
+                ))}
+              </div>
             </div>
           </nav>
         </div>
@@ -127,3 +106,4 @@ export function SiteHeader() {
     </header>
   );
 }
+

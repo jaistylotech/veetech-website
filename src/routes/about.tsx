@@ -112,11 +112,6 @@ function AboutPage() {
                 testimony to the company's success.
               </p>
             </div>
-            <div className="mt-10 grid grid-cols-3 gap-5">
-              <Stat value={<Counter value={40} suffix="+" />} label="Years of experience" />
-              <Stat value={<Counter value={2000} suffix="+" />} label="Projects" />
-              <Stat value="2009" label="COE Middle East" />
-            </div>
           </Reveal>
           <Reveal delay={80} className="relative h-full min-h-[300px]">
             <img

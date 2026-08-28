@@ -36,7 +36,7 @@ const columns = [
 
 export function SiteFooter() {
   return (
-    <footer className="surface-dark">
+    <footer className="surface-dark mt-16 md:mt-24">
       <div className="container-vt border-b border-hairline py-14 md:py-20">
         <div className="grid gap-12 lg:grid-cols-[1.2fr_2.4fr]">
           <div>
