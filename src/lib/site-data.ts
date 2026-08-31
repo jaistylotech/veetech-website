@@ -115,7 +115,7 @@ export const ENGINEERED_SOLUTIONS = [
 export const SERVICES = [
   {
     title: "Installation & Commissioning",
-    body: "Extensive field service and a dedicated after-market team providing comprehensive support for onsite installation, commissioning and start-up of equipment supplied worldwide.",
+    body: "Veetech Automation has the in-house capabilities to provide its valued customers with all the necessary services related to onsite installation, pre-commissioning, and commissioning activities for the entire range of products and solution packages.",
   },
   {
     title: "Spare Parts Management",
@@ -132,30 +132,6 @@ export const SERVICES = [
   {
     title: "Refurbishment & Recertification",
     body: "Restoration of aged equipment including complete revamp: inspection, testing, repairing, replacing and upgrading worn components, followed by recertification — at our facility or at the customer site.",
-  },
-  {
-    title: "Maintenance Contracts",
-    body: "Maintenance contracts for equipment supplied by VeeTech Automation or by any other OEM.",
-  },
-  {
-    title: "Long Term Service Agreements",
-    body: "LTSAs that help prevent or eliminate malfunctioning of the system and increase its reliability.",
-  },
-  {
-    title: "Flushing",
-    body: "Power flushing of hydraulic systems to eliminate sludge, varnish, debris and contaminated or degraded fluid from conductor walls, internal surfaces and system dead spots.",
-  },
-  {
-    title: "Pressure Testing",
-    body: "Pressure testing equipment and experienced technicians provided for performing these services.",
-  },
-  {
-    title: "Equipment Rental",
-    body: "Mission-critical equipment such as flushing equipment, pressure testing equipment and nitrogen booster units offered on a rental basis.",
-  },
-  {
-    title: "Product Training",
-    body: "Product training for customer teams on the systems supplied by VeeTech Automation.",
   },
 ] as const;
 

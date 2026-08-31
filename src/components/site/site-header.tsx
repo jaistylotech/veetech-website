@@ -1,5 +1,5 @@
 import { Link, useLocation } from "@tanstack/react-router";
-import { Menu, X, Search, User } from "lucide-react";
+import { Menu, X, Phone } from "lucide-react";
 import { useEffect, useState } from "react";
 import { COMPANY, NAV } from "@/lib/site-data";
 import { cn } from "@/lib/utils";
@@ -43,31 +43,24 @@ export function SiteHeader() {
           scrolled ? "h-16" : "h-[4.5rem] md:h-20",
         )}
       >
-        <Link to="/" className="group flex items-center transition-transform hover:scale-105" onClick={() => setOpen(false)}>
+        <Link to="/" className="group flex items-center transition-transform hover:scale-105 bg-white p-1.5 md:p-2 rounded-lg shadow-sm" onClick={() => setOpen(false)}>
           <img 
             src="/veetech-logo.png" 
             alt="VeeTech Automation FZE Logo" 
-            className="h-10 md:h-12 w-auto object-contain transition-opacity hover:opacity-100"
+            className="h-8 md:h-10 w-auto object-contain transition-opacity hover:opacity-100"
           />
         </Link>
 
         {/* Removed inline desktop navigation, now relies entirely on the Menu button */}
 
         <div className="flex items-center gap-6 sm:gap-8">
-          <button 
-            type="button" 
-            aria-label="Search" 
-            className="flex items-center justify-center transition-opacity hover:opacity-75"
-          >
-            <Search className="size-5" strokeWidth={1.5} />
-          </button>
-          
           <Link
             to="/contact"
-            className="hidden sm:flex items-center justify-center transition-opacity hover:opacity-75"
-            aria-label="User / Contact"
+            className="hidden sm:flex items-center gap-2 text-sm font-medium transition-opacity hover:opacity-75"
+            aria-label="Contact Us"
           >
-            <User className="size-5" strokeWidth={1.5} />
+            <Phone className="size-5" strokeWidth={1.5} />
+            <span className="hidden md:inline-block">Contact</span>
           </Link>
 
           <button

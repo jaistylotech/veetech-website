@@ -1,6 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { ComposableMap, Geographies, Geography, Marker, Line } from "react-simple-maps";
 import { ArrowUpRight, Volume2, VolumeX } from "lucide-react";
 import { useState, useRef, useEffect } from "react";
+import { cn } from "@/lib/utils";
 
 import heroFacility from "@/assets/hero-facility.jpg";
 import manufacturing from "@/assets/manufacturing.jpg";
@@ -8,6 +10,7 @@ import chemicalSkid from "@/assets/chemical-skid.jpg";
 import wellheadPanel from "@/assets/wellhead-panel.jpg";
 import modularSkid from "@/assets/modular-skid.jpg";
 import engineeringImg from "@/assets/engineering.jpg";
+import whoWeAreImg from "@/assets/veetech_who_we_are.jpg";
 import hpu from "@/assets/hpu.jpg";
 import fieldService from "@/assets/field-service.jpg";
 import ctaPlant from "@/assets/cta-plant.jpg";
@@ -143,33 +146,24 @@ function HomePage() {
 
       {/* INTRODUCTION */}
       <section className="section-y">
-        <div className="container-vt grid gap-12 lg:grid-cols-2 lg:gap-20">
-          <Reveal className="relative h-full min-h-[300px]">
-            <img
-              src={manufacturing}
-              alt="Fabrication workshop with overhead crane and steel skid frames under assembly"
-              className="absolute inset-0 h-full w-full object-cover rounded-2xl brightness-125"
-              loading="lazy"
-              width={1600}
-              height={1008}
-            />
-          </Reveal>
+        <div className="container-vt flex flex-col gap-12 lg:gap-16">
+          <Reveal delay={80} className="grid gap-12 lg:grid-cols-[1.5fr_1fr] items-center">
+            <div>
+              <SectionHeading
+                eyebrow="Who We Are"
+                eyebrowClassName="text-[0.85rem] md:text-[0.95rem] font-bold"
+                title="Engineering Expertise Built Over Four Decades"
+                lead="VeeTech Automation FZE (formerly Versatech Automation FZE) has proven expertise over four decades of experience in delivering complex projects, right from concept to successful implementation."
+              />
+              <p className="mt-5 text-base leading-relaxed text-muted-foreground">
+                Located in Jebel Ali Free Zone, Dubai, UAE, the company offers specialized and reliable
+                solutions for the industry. Backed by a team of experienced professionals and a
+                world-class manufacturing facility, its capabilities in industrial control automation
+                and packaged solutions to the energy industry.
+              </p>
+            </div>
 
-          <Reveal delay={80}>
-            <SectionHeading
-              eyebrow="Who We Are"
-              eyebrowClassName="text-[0.85rem] md:text-[0.95rem] font-bold"
-              title="Engineering Expertise Built Over Four Decades"
-              lead="VeeTech Automation FZE (formerly Versatech Automation FZE) has proven expertise over four decades of experience in delivering complex projects, right from concept to successful implementation."
-            />
-            <p className="mt-5 max-w-xl text-base leading-relaxed text-muted-foreground">
-              Located in Jebel Ali Free Zone, Dubai, UAE, the company offers specialized and reliable
-              solutions for the industry. Backed by a team of experienced professionals and a
-              world-class manufacturing facility, its capabilities in industrial control automation
-              and packaged solutions to the energy industry.
-            </p>
-
-            <div className="mt-12 grid grid-cols-1 gap-y-8 gap-x-6 md:grid-cols-3">
+            <div className="grid grid-cols-1 gap-y-8 gap-x-6 sm:grid-cols-3 lg:grid-cols-1 border-y border-border py-8 lg:border-y-0 lg:border-l lg:border-border/50 lg:py-4 lg:pl-10">
               <Stat value={<Counter value={40} suffix="+" />} label="Years of experience" />
               <Stat value={<Counter value={2000} suffix="+" />} label="Projects" />
               <Stat 
@@ -181,6 +175,17 @@ function HomePage() {
                 label="COE Middle East" 
               />
             </div>
+          </Reveal>
+          
+          <Reveal className="w-full">
+            <img
+              src={whoWeAreImg}
+              alt="VeeTech Automation Team and Facility"
+              className="w-full h-auto aspect-video md:aspect-[21/9] object-cover rounded-2xl shadow-xl"
+              loading="lazy"
+              width={1600}
+              height={1008}
+            />
           </Reveal>
         </div>
       </section>
@@ -205,7 +210,7 @@ function HomePage() {
 
       {/* FACILITY */}
       <section className="section-y">
-        <div className="container-vt grid items-center gap-12 lg:grid-cols-[1fr_1.1fr] lg:gap-20">
+        <div className="container-vt max-w-4xl">
           <Reveal>
             <SectionHeading
               eyebrow="Facility"
@@ -238,32 +243,6 @@ function HomePage() {
 
           </Reveal>
 
-          <Reveal delay={80} className="grid grid-cols-2 gap-4">
-            <img
-              src={manufacturing}
-              alt="Steel fabrication bay with overhead crane inside the Jebel Ali facility"
-              className="col-span-2 aspect-16/9 w-full object-cover"
-              loading="lazy"
-              width={1600}
-              height={1008}
-            />
-            <img
-              src={hpu}
-              alt="Hydraulic power unit assembled in the testing bay"
-              className="aspect-4/3 w-full object-cover"
-              loading="lazy"
-              width={1600}
-              height={1008}
-            />
-            <img
-              src={wellheadPanel}
-              alt="Wellhead control panel built at the VeeTech facility"
-              className="aspect-4/3 w-full object-cover"
-              loading="lazy"
-              width={1600}
-              height={1104}
-            />
-          </Reveal>
         </div>
       </section>
 
@@ -275,7 +254,7 @@ function HomePage() {
               <SectionHeading
                 eyebrow="After-Market Services"
                 title="Engineering Support Beyond Delivery"
-                lead="Extensive field service along with a dedicated after-market team ensures comprehensive support for onsite installation, commissioning, start-up and maintenance of equipment supplied worldwide."
+                lead="Veetech Automation’s extensive field service along with a dedicated after-market team ensures comprehensive support for onsite installation, commissioning, start-up, and maintenance of the equipment supplied worldwide. Veetech Automation is a one-stop solution provider for commissioning, troubleshooting & repair, refurbishment, and preventive maintenance services for its loyal customers."
               />
               <img
                 src={fieldService}
@@ -303,8 +282,8 @@ function HomePage() {
                 ))}
               </ol>
               <div className="mt-9">
-                <Btn to="/services" variant="solid">
-                  Explore After-Market Services
+                <Btn to="/contact" variant="solid">
+                  Partner With Us
                 </Btn>
               </div>
             </Reveal>
@@ -359,77 +338,123 @@ function HomePage() {
 }
 
 /* Stylised world map focused on UAE → Middle East → Asia → Africa */
+const geoUrl = "https://unpkg.com/world-atlas@2.0.2/countries-110m.json";
+
 function WorldMap() {
   const nodes = [
-    { x: 57.5, y: 47, label: "UAE", primary: true },
-    { x: 54.5, y: 45.5, label: "Middle East" },
-    { x: 68, y: 52, label: "Asia" },
-    { x: 74, y: 57, label: "South East Asia" },
-    { x: 50, y: 63, label: "Africa" },
-    { x: 48, y: 33, label: "Europe" },
-    { x: 62, y: 36, label: "CIS" },
+    { coordinates: [55.2708, 25.2048] as [number, number], label: "UAE", primary: true, dy: 45, dx: 0 },
+    { coordinates: [42.0, 25.0] as [number, number], label: "Middle East", dy: -25, dx: -35 },
+    { coordinates: [90.0, 30.0] as [number, number], label: "Asia", dy: -25, dx: 35 },
+    { coordinates: [115.0, 0.0] as [number, number], label: "South East Asia", dy: 35, dx: 0 },
+    { coordinates: [20.0, 5.0] as [number, number], label: "Africa", dy: 35, dx: 0 },
+    { coordinates: [15.0, 50.0] as [number, number], label: "Europe", dy: -35, dx: 0 },
+    { coordinates: [65.0, 55.0] as [number, number], label: "CIS", dy: -35, dx: 0 },
   ];
   const hub = nodes[0]!;
 
   return (
-    <div className="relative aspect-16/9 w-full border border-hairline bg-[oklch(0.22_0.05_252)]">
-      <div className="absolute inset-0 tech-grid opacity-50" aria-hidden="true" />
+    <div className="relative w-full overflow-hidden rounded-3xl border border-border/50 bg-navy-deep shadow-2xl aspect-square md:aspect-[16/10] xl:aspect-[21/9]">
+      <div className="absolute inset-0 tech-grid opacity-20" aria-hidden="true" />
       
-      {/* SVG for lines and base dots */}
-      <svg viewBox="0 0 100 56" className="absolute inset-0 size-full" role="img" aria-label="Map of global markets served by VeeTech Automation, centred on the UAE">
+      <ComposableMap
+        projection="geoMercator"
+        projectionConfig={{
+          scale: 400,
+          center: [60, 30]
+        }}
+        className="absolute inset-0 size-full"
+      >
+        <Geographies geography={geoUrl}>
+          {({ geographies }) =>
+            geographies.map((geo) => (
+              <Geography
+                key={geo.rsmKey}
+                geography={geo}
+                fill="rgba(255, 255, 255, 0.05)"
+                stroke="rgba(255, 255, 255, 0.15)"
+                strokeWidth={0.5}
+                style={{
+                  default: { outline: "none" },
+                  hover: { outline: "none", fill: "rgba(255,255,255,0.1)" },
+                  pressed: { outline: "none" },
+                }}
+              />
+            ))
+          }
+        </Geographies>
+
+        {/* Connections */}
         {nodes.slice(1).map((n) => (
-          <line
-            key={n.label}
-            x1={hub.x}
-            y1={hub.y * 0.56}
-            x2={n.x}
-            y2={n.y * 0.56}
+          <Line
+            key={`line-${n.label}`}
+            from={hub.coordinates}
+            to={n.coordinates}
             stroke="var(--accent)"
-            strokeWidth="0.18"
-            strokeOpacity="0.55"
-            strokeDasharray="1.2 1"
+            strokeWidth={4}
+            strokeOpacity={0.8}
+            strokeDasharray="8 8"
+            className="animate-[dash_3s_linear_infinite]"
           />
         ))}
-      </svg>
 
-      {/* HTML overlay for interactive dots and popups */}
-      <div className="absolute inset-0 size-full">
+        {/* Nodes */}
         {nodes.map((n) => (
-          <div
-            key={n.label}
-            className="group absolute flex items-center justify-center cursor-pointer"
-            style={{
-              left: `${n.x}%`,
-              top: `${n.y}%`,
-              transform: 'translate(-50%, -50%)',
-              width: n.primary ? '12%' : '8%',
-              height: n.primary ? '12%' : '8%',
-            }}
-          >
-            {/* The Dot */}
-            <div 
-              className={`rounded-full bg-accent transition-transform duration-300 group-hover:scale-150 ${n.primary ? 'size-2.5 opacity-100 shadow-[0_0_10px_rgba(255,140,0,0.8)]' : 'size-1.5 opacity-80'}`}
-            />
+          <Marker key={n.label} coordinates={n.coordinates}>
+            {/* Ping animation for primary */}
             {n.primary && (
-              <div className="absolute inset-0 rounded-full border border-accent/60 size-6 m-auto animate-ping" style={{ animationDuration: '3s' }} />
+              <circle r={36} fill="var(--accent)" opacity={0.3} className="animate-ping" />
             )}
-
-            {/* The Popup Tooltip */}
-            <div className="pointer-events-none absolute bottom-full left-1/2 z-10 mb-2 -translate-x-1/2 translate-y-2 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
-              <div className="relative rounded bg-navy-deep px-3 py-1.5 text-center shadow-lg border border-border">
-                <span className="whitespace-nowrap font-display text-sm font-medium text-on-navy">
-                  {n.label}
-                </span>
-                {/* Arrow */}
-                <div className="absolute -bottom-1 left-1/2 h-2 w-2 -translate-x-1/2 rotate-45 border-b border-r border-border bg-navy-deep" />
-              </div>
-            </div>
-          </div>
+            {/* Main Dot */}
+            <circle
+              r={n.primary ? 12 : 8}
+              fill={n.primary ? "var(--accent)" : "rgba(255, 140, 0, 1)"}
+              stroke={n.primary ? "rgba(255, 140, 0, 0.3)" : "none"}
+              strokeWidth={8}
+              className="transition-all duration-300 hover:scale-125 cursor-pointer"
+            />
+            {/* Label Outline */}
+            <text
+              textAnchor="middle"
+              y={n.dy}
+              x={n.dx}
+              stroke="rgba(10,20,40,0.95)"
+              strokeWidth={8}
+              strokeLinejoin="round"
+              style={{
+                fontFamily: "var(--font-display)",
+                fontSize: n.primary ? "24px" : "18px",
+                fontWeight: 800,
+                letterSpacing: "0.5px"
+              }}
+            >
+              {n.label}
+            </text>
+            {/* Label Fill */}
+            <text
+              textAnchor="middle"
+              y={n.dy}
+              x={n.dx}
+              fill={n.primary ? "var(--accent)" : "#ffffff"}
+              style={{
+                fontFamily: "var(--font-display)",
+                fontSize: n.primary ? "24px" : "18px",
+                fontWeight: 800,
+                letterSpacing: "0.5px"
+              }}
+            >
+              {n.label}
+            </text>
+          </Marker>
         ))}
-      </div>
-      <span className="absolute bottom-3 left-4 font-mono text-[0.6rem] tracking-[0.18em] text-on-navy-muted uppercase">
-        UAE → Middle East → Asia → Africa → Global
-      </span>
+      </ComposableMap>
+
+      <div className="absolute left-1/2 top-1/2 -z-10 h-3/4 w-3/4 -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent/5 blur-[100px] pointer-events-none" />
+
+      <style>{`
+        @keyframes dash {
+          to { stroke-dashoffset: -20; }
+        }
+      `}</style>
     </div>
   );
 }

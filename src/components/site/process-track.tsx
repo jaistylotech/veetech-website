@@ -1,77 +1,39 @@
-import { useState } from "react";
 import { CAPABILITIES } from "@/lib/site-data";
 import { cn } from "@/lib/utils";
+import { MoveRight } from "lucide-react";
 
 export function ProcessTrack() {
-  const [active, setActive] = useState(0);
-
   return (
     <div className="mt-14">
-      {/* Desktop View */}
-      <div className="relative hidden md:block">
-        <div className="absolute top-[0.6rem] right-0 left-0 h-px bg-border" aria-hidden="true" />
-        <div
-          className="absolute top-[0.6rem] left-0 h-px bg-accent transition-all duration-700 ease-out"
-          style={{ width: `${((active + 1) / CAPABILITIES.length) * 100}%` }}
-          aria-hidden="true"
-        />
-        <ol className="grid grid-cols-3 gap-x-6 gap-y-10 lg:grid-cols-6">
-          {CAPABILITIES.map((c, i) => (
-            <li
-              key={c.no}
-              onMouseEnter={() => setActive(i)}
-              onFocus={() => setActive(i)}
-              tabIndex={0}
-              className="group relative cursor-default pt-8 outline-none"
-            >
-              {/* Animated Dot */}
-              <span
-                className={cn(
-                  "absolute top-[0.35rem] left-0 block size-2.5 rounded-full border transition-all duration-500",
-                  i === active
-                    ? "border-accent bg-accent scale-150 shadow-[0_0_15px_rgba(255,140,0,0.6)] animate-pulse"
-                    : i < active
-                    ? "border-accent bg-accent scale-110"
-                    : "border-border bg-background group-hover:border-accent group-hover:scale-125",
-                )}
-                aria-hidden="true"
-              />
-              
-              <h3
-                className={cn(
-                  "mt-2 font-display text-lg font-semibold transition-all duration-500",
-                  i === active ? "text-foreground translate-x-1" : "text-graphite",
-                )}
-              >
-                {c.title}
-              </h3>
-              <p
-                className={cn(
-                  "mt-3 text-sm leading-relaxed text-muted-foreground transition-all duration-500",
-                  i === active ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2 pointer-events-none",
-                )}
-              >
-                {c.body}
-              </p>
-            </li>
-          ))}
-        </ol>
-      </div>
+      <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+        {CAPABILITIES.map((c, i) => (
+          <div
+            key={c.no}
+            className="group relative overflow-hidden rounded-2xl border border-border bg-background/50 p-8 transition-all duration-300 hover:-translate-y-1 hover:border-accent/40 hover:bg-background hover:shadow-xl hover:shadow-accent/5"
+          >
+            {/* Background Glow */}
+            <div className="absolute -right-10 -top-10 -z-10 size-32 rounded-full bg-accent/5 blur-3xl transition-all duration-500 group-hover:bg-accent/20 group-hover:scale-150" />
+            
+            <div className="flex items-center justify-between">
+              <span className="font-mono text-sm font-semibold tracking-wider text-accent">
+                {c.no}
+              </span>
+              <MoveRight className="size-5 text-muted-foreground opacity-0 transition-all duration-300 group-hover:translate-x-2 group-hover:text-accent group-hover:opacity-100" />
+            </div>
+            
+            <h3 className="mt-6 font-display text-xl font-semibold text-foreground transition-colors duration-300 group-hover:text-accent">
+              {c.title}
+            </h3>
+            
+            <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
+              {c.body}
+            </p>
 
-      {/* Mobile View */}
-      <ol className="space-y-8 md:hidden">
-        {CAPABILITIES.map((c) => (
-          <li key={c.no} className="relative border-l-2 border-accent/60 pl-6 pt-1 group">
-            {/* Animated pulsing dot on the line */}
-            <span
-              className="absolute -left-[6px] top-2.5 block size-2.5 rounded-full border border-accent bg-accent shadow-[0_0_10px_rgba(255,140,0,0.4)] animate-pulse"
-              aria-hidden="true"
-            />
-            <h3 className="font-display text-lg font-semibold text-foreground">{c.title}</h3>
-            <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{c.body}</p>
-          </li>
+            {/* Bottom highlight line */}
+            <div className="absolute bottom-0 left-0 h-0.5 w-0 bg-accent transition-all duration-500 group-hover:w-full" />
+          </div>
         ))}
-      </ol>
+      </div>
     </div>
   );
 }
