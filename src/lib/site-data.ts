@@ -209,3 +209,14 @@ export const OPENINGS = [
     location: "Jebel Ali Free Zone, Dubai, UAE",
   },
 ] as const;
+
+export const QUICK_LINKS = [
+  { label: "Trending", to: "/solutions" },
+  { label: "Careers", to: "/careers" },
+  { label: "Chemical Injection Packages", to: "/solutions/chemical-injection-packages" },
+  { label: "Wellhead Control Systems", to: "/solutions/wellhead-control-systems" },
+  { label: "Modular Packages", to: "/solutions/modular-packages" },
+  { label: "Engineered Solutions", to: "/solutions/engineered-solutions" },
+  { label: "Services", to: "/services" },
+] as const;
+

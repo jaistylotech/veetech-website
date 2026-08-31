@@ -26,6 +26,7 @@ import {
   Stat,
 } from "@/components/site/primitives";
 import { ProcessTrack } from "@/components/site/process-track";
+import { HeroScroller } from "@/components/site/hero-scroller";
 import { CERTIFICATIONS, MARKETS, SERVICES } from "@/lib/site-data";
 
 export const Route = createFileRoute("/")({
@@ -100,7 +101,7 @@ function HomePage() {
   return (
     <>
       {/* HERO */}
-      <section className="group relative isolate flex min-h-svh items-end overflow-hidden surface-dark">
+      <section className="group relative isolate flex min-h-svh flex-col justify-end overflow-hidden surface-dark">
         <video
           ref={videoRef}
           src="/factory-demo.mp4"
@@ -123,7 +124,7 @@ function HomePage() {
           aria-hidden="true"
         />
 
-        <div className="container-vt w-full pt-36 pb-14 md:pt-44 md:pb-20">
+        <div className="container-vt w-full pt-24 pb-6 md:pt-32 md:pb-8 mt-auto">
           <Reveal>
             <h1 className="mt-7 max-w-4xl text-[clamp(2.4rem,6.2vw,5rem)] leading-[1.02] font-semibold text-on-navy">
               Engineering Excellence.
@@ -140,8 +141,7 @@ function HomePage() {
             </div>
           </Reveal>
         </div>
-
-
+        <HeroScroller />
       </section>
 
       {/* INTRODUCTION */}
