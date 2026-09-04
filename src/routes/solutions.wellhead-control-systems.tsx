@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+﻿import { createFileRoute } from "@tanstack/react-router";
 
 import wellheadPanel from "@/assets/wellhead-panel.jpg";
 import hpu from "@/assets/hpu.jpg";
@@ -10,7 +10,7 @@ import { ImageSlider } from "@/components/site/image-slider";
 export const Route = createFileRoute("/solutions/wellhead-control-systems")({
   head: () => ({
     meta: [
-      { title: "Wellhead Control Systems & Hydraulic Power Units — VeeTech Automation" },
+      { title: "Wellhead Control Systems & Hydraulic Power Units â€” Veetech Automation" },
       {
         name: "description",
         content:
@@ -77,7 +77,7 @@ function WellheadPage() {
               </p>
               <p>
                 The modules can be isolated or removed without disrupting the functionality of the
-                other modules of the panel — keeping production running while maintenance is carried
+                other modules of the panel â€” keeping production running while maintenance is carried
                 out on an individual well.
               </p>
             </div>
@@ -138,7 +138,7 @@ function WellheadPage() {
       <CtaSection
         image={ctaPlant}
         title="Specifying a Wellhead Control Panel?"
-        lead="Send us your valve schedule, control media and shutdown philosophy — our engineers will take it from there."
+        lead="Send us your valve schedule, control media and shutdown philosophy â€” our engineers will take it from there."
       />
     </>
   );

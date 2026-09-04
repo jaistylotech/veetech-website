@@ -11,13 +11,13 @@ import { CtaSection, PageHero, Reveal, SectionHeading } from "@/components/site/
 export const Route = createFileRoute("/solutions/engineered-solutions")({
   head: () => ({
     meta: [
-      { title: "Engineered Solutions — Customized Engineering for Upstream Energy" },
+      { title: "Engineered Solutions â€” Customized Engineering for Upstream Energy" },
       {
         name: "description",
         content:
           "Bespoke engineered solutions for upstream energy-sector applications: design to customer specification, detailed engineering, manufacturing, testing and commissioning.",
       },
-      { property: "og:title", content: "Engineered Solutions — VeeTech Automation FZE" },
+      { property: "og:title", content: "Engineered Solutions â€” Veetech Automation FZE" },
       {
         property: "og:description",
         content:
@@ -47,7 +47,7 @@ function EngineeredPage() {
       <PageHero
         eyebrow="Engineered Solutions"
         title="When Standard Solutions Aren't Enough."
-        lead="Decades of experience, intense knowledge of the field and the availability of the right resources make VeeTech the predominant choice for upstream energy-sector markets."
+        lead="Decades of experience, intense knowledge of the field and the availability of the right resources make Veetech the predominant choice for upstream energy-sector markets."
         image={engineeringImg}
         imageAlt="Engineers reviewing 3D piping models and technical drawings"
         breadcrumbs={[
@@ -61,17 +61,14 @@ function EngineeredPage() {
         <div className="container-vt grid gap-12 lg:grid-cols-2 lg:gap-20">
           <Reveal>
             <SectionHeading
-              eyebrow="Capability"
+              eyebrow="Capabilities"
               title="Customized systems, engineered around the requirement"
-              lead="VeeTech Automation develops customized engineered solutions for demanding upstream energy applications, designed, engineered, assembled and tested according to international standards and the requirements of the customer."
+              lead="Veetech Automation develops customized engineered solutions for demanding upstream energy applications, designed, engineered, assembled and tested according to international standards and the requirements of the customer."
             />
             <ol className="mt-10 space-y-6">
               {steps.map((s, i) => (
                 <li key={s.title} className="border-l-2 border-accent/70 pl-5">
-                  <span className="font-mono text-[0.65rem] text-accent">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                  <h3 className="mt-1 font-display text-lg font-semibold">{s.title}</h3>
+                  <h3 className="font-display text-lg font-semibold">{s.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{s.body}</p>
                 </li>
               ))}
@@ -119,7 +116,7 @@ function EngineeredPage() {
       <CtaSection
         image={ctaPlant}
         title="Discuss Your Requirement"
-        lead="Bring us the application — our engineering team will develop the solution around it."
+        lead="Bring us the application â€” our engineering team will develop the solution around it."
       />
     </>
   );

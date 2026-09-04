@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+﻿import { createFileRoute } from "@tanstack/react-router";
 
 import fieldService from "@/assets/field-service.jpg";
 import testing from "@/assets/testing.jpg";
@@ -9,13 +9,13 @@ import { CtaSection, PageHero, Reveal, SectionHeading } from "@/components/site/
 export const Route = createFileRoute("/services")({
   head: () => ({
     meta: [
-      { title: "After-Market Services — Commissioning, Maintenance & Spares" },
+      { title: "After-Market Services â€” Commissioning, Maintenance & Spares" },
       {
         name: "description",
         content:
           "Installation and commissioning, preventive and corrective maintenance, field repair, spare parts, refurbishment and technical support for control systems and skid packages.",
       },
-      { property: "og:title", content: "After-Market Services — VeeTech Automation FZE" },
+      { property: "og:title", content: "After-Market Services â€” Veetech Automation FZE" },
       {
         property: "og:description",
         content:

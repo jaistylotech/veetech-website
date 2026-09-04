@@ -41,10 +41,10 @@ export function SiteFooter() {
         <div className="grid gap-12 lg:grid-cols-[1.2fr_2.4fr]">
           <div>
             <Link to="/" className="inline-block rounded-lg bg-white p-3 shadow-sm transition-transform hover:-translate-y-1">
-              <img src="/veetech-logo.png" alt="VeeTech Automation FZE Logo" className="h-10 w-auto md:h-14" />
+              <img src="/veetech-logo.png" alt="Veetech Automation FZE Logo" className="h-10 w-auto md:h-14" />
             </Link>
             <p className="mt-6 max-w-sm text-sm leading-relaxed text-on-navy-muted">
-              Industrial control automation and packaged solutions for the energy sector — designed,
+              Industrial control automation and packaged solutions for the energy sector â€” designed,
               engineered, manufactured and tested in Jebel Ali Free Zone, Dubai.
             </p>
             <div className="mt-8 flex gap-4">
@@ -126,7 +126,7 @@ export function SiteFooter() {
       </div>
 
       <div className="container-vt flex flex-col gap-4 py-6 text-xs text-on-navy-muted sm:flex-row sm:items-center sm:justify-between">
-        <p className="flex-1">© {new Date().getFullYear()} VeeTech Automation FZE. All rights reserved.</p>
+        <p className="flex-1">Â© {new Date().getFullYear()} Veetech Automation FZE. All rights reserved.</p>
         <div className="flex flex-1 gap-6 sm:justify-center">
           <Link to="/privacy-policy" className="transition-colors hover:text-on-navy">
             Privacy Policy

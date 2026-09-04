@@ -1,6 +1,5 @@
 import { CAPABILITIES } from "@/lib/site-data";
 import { cn } from "@/lib/utils";
-import { MoveRight } from "lucide-react";
 
 export function ProcessTrack() {
   return (
@@ -14,11 +13,7 @@ export function ProcessTrack() {
             {/* Background Glow */}
             <div className="absolute -right-10 -top-10 -z-10 size-32 rounded-full bg-accent/5 blur-3xl transition-all duration-500 group-hover:bg-accent/20 group-hover:scale-150" />
             
-            <div className="flex items-center justify-between">
-              <span className="font-mono text-sm font-semibold tracking-wider text-accent">
-                {c.no}
-              </span>
-              <MoveRight className="size-5 text-muted-foreground opacity-0 transition-all duration-300 group-hover:translate-x-2 group-hover:text-accent group-hover:opacity-100" />
+            <div className="flex items-center justify-end">
             </div>
             
             <h3 className="mt-6 font-display text-xl font-semibold text-foreground transition-colors duration-300 group-hover:text-accent">

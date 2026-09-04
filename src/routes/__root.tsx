@@ -74,13 +74,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "VeeTech Automation FZE — Industrial Control Automation, Dubai" },
+      { title: "Veetech Automation FZE â€” Industrial Control Automation, Dubai" },
       {
         name: "description",
         content:
           "Chemical injection systems, wellhead control systems and modular skid packages engineered, manufactured and tested in Jebel Ali Free Zone, Dubai.",
       },
-      { property: "og:site_name", content: "VeeTech Automation FZE" },
+      { property: "og:site_name", content: "Veetech Automation FZE" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -100,9 +100,9 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Organization",
-          name: "VeeTech Automation FZE",
+          name: "Veetech Automation FZE",
           alternateName: "Versatech Automation FZE",
-          email: "sales@veetech.ae",
+          email: "sales@Veetech.ae",
           telephone: "+971 4 881 1214",
           address: {
             "@type": "PostalAddress",

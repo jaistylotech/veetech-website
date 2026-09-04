@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+﻿import { createFileRoute } from "@tanstack/react-router";
 
 import chemicalSkid from "@/assets/chemical-skid.jpg";
 import testing from "@/assets/testing.jpg";
@@ -11,13 +11,13 @@ import { ImageSlider } from "@/components/site/image-slider";
 export const Route = createFileRoute("/solutions/chemical-injection-packages")({
   head: () => ({
     meta: [
-      { title: "Chemical Injection Packages — Chemical Injection Systems, Dubai UAE" },
+      { title: "Chemical Injection Packages â€” Chemical Injection Systems, Dubai UAE" },
       {
         name: "description",
         content:
           "Customized chemical injection skids for controlled chemical dosing: single and multi-point injection, IRCD, PLC/RTU & SCADA control and solar-powered skids.",
       },
-      { property: "og:title", content: "Chemical Injection Packages — VeeTech Automation FZE" },
+      { property: "og:title", content: "Chemical Injection Packages â€” Veetech Automation FZE" },
       {
         property: "og:description",
         content:

@@ -18,13 +18,13 @@ import { CERTIFICATIONS, MARKETS } from "@/lib/site-data";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About VeeTech Automation FZE — Four Decades in the Energy Sector" },
+      { title: "About Veetech Automation FZE â€” Four Decades in the Energy Sector" },
       {
         name: "description",
         content:
-          "VeeTech Automation FZE, formerly Versatech Automation FZE, has over four decades of energy-sector experience, a COE Middle East presence from 2009 and 2000+ projects delivered.",
+          "Veetech Automation FZE, formerly Versatech Automation FZE, has over four decades of energy-sector experience, a COE Middle East presence from 2009 and 2000+ projects delivered.",
       },
-      { property: "og:title", content: "About VeeTech Automation FZE" },
+      { property: "og:title", content: "About Veetech Automation FZE" },
       {
         property: "og:description",
         content:
@@ -51,7 +51,7 @@ const timeline = [
   },
   {
     marker: "2021",
-    title: "Rebranded as VeeTech Automation FZE",
+    title: "Rebranded as Veetech Automation FZE",
     body: "Versatech Automation FZE was rebranded as Veetech Automation FZE.",
   },
   {
@@ -70,7 +70,7 @@ const values = [
   },
   {
     title: "Ethical conduct",
-    body: "VeeTech Automation takes pride in ethical business conduct in all aspects of its operations.",
+    body: "Veetech Automation takes pride in ethical business conduct in all aspects of its operations.",
   },
 ];
 
@@ -78,11 +78,11 @@ function AboutPage() {
   return (
     <>
       <PageHero
-        eyebrow="About VeeTech"
+        eyebrow=""
         title="Engineering dependable control systems for critical energy operations"
-        lead="VeeTech Automation FZE designs, manufactures, tests and supports wellhead control, chemical injection and modular automation packages from our facility in the UAE."
+        lead="Veetech Automation FZE designs, manufactures, tests and supports wellhead control, chemical injection and modular automation packages from our facility in the UAE."
         image={heroFacility}
-        imageAlt="VeeTech industrial fabrication facility"
+        imageAlt="Veetech industrial fabrication facility"
         breadcrumbs={[
           { label: "Home", to: "/" },
           { label: "About Us" }
@@ -95,7 +95,7 @@ function AboutPage() {
             <SectionHeading eyebrow="Company Overview" title="Specialized and reliable solutions for the industry" />
             <div className="mt-6 space-y-5 text-base leading-relaxed text-muted-foreground">
               <p>
-                VeeTech Automation FZE has proven expertise over four decades of experience in
+                Veetech Automation FZE has proven expertise over four decades of experience in
                 delivering complex projects, right from concept to successful implementation. Located
                 in Jebel Ali Free Zone, Dubai, UAE, the company offers specialized and reliable
                 solutions for the industry.
@@ -107,7 +107,7 @@ function AboutPage() {
                 become prominent in the energy sector.
               </p>
               <p>
-                VeeTech Automation FZE offers capabilities in industrial control automation and packaged
+                Veetech Automation FZE offers capabilities in industrial control automation and packaged
                 solutions to the energy industry. A proven track record of 2000+ projects is a
                 testimony to the company's success.
               </p>
@@ -116,7 +116,7 @@ function AboutPage() {
           <Reveal delay={80} className="relative h-full min-h-[300px]">
             <img
               src={manufacturing}
-              alt="Interior of the VeeTech fabrication workshop with steel skid frames"
+              alt="Interior of the Veetech fabrication workshop with steel skid frames"
               className="absolute inset-0 h-full w-full object-cover rounded-2xl"
               loading="lazy"
               width={1600}
@@ -132,12 +132,12 @@ function AboutPage() {
             <SectionHeading
               eyebrow="Superior Value Creation"
               title="Best-in-class solutions for complex assignments"
-              lead="VeeTech Automation's extensive knowledge and decades of expertise combined with core values enable the company to provide best-in-class solutions to its clients in complex and challenging assignments."
+              lead="Veetech Automation's extensive knowledge and decades of expertise combined with core values enable the company to provide best-in-class solutions to its clients in complex and challenging assignments."
             />
             <div className="mt-8 text-base leading-relaxed text-muted-foreground">
               <p>
-                The highly talented engineers at VeeTech offer innovative solutions meeting the
-                specific needs of customers. As a proficient equipment manufacturer, VeeTech
+                The highly talented engineers at Veetech offer innovative solutions meeting the
+                specific needs of customers. As a proficient equipment manufacturer, Veetech
                 Automation supports and extends its value-added services to ensure reliable and
                 long-lasting service of the products.
               </p>
@@ -169,7 +169,7 @@ function AboutPage() {
       <section className="border-y border-border section-y">
         <div className="container-vt">
           <Reveal>
-            <SectionHeading eyebrow="Our History" title="From Versatech to VeeTech" />
+            <SectionHeading eyebrow="Our History" title="From Versatech to Veetech" />
           </Reveal>
           <ol className="mt-14 grid gap-px border border-border bg-border md:grid-cols-2 lg:grid-cols-4">
             {timeline.map((t, i) => (
@@ -232,7 +232,7 @@ function AboutPage() {
             <SectionHeading
               eyebrow="Quality & Certifications"
               title="Strong systems, superior standards"
-              lead="VeeTech Automation FZE has established strong systems and processes to maintain superior standards in quality management systems, environmental management, health and occupational safety, among others."
+              lead="Veetech Automation FZE has established strong systems and processes to maintain superior standards in quality management systems, environmental management, health and occupational safety, among others."
             />
           </Reveal>
           <div className="mt-12 grid gap-px border border-border bg-border sm:grid-cols-2 lg:grid-cols-3">

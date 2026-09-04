@@ -46,7 +46,7 @@ export function SiteHeader() {
         <Link to="/" className="group flex items-center transition-transform hover:scale-105 bg-white p-1.5 md:p-2 rounded-lg shadow-sm" onClick={() => setOpen(false)}>
           <img 
             src="/veetech-logo.png" 
-            alt="VeeTech Automation FZE Logo" 
+            alt="Veetech Automation FZE Logo" 
             className="h-8 md:h-10 w-auto object-contain transition-opacity hover:opacity-100"
           />
         </Link>

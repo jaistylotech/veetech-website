@@ -13,7 +13,7 @@ import { CtaSection, PageHero, Reveal, SectionHeading } from "@/components/site/
 export const Route = createFileRoute("/solutions/")({
   head: () => ({
     meta: [
-      { title: "Products & Solutions — Chemical Injection, Wellhead Control & Skids" },
+      { title: "Products & Solutions â€” Chemical Injection, Wellhead Control & Skids" },
       {
         name: "description",
         content:
@@ -23,7 +23,7 @@ export const Route = createFileRoute("/solutions/")({
       {
         property: "og:description",
         content:
-          "The full VeeTech Automation range: chemical injection, wellhead control systems, modular skid packages and bespoke engineered solutions.",
+          "The full Veetech Automation range: chemical injection, wellhead control systems, modular skid packages and bespoke engineered solutions.",
       },
       { property: "og:url", content: "/solutions" },
       { property: "og:type", content: "website" },
@@ -90,7 +90,7 @@ const solutions = [
     image: engineeringImg,
     alt: "Engineers reviewing 3D piping models and technical drawings",
     overview:
-      "Decades of experience, intense knowledge of the field and the availability of the right resources make VeeTech the predominant choice for upstream energy-sector markets requiring customized engineered solutions.",
+      "Decades of experience, intense knowledge of the field and the availability of the right resources make Veetech the predominant choice for upstream energy-sector markets requiring customized engineered solutions.",
     applications: ["Upstream energy-sector applications", "Non-standard control requirements", "Retrofit & upgrade scopes"],
     capabilities: [
       "Design to customer specification",
@@ -107,12 +107,12 @@ function SolutionsPage() {
       <PageHero
         eyebrow="Products & Solutions"
         title="Solutions Engineered for the Energy Sector"
-        lead="The entire range of chemical injection systems, wellhead control systems, modular skid packages and customized engineered solutions — designed, engineered, manufactured and tested to international standards."
+        lead="The entire range of chemical injection systems, wellhead control systems, modular skid packages and customized engineered solutions â€” designed, engineered, manufactured and tested to international standards."
         image={offshore}
         imageAlt="Offshore oil and gas platform at sunset"
         breadcrumbs={[
           { label: "Home", to: "/" },
-          { label: "Solutions" }
+          { label: "Products & Solutions" }
         ]}
       />
 
@@ -132,7 +132,7 @@ function SolutionsPage() {
                   />
                 </div>
                 <div className="flex flex-col justify-center">
-                  <SectionHeading eyebrow={`0${i + 1} — Solution`} title={s.title} lead={s.overview} />
+                  <SectionHeading eyebrow="Solution" title={s.title} lead={s.overview} />
                   <div className="mt-9 grid gap-8 sm:grid-cols-2">
                     <div>
                       <h3 className="font-mono text-[0.62rem] tracking-[0.2em] text-accent uppercase">

@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+﻿import { createFileRoute } from "@tanstack/react-router";
 
 import engineeringImg from "@/assets/engineering.jpg";
 import ctaPlant from "@/assets/cta-plant.jpg";
@@ -10,7 +10,7 @@ import { Link } from "@tanstack/react-router";
 export const Route = createFileRoute("/solutions/engineered-solutions/hipps-systems")({
   head: () => ({
     meta: [
-      { title: "HIPPS Systems — VeeTech Automation FZE" },
+      { title: "HIPPS Systems â€” Veetech Automation FZE" },
       {
         name: "description",
         content: "HIPPS is a safety system engineered to prevent overpressure in pipelines by rapidly isolating the source using high-integrity instrumentation and shutdown valves.",
@@ -103,7 +103,7 @@ function HIPPSSystemsPage() {
               <ul className="mt-10 space-y-4">
                 {engineeringCapabilities.map((cap, i) => (
                   <li key={i} className="flex items-start gap-3 text-sm text-muted-foreground">
-                     <span className="font-mono text-accent">✓</span>
+                     <span className="font-mono text-accent">âœ“</span>
                     <span>{cap}</span>
                   </li>
                 ))}
@@ -113,7 +113,7 @@ function HIPPSSystemsPage() {
                <div className="h-full border border-border bg-background p-8">
                  <h3 className="font-display text-xl font-semibold">Testing & Quality</h3>
                  <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-                   VeeTech Automation's HIPPS are subjected to rigorous testing in a climate-controlled assembly and testing facility before dispatch. Every safety-critical system is engineered and tested to meet international functional safety standards (SIL 2/3) to ensure complete reliability when protecting critical infrastructure.
+                   Veetech Automation's HIPPS are subjected to rigorous testing in a climate-controlled assembly and testing facility before dispatch. Every safety-critical system is engineered and tested to meet international functional safety standards (SIL 2/3) to ensure complete reliability when protecting critical infrastructure.
                  </p>
                </div>
             </Reveal>

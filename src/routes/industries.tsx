@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+﻿import { createFileRoute } from "@tanstack/react-router";
 
 import offshore from "@/assets/offshore.jpg";
 import ctaPlant from "@/assets/cta-plant.jpg";
@@ -8,13 +8,13 @@ import { CtaSection, PageHero, Reveal, SectionHeading } from "@/components/site/
 export const Route = createFileRoute("/industries")({
   head: () => ({
     meta: [
-      { title: "Industries Served — Upstream Oil & Gas, Petrochemical, Power & Water" },
+      { title: "Industries Served â€” Upstream Oil & Gas, Petrochemical, Power & Water" },
       {
         name: "description",
         content:
-          "VeeTech Automation serves upstream oil and gas, offshore, petrochemical, power generation, water and industrial process markets across the UAE and wider region.",
+          "Veetech Automation serves upstream oil and gas, offshore, petrochemical, power generation, water and industrial process markets across the UAE and wider region.",
       },
-      { property: "og:title", content: "Industries Served — VeeTech Automation FZE" },
+      { property: "og:title", content: "Industries Served â€” Veetech Automation FZE" },
       {
         property: "og:description",
         content:

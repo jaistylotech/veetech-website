@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+﻿import { createFileRoute } from "@tanstack/react-router";
 
 import engineeringImg from "@/assets/engineering.jpg";
 import ctaPlant from "@/assets/cta-plant.jpg";
@@ -10,7 +10,7 @@ import { Link } from "@tanstack/react-router";
 export const Route = createFileRoute("/solutions/engineered-solutions/lube-oil-systems")({
   head: () => ({
     meta: [
-      { title: "Lube Oil Systems — VeeTech Automation FZE" },
+      { title: "Lube Oil Systems â€” Veetech Automation FZE" },
       {
         name: "description",
         content: "A lube oil system is an auxiliary system designed to deliver clean, temperature-controlled oil for lubrication for the protection of main rotating equipment.",
@@ -102,7 +102,7 @@ function LubeOilSystemsPage() {
               <ul className="mt-10 space-y-4">
                 {engineeringCapabilities.map((cap, i) => (
                   <li key={i} className="flex items-start gap-3 text-sm text-muted-foreground">
-                     <span className="font-mono text-accent">✓</span>
+                     <span className="font-mono text-accent">âœ“</span>
                     <span>{cap}</span>
                   </li>
                 ))}
@@ -112,7 +112,7 @@ function LubeOilSystemsPage() {
                <div className="h-full border border-border bg-background p-8">
                  <h3 className="font-display text-xl font-semibold">Testing & Quality</h3>
                  <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-                   VeeTech Automation's lube oil systems are subjected to rigorous testing in a climate-controlled assembly and testing facility before dispatch. Every system is engineered and tested to meet international standards (including API 614 where applicable) to ensure absolute reliability for critical rotating equipment.
+                   Veetech Automation's lube oil systems are subjected to rigorous testing in a climate-controlled assembly and testing facility before dispatch. Every system is engineered and tested to meet international standards (including API 614 where applicable) to ensure absolute reliability for critical rotating equipment.
                  </p>
                </div>
             </Reveal>

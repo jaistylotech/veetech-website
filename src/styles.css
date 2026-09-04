@@ -5,7 +5,7 @@
 @custom-variant dark (&:is(.dark *));
 
 /*
- * VeeTech Automation FZE — industrial engineering design system.
+ * Veetech Automation FZE â€” industrial engineering design system.
  * Palette: deep navy / graphite / white with an electric-cyan accent
  * and a restrained amber signal colour.
  */
@@ -59,7 +59,7 @@
   --navy: #253b80;
   --graphite: #334155;
   --steel: #607094;
-  --signal: #fcee21;
+  --signal: #d2a600;
 
   --background: #ffffff;
   --foreground: #1c2a5e;
@@ -71,17 +71,17 @@
 
   --primary: #253b80;
   --primary-foreground: #ffffff;
-  --secondary: #f8ef22;
+  --secondary: #d2a600;
   --secondary-foreground: #1c2a5e;
   --muted: #f1f5f9;
   --muted-foreground: #64748b;
-  --accent: #f8ef22;
+  --accent: #d2a600;
   --accent-foreground: #1c2a5e;
   --destructive: #ef4444;
   --destructive-foreground: #ffffff;
   --border: #e2e8f0;
   --input: #e2e8f0;
-  --ring: #f8ef22;
+  --ring: #d2a600;
 
   --on-navy: #ffffff;
   --on-navy-muted: #cbd5e1;
@@ -89,7 +89,7 @@
 
   --shadow-panel: 0 1px 2px rgba(37, 59, 128, 0.06), 0 12px 32px -18px rgba(37, 59, 128, 0.28);
   --shadow-lift: 0 2px 4px rgba(37, 59, 128, 0.06), 0 26px 60px -28px rgba(37, 59, 128, 0.38);
-  --grid-line: rgba(248, 239, 34, 0.14);
+  --grid-line: rgba(210, 166, 0, 0.14);
 }
 
 @layer base {

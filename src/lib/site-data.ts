@@ -1,8 +1,8 @@
-export const COMPANY = {
-  name: "VeeTech Automation FZE",
-  shortName: "VeeTech Automation",
+﻿export const COMPANY = {
+  name: "Veetech Automation FZE",
+  shortName: "Veetech Automation",
   formerName: "Versatech Automation FZE",
-  email: "sales@veetech.ae",
+  email: "sales@Veetech.ae",
   phone: "+971 4 881 1214",
   phoneHref: "+97148811214",
   poBox: "P.O. Box 18642",
@@ -12,7 +12,7 @@ export const COMPANY = {
 
 export const NAV = [
   { label: "Home", to: "/" },
-  { label: "About", to: "/about" },
+  { label: "About Us", to: "/about" },
   { label: "Solutions", to: "/solutions" },
   { label: "Services", to: "/services" },
   { label: "Careers", to: "/careers" },
@@ -131,7 +131,7 @@ export const SERVICES = [
   },
   {
     title: "Refurbishment & Recertification",
-    body: "Restoration of aged equipment including complete revamp: inspection, testing, repairing, replacing and upgrading worn components, followed by recertification — at our facility or at the customer site.",
+    body: "Restoration of aged equipment including complete revamp: inspection, testing, repairing, replacing and upgrading worn components, followed by recertification â€” at our facility or at the customer site.",
   },
 ] as const;
 
@@ -197,13 +197,13 @@ export const OPENINGS = [
     location: "Jebel Ali Free Zone, Dubai, UAE",
   },
   {
-    title: "Project Engineer – CIS",
+    title: "Project Engineer â€“ CIS",
     summary:
       "The ideal candidate should have exposure to Chemical Injection Systems with relevant experience.",
     location: "Jebel Ali Free Zone, Dubai, UAE",
   },
   {
-    title: "Senior Project Engineer – WHCP",
+    title: "Senior Project Engineer â€“ WHCP",
     summary:
       "10 years of experience with a minimum of 5 years overseas, preferably in the Middle East.",
     location: "Jebel Ali Free Zone, Dubai, UAE",
@@ -211,12 +211,12 @@ export const OPENINGS = [
 ] as const;
 
 export const QUICK_LINKS = [
-  { label: "Trending", to: "/solutions" },
-  { label: "Careers", to: "/careers" },
+  { label: "ABOUT US", to: "/about" },
   { label: "Chemical Injection Packages", to: "/solutions/chemical-injection-packages" },
   { label: "Wellhead Control Systems", to: "/solutions/wellhead-control-systems" },
   { label: "Modular Packages", to: "/solutions/modular-packages" },
   { label: "Engineered Solutions", to: "/solutions/engineered-solutions" },
   { label: "Services", to: "/services" },
+  { label: "Careers", to: "/careers" },
 ] as const;
 

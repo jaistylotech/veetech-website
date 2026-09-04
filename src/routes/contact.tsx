@@ -9,13 +9,13 @@ import { COMPANY, REGIONAL_OFFICES } from "@/lib/site-data";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact — VeeTech Automation FZE, Jebel Ali Free Zone, Dubai" },
+      { title: "Contact â€” Veetech Automation FZE, Jebel Ali Free Zone, Dubai" },
       {
         name: "description",
         content:
-          "Contact VeeTech Automation FZE in Jebel Ali Free Zone, Dubai for wellhead control systems, chemical injection packages, modular skids and after-market services.",
+          "Contact Veetech Automation FZE in Jebel Ali Free Zone, Dubai for wellhead control systems, chemical injection packages, modular skids and after-market services.",
       },
-      { property: "og:title", content: "Contact VeeTech Automation FZE" },
+      { property: "og:title", content: "Contact Veetech Automation FZE" },
       {
         property: "og:description",
         content: "Talk to our Dubai engineering team about your control system or skid package.",
@@ -36,7 +36,7 @@ function ContactPage() {
         title="Get in touch with our engineering team"
         lead="Whether you need a custom engineered package, lifecycle services, or technical support, our team is ready to assist you from our headquarters in the UAE."
         image={jebelAli}
-        imageAlt="VeeTech headquarters and manufacturing facility"
+        imageAlt="Veetech headquarters and manufacturing facility"
         breadcrumbs={[
           { label: "Home", to: "/" },
           { label: "Contact Us" }
@@ -46,7 +46,7 @@ function ContactPage() {
       <section className="section-y bg-surface">
         <div className="container-vt grid gap-12 lg:grid-cols-[1fr_1.2fr] lg:gap-20">
           <Reveal>
-            <SectionHeading eyebrow="Reach Out" title="VeeTech Automation FZE" />
+            <SectionHeading eyebrow="" title="Veetech Automation FZE" />
             <div className="mt-10 space-y-6">
               <a 
                 href="#"
@@ -120,7 +120,7 @@ function ContactPage() {
             <div className="h-full w-full overflow-hidden rounded-2xl shadow-lift border border-border/50 bg-card relative group">
               <div className="absolute inset-0 bg-navy/5 group-hover:bg-transparent transition-colors z-10 pointer-events-none" />
               <iframe
-                title="VeeTech Automation Map"
+                title="Veetech Automation Map"
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d115622.76673551528!2d54.9806456!3d24.9604106!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f0e3400000001%3A0xa9457635fb88b3!2sJebel%20Ali%20Free%20Zone%20-%20Dubai%20-%20United%20Arab%20Emirates!5e0!3m2!1sen!2s!4v1700000000000!5m2!1sen!2s"
                 width="100%"
                 height="100%"
@@ -141,7 +141,7 @@ function ContactPage() {
           <Reveal>
             <img
               src={diversityTeam}
-              alt="Diverse global team at VeeTech Automation"
+              alt="Diverse global team at Veetech Automation"
               className="w-full aspect-4/3 object-cover shadow-lift rounded-2xl"
               loading="lazy"
             />

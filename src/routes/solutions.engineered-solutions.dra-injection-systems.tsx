@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+﻿import { createFileRoute } from "@tanstack/react-router";
 
 import engineeringImg from "@/assets/engineering.jpg";
 import ctaPlant from "@/assets/cta-plant.jpg";
@@ -10,7 +10,7 @@ import { Link } from "@tanstack/react-router";
 export const Route = createFileRoute("/solutions/engineered-solutions/dra-injection-systems")({
   head: () => ({
     meta: [
-      { title: "DRA Injection Systems — VeeTech Automation FZE" },
+      { title: "DRA Injection Systems â€” Veetech Automation FZE" },
       {
         name: "description",
         content: "A DRA injection system is a chemical injection package designed to inject drag-reducing additives into pipelines to improve flow efficiency.",
@@ -99,7 +99,7 @@ function DRAInjectionSystemsPage() {
               <ul className="mt-10 space-y-4">
                 {engineeringCapabilities.map((cap, i) => (
                   <li key={i} className="flex items-start gap-3 text-sm text-muted-foreground">
-                     <span className="font-mono text-accent">✓</span>
+                     <span className="font-mono text-accent">âœ“</span>
                     <span>{cap}</span>
                   </li>
                 ))}
@@ -109,7 +109,7 @@ function DRAInjectionSystemsPage() {
                <div className="h-full border border-border bg-background p-8">
                  <h3 className="font-display text-xl font-semibold">Testing & Quality</h3>
                  <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-                   VeeTech Automation's DRA systems are subjected to rigorous testing in a climate-controlled assembly and testing facility before dispatch. Every system is engineered and tested to meet international standards to ensure reliable operation, accurate dosing, and long-term durability in demanding environments.
+                   Veetech Automation's DRA systems are subjected to rigorous testing in a climate-controlled assembly and testing facility before dispatch. Every system is engineered and tested to meet international standards to ensure reliable operation, accurate dosing, and long-term durability in demanding environments.
                  </p>
                </div>
             </Reveal>

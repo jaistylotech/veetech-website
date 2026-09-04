@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+﻿import { createFileRoute, Link } from "@tanstack/react-router";
 import { ComposableMap, Geographies, Geography, Marker, Line } from "react-simple-maps";
 import { ArrowUpRight, Volume2, VolumeX } from "lucide-react";
 import { useState, useRef, useEffect } from "react";
@@ -10,7 +10,7 @@ import chemicalSkid from "@/assets/chemical-skid.jpg";
 import wellheadPanel from "@/assets/wellhead-panel.jpg";
 import modularSkid from "@/assets/modular-skid.jpg";
 import engineeringImg from "@/assets/engineering.jpg";
-import whoWeAreImg from "@/assets/veetech_who_we_are.jpg";
+import whoWeAreImg from "@/assets/Veetech_who_we_are.jpg";
 import hpu from "@/assets/hpu.jpg";
 import fieldService from "@/assets/field-service.jpg";
 import ctaPlant from "@/assets/cta-plant.jpg";
@@ -32,13 +32,13 @@ import { CERTIFICATIONS, MARKETS, SERVICES } from "@/lib/site-data";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "VeeTech Automation FZE — Industrial Control Automation, Dubai UAE" },
+      { title: "Veetech Automation FZE â€” Industrial Control Automation, Dubai UAE" },
       {
         name: "description",
         content:
-          "VeeTech Automation FZE engineers chemical injection systems, wellhead control systems and modular skid packages for the energy sector, from Jebel Ali Free Zone, Dubai.",
+          "Veetech Automation FZE engineers chemical injection systems, wellhead control systems and modular skid packages for the energy sector, from Jebel Ali Free Zone, Dubai.",
       },
-      { property: "og:title", content: "VeeTech Automation FZE — Engineering Control. Powering Energy." },
+      { property: "og:title", content: "Veetech Automation FZE â€” Engineering Control. Powering Energy." },
       {
         property: "og:description",
         content:
@@ -66,7 +66,7 @@ const solutionCards = [
     to: "/solutions/wellhead-control-systems",
     image: "/client-media/products/wellhead/dsc-7917.jpg",
     alt: "Stainless steel hydraulic wellhead control panel with pressure gauges and tubing manifold",
-    body: "Pneumatic, hydraulic and electric valve controls for sequential valve operation, manual override, emergency and safety shutdown — including multi-well modular panels.",
+    body: "Pneumatic, hydraulic and electric valve controls for sequential valve operation, manual override, emergency and safety shutdown â€” including multi-well modular panels.",
     specs: ["Single & multi-slot WHCP", "ESD systems", "HIPPS / IPF", "Hydraulic power units"],
   },
   {
@@ -153,7 +153,7 @@ function HomePage() {
                 eyebrow="Who We Are"
                 eyebrowClassName="text-[0.85rem] md:text-[0.95rem] font-bold"
                 title="Engineering Expertise Built Over Four Decades"
-                lead="VeeTech Automation FZE (formerly Versatech Automation FZE) has proven expertise over four decades of experience in delivering complex projects, right from concept to successful implementation."
+                lead="Veetech Automation FZE (formerly Versatech Automation FZE) has proven expertise over four decades of experience in delivering complex projects, right from concept to successful implementation."
               />
               <p className="mt-5 text-base leading-relaxed text-muted-foreground">
                 Located in Jebel Ali Free Zone, Dubai, UAE, the company offers specialized and reliable
@@ -180,7 +180,7 @@ function HomePage() {
           <Reveal className="w-full">
             <img
               src={whoWeAreImg}
-              alt="VeeTech Automation Team and Facility"
+              alt="Veetech Automation Team and Facility"
               className="w-full h-auto aspect-video md:aspect-[21/9] object-cover rounded-2xl shadow-xl"
               loading="lazy"
               width={1600}
@@ -197,7 +197,7 @@ function HomePage() {
             <SectionHeading
               eyebrow="Capabilities"
               title="From Design to Deployment"
-              lead="At VeeTech, Engineering excellence drives everything we do. From design and manufacturing to site installation and commissioning, we deliver reliable solutions for the energy sector."
+              lead="At Veetech, Engineering excellence drives everything we do. From design and manufacturing to site installation and commissioning, we deliver reliable solutions for the energy sector."
             />
           </Reveal>
           <Reveal delay={80}>
@@ -215,7 +215,7 @@ function HomePage() {
             <SectionHeading
               eyebrow="Facility"
               title="Manufacturing Capability at Scale"
-              lead="VeeTech Automation operates from a state-of-the-art manufacturing facility and office in the world's largest free zone — Jebel Ali Free Zone, Dubai, UAE."
+              lead="Veetech Automation operates from a state-of-the-art manufacturing facility and office in the world's largest free zone â€” Jebel Ali Free Zone, Dubai, UAE."
             />
             <p className="mt-5 max-w-xl text-base leading-relaxed text-muted-foreground">
               The facility is equipped with modern technology for manufacturing hydraulic and
@@ -254,7 +254,7 @@ function HomePage() {
               <SectionHeading
                 eyebrow="After-Market Services"
                 title="Engineering Support Beyond Delivery"
-                lead="Veetech Automation’s extensive field service along with a dedicated after-market team ensures comprehensive support for onsite installation, commissioning, start-up, and maintenance of the equipment supplied worldwide. Veetech Automation is a one-stop solution provider for commissioning, troubleshooting & repair, refurbishment, and preventive maintenance services for its loyal customers."
+                lead="Veetech Automationâ€™s extensive field service along with a dedicated after-market team ensures comprehensive support for onsite installation, commissioning, start-up, and maintenance of the equipment supplied worldwide. Veetech Automation is a one-stop solution provider for commissioning, troubleshooting & repair, refurbishment, and preventive maintenance services for its loyal customers."
               />
               <img
                 src={fieldService}
@@ -301,7 +301,7 @@ function HomePage() {
               tone="dark"
               eyebrow="Global Presence"
               title="Supporting Energy Operations Across Global Markets"
-              lead="VeeTech Automation FZE's clientele includes reputed names in the energy sector across the Middle East, Asia, Africa, the CIS region and Europe."
+              lead="Veetech Automation FZE's clientele includes reputed names in the energy sector across the Middle East, Asia, Africa, the CIS region and Europe."
             />
           </Reveal>
 
@@ -337,7 +337,7 @@ function HomePage() {
   );
 }
 
-/* Stylised world map focused on UAE → Middle East → Asia → Africa */
+/* Stylised world map focused on UAE â†’ Middle East â†’ Asia â†’ Africa */
 const geoUrl = "https://unpkg.com/world-atlas@2.0.2/countries-110m.json";
 
 function WorldMap() {

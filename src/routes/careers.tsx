@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+﻿import { createFileRoute } from "@tanstack/react-router";
 
 import engineeringImg from "@/assets/engineering.jpg";
 import ctaPlant from "@/assets/cta-plant.jpg";
@@ -9,13 +9,13 @@ import { COMPANY } from "@/lib/site-data";
 export const Route = createFileRoute("/careers")({
   head: () => ({
     meta: [
-      { title: "Careers — Engineering Roles at VeeTech Automation, Dubai" },
+      { title: "Careers â€” Engineering Roles at Veetech Automation, Dubai" },
       {
         name: "description",
         content:
           "Join a Dubai-based engineering team building wellhead control systems, chemical injection packages and modular skids for the energy sector.",
       },
-      { property: "og:title", content: "Careers — VeeTech Automation FZE" },
+      { property: "og:title", content: "Careers â€” Veetech Automation FZE" },
       {
         property: "og:description",
         content: "Engineering, fabrication and service careers at our Jebel Ali Free Zone facility.",
@@ -53,7 +53,7 @@ function CareersPage() {
         title="Build the future of energy infrastructure with us"
         lead="Join a team of dedicated engineers, technicians, and professionals delivering mission-critical control systems and automation packages to the world's leading energy companies."
         image={engineeringImg}
-        imageAlt="VeeTech engineering team collaborating"
+        imageAlt="Veetech engineering team collaborating"
         breadcrumbs={[
           { label: "Home", to: "/" },
           { label: "Careers" }

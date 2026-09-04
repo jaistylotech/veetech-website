@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+﻿import { createFileRoute } from "@tanstack/react-router";
 
 import engineeringImg from "@/assets/engineering.jpg";
 import ctaPlant from "@/assets/cta-plant.jpg";
@@ -10,7 +10,7 @@ import { Link } from "@tanstack/react-router";
 export const Route = createFileRoute("/solutions/engineered-solutions/nitrogen-generator-packages")({
   head: () => ({
     meta: [
-      { title: "Nitrogen Generator Packages — VeeTech Automation FZE" },
+      { title: "Nitrogen Generator Packages â€” Veetech Automation FZE" },
       {
         name: "description",
         content: "A membrane nitrogen generator package is a compact, non-cyclic gas separation system engineered to reliably produce moderate purity nitrogen from compressed air.",
@@ -34,7 +34,7 @@ const systemDetails = [
 const engineeringCapabilities = [
   "Designed for continuous, non-cyclic operation, providing steady nitrogen flow without regeneration or switching sequences",
   "Produces nitrogen by selective permeation, with oxygen, moisture, and trace gases removed as permeate stream",
-  "Operates with 95–99% nitrogen purity for industrial applications",
+  "Operates with 95â€“99% nitrogen purity for industrial applications",
   "Requires high-quality compressed air (clean, dry, oil-free) to maintain membrane integrity and long-term performance",
   "Compact, modular skid design suitable for space-constrained installations (e.g., offshore or packaged units)",
   "Low maintenance due to absence of moving parts within the separation process"
@@ -100,7 +100,7 @@ function NitrogenGeneratorPackagesPage() {
               <ul className="mt-10 space-y-4">
                 {engineeringCapabilities.map((cap, i) => (
                   <li key={i} className="flex items-start gap-3 text-sm text-muted-foreground">
-                     <span className="font-mono text-accent">✓</span>
+                     <span className="font-mono text-accent">âœ“</span>
                     <span>{cap}</span>
                   </li>
                 ))}
@@ -110,7 +110,7 @@ function NitrogenGeneratorPackagesPage() {
                <div className="h-full border border-border bg-background p-8">
                  <h3 className="font-display text-xl font-semibold">Testing & Quality</h3>
                  <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-                   VeeTech Automation's nitrogen generator packages are subjected to rigorous testing in a climate-controlled assembly and testing facility before dispatch. Every system is engineered and tested to meet international standards ensuring consistent purity, reliable flow rates, and long-term durability.
+                   Veetech Automation's nitrogen generator packages are subjected to rigorous testing in a climate-controlled assembly and testing facility before dispatch. Every system is engineered and tested to meet international standards ensuring consistent purity, reliable flow rates, and long-term durability.
                  </p>
                </div>
             </Reveal>

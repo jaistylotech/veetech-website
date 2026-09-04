@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+﻿import { createFileRoute } from "@tanstack/react-router";
 
 import engineeringImg from "@/assets/engineering.jpg";
 import ctaPlant from "@/assets/cta-plant.jpg";
@@ -10,7 +10,7 @@ import { Link } from "@tanstack/react-router";
 export const Route = createFileRoute("/solutions/engineered-solutions/surge-relief-skids")({
   head: () => ({
     meta: [
-      { title: "Surge Relief Skids — VeeTech Automation FZE" },
+      { title: "Surge Relief Skids â€” Veetech Automation FZE" },
       {
         name: "description",
         content: "A surge relief skid is a protection system designed to relieve transient pressure surges and safeguard pipelines and equipment.",
@@ -101,7 +101,7 @@ function SurgeReliefSkidsPage() {
               <ul className="mt-10 space-y-4">
                 {engineeringCapabilities.map((cap, i) => (
                   <li key={i} className="flex items-start gap-3 text-sm text-muted-foreground">
-                     <span className="font-mono text-accent">✓</span>
+                     <span className="font-mono text-accent">âœ“</span>
                     <span>{cap}</span>
                   </li>
                 ))}
@@ -111,7 +111,7 @@ function SurgeReliefSkidsPage() {
                <div className="h-full border border-border bg-background p-8">
                  <h3 className="font-display text-xl font-semibold">Testing & Quality</h3>
                  <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-                   VeeTech Automation's surge relief skids are subjected to rigorous testing in a climate-controlled assembly and testing facility before dispatch. Every system is engineered and tested to meet international standards to ensure reliable, instantaneous response during critical pressure transient events.
+                   Veetech Automation's surge relief skids are subjected to rigorous testing in a climate-controlled assembly and testing facility before dispatch. Every system is engineered and tested to meet international standards to ensure reliable, instantaneous response during critical pressure transient events.
                  </p>
                </div>
             </Reveal>

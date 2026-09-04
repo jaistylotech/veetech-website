@@ -1,17 +1,17 @@
-import { createFileRoute } from "@tanstack/react-router";
+﻿import { createFileRoute } from "@tanstack/react-router";
 
 import { COMPANY } from "@/lib/site-data";
 
 export const Route = createFileRoute("/terms")({
   head: () => ({
     meta: [
-      { title: "Terms & Conditions — VeeTech Automation FZE" },
+      { title: "Terms & Conditions â€” Veetech Automation FZE" },
       {
         name: "description",
         content:
-          "Terms governing the use of the VeeTech Automation FZE website and the information published on it.",
+          "Terms governing the use of the Veetech Automation FZE website and the information published on it.",
       },
-      { property: "og:title", content: "Terms & Conditions — VeeTech Automation FZE" },
+      { property: "og:title", content: "Terms & Conditions â€” Veetech Automation FZE" },
       { property: "og:description", content: "Website terms of use and content disclaimer." },
       { property: "og:url", content: "/terms" },
       { property: "og:type", content: "website" },
@@ -39,7 +39,7 @@ function TermsPage() {
         </p>
         <h2 className="font-display text-lg font-semibold text-foreground">Intellectual property</h2>
         <p>
-          All content on this website, including text, images and marks, is the property of VeeTech
+          All content on this website, including text, images and marks, is the property of Veetech
           Automation FZE and may not be reproduced without written permission.
         </p>
         <h2 className="font-display text-lg font-semibold text-foreground">Contact</h2>

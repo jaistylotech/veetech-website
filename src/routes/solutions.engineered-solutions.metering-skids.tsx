@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+﻿import { createFileRoute } from "@tanstack/react-router";
 
 import engineeringImg from "@/assets/engineering.jpg";
 import ctaPlant from "@/assets/cta-plant.jpg";
@@ -10,7 +10,7 @@ import { Link } from "@tanstack/react-router";
 export const Route = createFileRoute("/solutions/engineered-solutions/metering-skids")({
   head: () => ({
     meta: [
-      { title: "Metering Skids — VeeTech Automation FZE" },
+      { title: "Metering Skids â€” Veetech Automation FZE" },
       {
         name: "description",
         content: "Condensate Metering skid is a high-accuracy, redundant measurement package engineered to quantify stabilized condensate flow reliably under single-phase conditions for fiscal metering and operational control.",
@@ -21,7 +21,7 @@ export const Route = createFileRoute("/solutions/engineered-solutions/metering-s
 });
 
 const systemDetails = [
-  "Meter runs (often dual 100% or 2 × 110%) equipped with high-accuracy Coriolis flow meters for direct mass measurement",
+  "Meter runs (often dual 100% or 2 Ã— 110%) equipped with high-accuracy Coriolis flow meters for direct mass measurement",
   "Pressure & Temperature transmitters to Monitor Process parameters",
   "Flow computers to calculate standardized flow, totalization, and diagnostics in compliance with industry standards (e.g., API MPMS)",
   "Inlet filtration (basket filters/strainers) to protect meters and ensure measurement integrity",
@@ -33,7 +33,7 @@ const systemDetails = [
 const engineeringCapabilities = [
   "Designed for single-phase liquid hydrocarbons, ensuring operation above bubble point to avoid flashing",
   "Handles light hydrocarbons with potential gas breakout, incorporating venting and safeguards against two-phase flow",
-  "Achieves high accuracy (≈ ±0.15%) and repeatability, suitable for fiscal metering systems",
+  "Achieves high accuracy (â‰ˆ Â±0.15%) and repeatability, suitable for fiscal metering systems",
   "Supports redundancy and verification through parallel meter runs (duty + check stream)",
   "Integrates with facility systems for real-time monitoring, reporting, and fiscal metering compliance"
 ];
@@ -98,7 +98,7 @@ function MeteringSkidsPage() {
               <ul className="mt-10 space-y-4">
                 {engineeringCapabilities.map((cap, i) => (
                   <li key={i} className="flex items-start gap-3 text-sm text-muted-foreground">
-                     <span className="font-mono text-accent">✓</span>
+                     <span className="font-mono text-accent">âœ“</span>
                     <span>{cap}</span>
                   </li>
                 ))}
@@ -108,7 +108,7 @@ function MeteringSkidsPage() {
                <div className="h-full border border-border bg-background p-8">
                  <h3 className="font-display text-xl font-semibold">Testing & Quality</h3>
                  <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-                   VeeTech Automation's metering skids are subjected to rigorous testing in a climate-controlled assembly and testing facility before dispatch. Every system is engineered and tested to meet international standards (including API MPMS) to ensure fiscal metering compliance, measurement integrity, and reliable integration with facility systems.
+                   Veetech Automation's metering skids are subjected to rigorous testing in a climate-controlled assembly and testing facility before dispatch. Every system is engineered and tested to meet international standards (including API MPMS) to ensure fiscal metering compliance, measurement integrity, and reliable integration with facility systems.
                  </p>
                </div>
             </Reveal>

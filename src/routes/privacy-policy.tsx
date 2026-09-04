@@ -1,17 +1,17 @@
-import { createFileRoute } from "@tanstack/react-router";
+﻿import { createFileRoute } from "@tanstack/react-router";
 
 import { COMPANY } from "@/lib/site-data";
 
 export const Route = createFileRoute("/privacy-policy")({
   head: () => ({
     meta: [
-      { title: "Privacy Policy — VeeTech Automation FZE" },
+      { title: "Privacy Policy â€” Veetech Automation FZE" },
       {
         name: "description",
         content:
-          "How VeeTech Automation FZE collects, uses and protects information submitted through this website.",
+          "How Veetech Automation FZE collects, uses and protects information submitted through this website.",
       },
-      { property: "og:title", content: "Privacy Policy — VeeTech Automation FZE" },
+      { property: "og:title", content: "Privacy Policy â€” Veetech Automation FZE" },
       { property: "og:description", content: "Our approach to personal data and website enquiries." },
       { property: "og:url", content: "/privacy-policy" },
       { property: "og:type", content: "website" },
@@ -27,12 +27,12 @@ function PrivacyPage() {
       <h1 className="font-display text-4xl font-semibold">Privacy Policy</h1>
       <div className="mt-8 space-y-6 text-sm leading-relaxed text-muted-foreground">
         <p>
-          VeeTech Automation FZE respects the privacy of visitors to this website. This policy
+          Veetech Automation FZE respects the privacy of visitors to this website. This policy
           explains what information we collect and how we use it.
         </p>
         <h2 className="font-display text-lg font-semibold text-foreground">Information we collect</h2>
         <p>
-          We collect only the information you choose to provide through our enquiry form — such as
+          We collect only the information you choose to provide through our enquiry form â€” such as
           your name, company, email address, phone number and the details of your requirement.
         </p>
         <h2 className="font-display text-lg font-semibold text-foreground">How we use it</h2>
