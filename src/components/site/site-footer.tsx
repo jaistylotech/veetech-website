@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Mail, MapPin, Phone, Linkedin, Youtube } from "lucide-react";
+import { Mail, MapPin, Phone, Linkedin } from "lucide-react";
 import { COMPANY } from "@/lib/site-data";
 
 const columns = [
@@ -7,8 +7,7 @@ const columns = [
     heading: "Company",
     links: [
       { label: "About", to: "/about" },
-      { label: "Facility", to: "/facility" },
-      { label: "Projects", to: "/projects" },
+      { label: "Services", to: "/services" },
       { label: "Industries", to: "/industries" },
       { label: "Careers", to: "/careers" },
     ],
@@ -22,23 +21,14 @@ const columns = [
       { label: "Engineered Solutions", to: "/solutions/engineered-solutions" },
     ],
   },
-  {
-    heading: "Services",
-    links: [
-      { label: "After-Market Services", to: "/services" },
-      { label: "Preventive Maintenance", to: "/services" },
-      { label: "Refurbishment & Recertification", to: "/services" },
-      { label: "Pressure Testing", to: "/services" },
-      { label: "Product Training", to: "/services" },
-    ],
-  },
+
 ];
 
 export function SiteFooter() {
   return (
     <footer className="surface-dark mt-16 md:mt-24">
       <div className="container-vt border-b border-hairline py-14 md:py-20">
-        <div className="grid gap-12 lg:grid-cols-[1.2fr_2.4fr]">
+        <div className="grid gap-12 lg:grid-cols-[1.5fr_1.8fr]">
           <div>
             <Link to="/" className="inline-block rounded-lg bg-white p-3 shadow-sm transition-transform hover:-translate-y-1">
               <img src="/veetech-logo.png" alt="Veetech Automation FZE Logo" className="h-10 w-auto md:h-14" />
@@ -57,19 +47,11 @@ export function SiteFooter() {
                 <Linkedin className="h-4 w-4" />
                 <span className="sr-only">LinkedIn</span>
               </a>
-              <a 
-                href="https://www.youtube.com/channel/UC91UVr6sU91Du1s8zRsDQ2w" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="flex h-10 w-10 items-center justify-center rounded-full bg-white/5 text-white/70 shadow-sm transition-all hover:-translate-y-1 hover:bg-[#FF0000] hover:text-white"
-              >
-                <Youtube className="h-5 w-5" />
-                <span className="sr-only">YouTube</span>
-              </a>
+
             </div>
           </div>
 
-          <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
             {columns.map((col) => (
               <div key={col.heading}>
                 <h3 className="font-mono text-[0.65rem] tracking-[0.2em] text-accent uppercase">

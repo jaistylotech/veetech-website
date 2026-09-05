@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { MapPin, Mail, Phone, Linkedin, Youtube, Globe } from "lucide-react";
+import { MapPin, Mail, Phone, Linkedin, Globe } from "lucide-react";
 
 import jebelAli from "@/assets/jebel-ali.jpg";
 import diversityTeam from "@/assets/diversity-team.jpg";
@@ -103,15 +103,7 @@ function ContactPage() {
                   <Linkedin className="h-5 w-5" />
                   <span className="sr-only">LinkedIn</span>
                 </a>
-                <a 
-                  href="https://www.youtube.com/channel/UC91UVr6sU91Du1s8zRsDQ2w" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="flex h-12 w-12 items-center justify-center rounded-2xl bg-card border border-border/50 text-navy shadow-sm transition-all hover:-translate-y-1 hover:border-[#FF0000] hover:bg-[#FF0000] hover:text-white hover:shadow-md"
-                >
-                  <Youtube className="h-5 w-5" />
-                  <span className="sr-only">YouTube</span>
-                </a>
+
               </div>
             </div>
           </Reveal>

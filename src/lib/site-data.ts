@@ -1,4 +1,4 @@
-﻿export const COMPANY = {
+export const COMPANY = {
   name: "Veetech Automation FZE",
   shortName: "Veetech Automation",
   formerName: "Versatech Automation FZE",
@@ -14,7 +14,7 @@ export const NAV = [
   { label: "Home", to: "/" },
   { label: "About Us", to: "/about" },
   { label: "Solutions", to: "/solutions" },
-  { label: "Services", to: "/services" },
+  { label: "Products & Services", to: "/services" },
   { label: "Careers", to: "/careers" },
   { label: "Contact", to: "/contact" },
 ] as const;

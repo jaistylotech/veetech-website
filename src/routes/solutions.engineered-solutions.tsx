@@ -94,7 +94,7 @@ function EngineeredPage() {
           <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {ENGINEERED_SOLUTIONS.map((solution, i) => (
               <Reveal key={solution.slug} delay={i * 50}>
-                <Link to={solution.slug} className="group block h-full">
+                <div className="group block h-full">
                   <div className="hairline-card flex h-full flex-col p-8 transition-colors group-hover:border-accent/50 group-hover:bg-accent/5">
                     <h3 className="font-display text-xl font-semibold text-on-navy transition-colors group-hover:text-accent">
                       {solution.title}
@@ -102,11 +102,8 @@ function EngineeredPage() {
                     <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">
                       {solution.short}
                     </p>
-                    <div className="mt-6 font-mono text-[0.68rem] tracking-wide text-accent">
-                      Explore Solution &rarr;
-                    </div>
                   </div>
-                </Link>
+                </div>
               </Reveal>
             ))}
           </div>
