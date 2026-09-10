@@ -10,7 +10,7 @@ import chemicalSkid from "@/assets/chemical-skid.jpg";
 import wellheadPanel from "@/assets/wellhead-panel.jpg";
 import modularSkid from "@/assets/modular-skid.jpg";
 import engineeringImg from "@/assets/engineering.jpg";
-import whoWeAreImg from "@/assets/Veetech_who_we_are.jpg";
+import whoWeAreImg from "@/assets/veetech_who_we_are.jpg";
 import hpu from "@/assets/hpu.jpg";
 import fieldService from "@/assets/field-service.jpg";
 import ctaPlant from "@/assets/cta-plant.jpg";
