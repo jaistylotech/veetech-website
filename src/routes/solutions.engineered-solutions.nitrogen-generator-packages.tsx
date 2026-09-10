@@ -1,7 +1,7 @@
-﻿import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 
-import engineeringImg from "@/assets/engineering.jpg";
 import ctaPlant from "@/assets/cta-plant.jpg";
+import engineeringImg from "@/assets/engineering.jpg";
 
 import { CtaSection, PageHero, Reveal, SectionHeading } from "@/components/site/primitives";
 import { ENGINEERED_SOLUTIONS } from "@/lib/site-data";
@@ -10,10 +10,10 @@ import { Link } from "@tanstack/react-router";
 export const Route = createFileRoute("/solutions/engineered-solutions/nitrogen-generator-packages")({
   head: () => ({
     meta: [
-      { title: "Nitrogen Generator Packages â€” Veetech Automation FZE" },
+      { title: "Nitrogen Generator Packages Ã¢â‚¬â€ Veetech Automation FZE" },
       {
         name: "description",
-        content: "A membrane nitrogen generator package is a compact, non-cyclic gas separation system engineered to reliably produce moderate purity nitrogen from compressed air.",
+        content: "A nitrogen generator package is a self-contained system that produces high-purity nitrogen gas on-site using Pressure Swing Adsorption (PSA) or Membrane technology.",
       },
     ],
   }),
@@ -27,17 +27,12 @@ const systemDetails = [
   "Pressure control system to regulate and maintain the required operating conditions",
   "Nitrogen receiver (buffer vessel) to stabilize flow and pressure (where applicable)",
   "Instrumentation for monitoring nitrogen purity and system performance",
-  "Flow measurement and control devices for regulating production rate",
+  "Flow measurement and control devices for regulating production rate.",
   "Control panel for system operation, alarms, and integration with plant systems"
 ];
 
 const engineeringCapabilities = [
-  "Designed for continuous, non-cyclic operation, providing steady nitrogen flow without regeneration or switching sequences",
-  "Produces nitrogen by selective permeation, with oxygen, moisture, and trace gases removed as permeate stream",
-  "Operates with 95â€“99% nitrogen purity for industrial applications",
-  "Requires high-quality compressed air (clean, dry, oil-free) to maintain membrane integrity and long-term performance",
-  "Compact, modular skid design suitable for space-constrained installations (e.g., offshore or packaged units)",
-  "Low maintenance due to absence of moving parts within the separation process"
+  "Instrument gas supply (in absence of instrument air)"
 ];
 
 function NitrogenGeneratorPackagesPage() {
@@ -48,7 +43,7 @@ function NitrogenGeneratorPackagesPage() {
       <PageHero
         eyebrow="Engineered Solutions"
         title="Nitrogen Generator Packages"
-        lead="A membrane nitrogen generator package is a compact, non-cyclic gas separation system engineered to reliably produce moderate purity nitrogen from compressed air for continuous blanketing and utility applications."
+        lead="A nitrogen generator package is a self-contained system that produces high-purity nitrogen gas on-site using Pressure Swing Adsorption (PSA) or Membrane technology."
         image={engineeringImg}
         imageAlt="Engineering facility"
         breadcrumbs={[
@@ -59,65 +54,118 @@ function NitrogenGeneratorPackagesPage() {
         ]}
       />
 
-      <section className="section-y">
-        <div className="container-vt grid gap-12 lg:grid-cols-2 lg:gap-20">
-          <Reveal>
-            <SectionHeading
-              eyebrow="Overview"
-              title="Reliable On-Site Nitrogen Production"
-              lead="Membrane nitrogen generator package is an integrated system designed to produce nitrogen gas on-site from compressed air for blanketing and utility applications in industrial and oil & gas facilities."
-            />
-            <div className="mt-8 flex flex-col gap-4">
-               <Link to="/contact" className="btn-base btn-accent w-fit hover:brightness-110">
-                Discuss Your Requirement
-              </Link>
-            </div>
-          </Reveal>
-          
-          <Reveal delay={80}>
-            <div className="hairline-card bg-surface p-8">
-              <h3 className="font-display text-xl font-semibold">System & Equipment Details</h3>
-              <ul className="mt-6 space-y-4">
-                {systemDetails.map((detail, i) => (
-                  <li key={i} className="flex items-start gap-3 text-sm text-muted-foreground">
-                    <span className="mt-1 block size-1.5 shrink-0 rounded-full bg-accent" />
-                    <span>{detail}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </Reveal>
+      <section className="section-y bg-background">
+        <div className="container-vt">
+          <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
+            {/* Image Column */}
+            <Reveal className="order-2 lg:order-1">
+              <div className="relative overflow-hidden rounded-2xl border border-border/50 bg-white shadow-xl">
+                <div className="absolute inset-0 bg-gradient-to-tr from-black/5 to-transparent pointer-events-none" />
+                <img 
+                  src="/client-media/products/engineered-solutions/nitrogen.jpg" 
+                  alt="Nitrogen Generator Packages" 
+                  className="w-full h-auto object-contain p-8 transition-transform duration-700 hover:scale-105"
+                />
+              </div>
+            </Reveal>
+
+            {/* Text Column */}
+            <Reveal delay={80} className="order-1 lg:order-2">
+              <div className="flex flex-col">
+                <h2 className="font-display text-3xl md:text-4xl font-semibold text-navy-deep uppercase tracking-tight">
+                  NITROGEN GENERATOR PACKAGES
+                </h2>
+                <div className="mt-6 w-16 h-1 bg-accent rounded-full" />
+                <p className="mt-8 text-base md:text-lg leading-relaxed text-muted-foreground">
+                  A nitrogen generator package is a self-contained system designed to produce high-purity nitrogen gas on-site from compressed air, ensuring a reliable supply for critical industrial applications like purging, blanketing, and safety processes.
+                </p>
+                
+                <div className="mt-10 flex">
+                  <Link to="/contact" className="btn-base btn-solid w-fit !bg-navy hover:!bg-accent hover:!text-navy-deep !text-white text-base font-medium transition-all shadow-lg hover:shadow-xl">
+                    Enquire Now
+                  </Link>
+                </div>
+              </div>
+            </Reveal>
+          </div>
         </div>
       </section>
 
-      <section className="border-y border-border bg-surface section-y">
-         <div className="container-vt grid gap-12 lg:grid-cols-2 lg:gap-20">
+            <section className="border-t border-border bg-surface section-y relative overflow-hidden">
+        {/* Subtle background decoration */}
+        <div className="absolute top-0 right-0 w-1/3 h-full bg-accent/5 rounded-bl-[100px] pointer-events-none" />
+        
+         <div className="container-vt relative z-10">
             <Reveal>
-              <SectionHeading
-                eyebrow="Applications & Capabilities"
-                title="Engineered for Continuous Operations"
-              />
-              <ul className="mt-10 space-y-4">
-                {engineeringCapabilities.map((cap, i) => (
-                  <li key={i} className="flex items-start gap-3 text-sm text-muted-foreground">
-                     <span className="font-mono text-accent">âœ“</span>
-                    <span>{cap}</span>
-                  </li>
-                ))}
-              </ul>
+              <div className="flex flex-col items-center text-center max-w-2xl mx-auto">
+                <h2 className="font-display text-3xl font-semibold text-navy-deep uppercase tracking-wide">
+                  TECHNICAL DESCRIPTION
+                </h2>
+                <div className="mt-4 w-12 h-1 bg-accent rounded-full" />
+              </div>
             </Reveal>
-            <Reveal delay={80}>
-               <div className="h-full border border-border bg-background p-8">
-                 <h3 className="font-display text-xl font-semibold">Testing & Quality</h3>
-                 <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-                   Veetech Automation's nitrogen generator packages are subjected to rigorous testing in a climate-controlled assembly and testing facility before dispatch. Every system is engineered and tested to meet international standards ensuring consistent purity, reliable flow rates, and long-term durability.
-                 </p>
-               </div>
-            </Reveal>
+            
+            <div className="mt-16 grid gap-8 lg:grid-cols-2 max-w-6xl mx-auto">
+              {/* Components Card */}
+              <Reveal delay={100}>
+                <div className="h-full bg-white rounded-2xl border border-border/60 shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group">
+                  <div className="bg-navy p-6">
+                    <h3 className="font-display text-xl font-medium text-white flex items-center gap-3">
+                      <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center shrink-0">
+                        <span className="block w-3 h-3 rounded-full bg-accent animate-pulse" />
+                      </div>
+                      System Components
+                    </h3>
+                  </div>
+                  <div className="p-8">
+                    <ul className="space-y-5">
+                      {systemDetails.map((detail, i) => (
+                        <li key={i} className="flex items-start gap-4 text-[0.95rem] text-muted-foreground leading-relaxed group-hover:text-navy transition-colors">
+                          <span className="mt-1 flex shrink-0 h-6 w-6 items-center justify-center rounded-full bg-accent/10 text-accent">
+                            <svg className="h-3 w-3" fill="currentColor" viewBox="0 0 8 8"><circle cx="4" cy="4" r="3" /></svg>
+                          </span>
+                          <span>{detail}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </Reveal>
+
+              {/* Capabilities Card */}
+              <Reveal delay={200}>
+                <div className="h-full bg-white rounded-2xl border border-border/60 shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group">
+                  <div className="bg-navy p-6">
+                    <h3 className="font-display text-xl font-medium text-white flex items-center gap-3">
+                      <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center shrink-0">
+                        <svg className="w-5 h-5 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                        </svg>
+                      </div>
+                      Key Functional Highlights
+                    </h3>
+                  </div>
+                  <div className="p-8">
+                    <ul className="space-y-5">
+                      {engineeringCapabilities.map((cap, i) => (
+                        <li key={i} className="flex items-start gap-4 text-[0.95rem] text-muted-foreground leading-relaxed group-hover:text-navy transition-colors">
+                          <span className="mt-0.5 flex shrink-0 h-6 w-6 items-center justify-center rounded-full bg-accent text-white">
+                            <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                            </svg>
+                          </span>
+                          <span>{cap}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </Reveal>
+            </div>
          </div>
       </section>
 
-      <section className="section-y">
+      <section className="border-t border-border section-y">
         <div className="container-vt">
           <Reveal>
             <SectionHeading eyebrow="Related" title="Explore Other Engineered Solutions" />
@@ -144,8 +192,9 @@ function NitrogenGeneratorPackagesPage() {
       <CtaSection
         image={ctaPlant}
         title="Talk to Our Engineers"
-        lead="Contact us to discuss customized nitrogen generator solutions for your specific operational requirements."
+        lead="Contact us to discuss customized Nitrogen Generator solutions for your specific operational requirements."
       />
     </>
   );
 }
+

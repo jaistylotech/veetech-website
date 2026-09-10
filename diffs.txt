@@ -1,0 +1,154 @@
+
+--- STEP 857 ---
+[diff_block_start]\n@@ -251,20 +251,14 @@\n           </Reveal>\r\n           \r\n           <div className=\"mt-14 grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5\">\r\n-            {SERVICES.map((s, i) => (\r\n-              <Reveal key={s.title} delay={i * 100} className=\"relative h-[450px] overflow-hidden rounded-xl group shadow-md border border-border/50\">\r\n-                <img\r\n-                  src={s.image}\r\n-                  alt={s.title}\r\n-                  className=\"absolute inset-0 size-full object-cover transition-transform duration-700 group-hover:scale-110\"\r\n-                  loading=\"lazy\"\r\n+            <div className=\"grid lg:grid-cols-2 gap-12 lg:gap-20 items-center\">\r\n+              <Reveal className=\"relative min-h-[400px] h-full rounded-3xl overflow-hidden shadow-2xl\">\r\n+                <img \r\n+                  src={heroFacility} \r\n+                  alt=\"Veetech Facility\" \r\n+                  className=\"absolute inset-0 w-full h-full object-cover transition-transform duration-700 hover:scale-105\"\r\n                 />\r\n-                <div className=\"absolute inset-0 bg-gradient-to-t from-navy-deep/95 via-navy-deep/30 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-300\" />\r\n-                <div className=\"absolute inset-x-0 bottom-0 p-6 flex flex-col items-center justify-end h-full\">\r\n-                  <h3 className=\"text-white text-center font-semibold text-lg md:text-[1.15rem] leading-tight mb-4 group-hover:-translate-y-2 transition-transform duration-300\">\r\n-                    {s.title}\r\n-                  </h3>\r\n-                </div>\r\n+                <div className=\"absolute inset-0 bg-gradient-to-t from-navy-deep/60 to-transparent mix-blend-multiply\" />\r\n               </Reveal>\r\n             ))}\r\n           </div>\r\n[diff_block_end]\n
+
+--- STEP 860 ---
+[diff_block_start]
+@@ -206,56 +206,26 @@
+         </div>
+       </section>
+ 
+-
+-
+-      {/* FACILITY */}
+-      <section className="section-y">
+-        <div className...
+
+--- STEP 446 ---
+Created At: 2026-09-07T13:39:19+05:30
+Completed At: 2026-09-07T13:39:21+05:30
+The following changes were made by the replace_file_content tool to: c:\Users\Cypher\Desktop\UAE\project-veetech-main\src\routes\index.tsx. If relevant, proactively run terminal commands to execute this code for the USER. Don't ask for permission.
+[diff_block_start]
+@@ -218,13 +218,13 @@
+           <div className="absolute inset-0 bg-navy-deep/85 backdrop-blur-[2px]" />
+         </div>
+ 
+-        <div className="con...
+
+--- STEP 452 ---
+Created At: 2026-09-07T13:42:06+05:30
+Completed At: 2026-09-07T13:42:09+05:30
+The following changes were made by the replace_file_content tool to: c:\Users\Cypher\Desktop\UAE\project-veetech-main\src\routes\index.tsx. If relevant, proactively run terminal commands to execute this code for the USER. Don't ask for permission.
+[diff_block_start]
+@@ -207,7 +207,7 @@
+       </section>
+ 
+       {/* SUPERIOR VALUE CREATION */}
+-      <section className="relative isolate overflow-hidden surface-dark ...
+
+--- STEP 458 ---
+Created At: 2026-09-07T13:46:09+05:30
+Completed At: 2026-09-07T13:46:11+05:30
+The following changes were made by the replace_file_content tool to: c:\Users\Cypher\Desktop\UAE\project-veetech-main\src\routes\index.tsx. If relevant, proactively run terminal commands to execute this code for the USER. Don't ask for permission.
+[diff_block_start]
+@@ -220,16 +220,16 @@
+ 
+         <div className="container-vt relative z-10">
+           <Reveal className="grid gap-8 lg:grid-cols-2 items-center">
+-  ...
+
+--- STEP 461 ---
+Created At: 2026-09-07T13:46:55+05:30
+Completed At: 2026-09-07T13:46:58+05:30
+The following changes were made by the replace_file_content tool to: c:\Users\Cypher\Desktop\UAE\project-veetech-main\src\routes\index.tsx. If relevant, proactively run terminal commands to execute this code for the USER. Don't ask for permission.
+[diff_block_start]
+@@ -229,7 +229,7 @@
+               <p className="text-white/90 text-base md:text-lg leading-relaxed mb-10">
+                 VeeTech Automation FZE's (for...
+
+--- STEP 467 ---
+Created At: 2026-09-07T13:48:30+05:30
+Completed At: 2026-09-07T13:48:32+05:30
+The following changes were made by the replace_file_content tool to: c:\Users\Cypher\Desktop\UAE\project-veetech-main\src\routes\index.tsx. If relevant, proactively run terminal commands to execute this code for the USER. Don't ask for permission.
+[diff_block_start]
+@@ -224,9 +224,9 @@
+               {/* Decorative accent glow */}
+               <div className="absolute -top-24 -right-24 w-48 h-48 bg-accent/20 rounded...
+
+--- STEP 474 ---
+{{ CHECKPOINT 6 }}
+ **The earlier parts of this conversation have been truncated due to its long length. The following content summarizes the truncated context so that you may continue your work. **
+
+
+# User Requests
+The following were user requests from the truncated conversation in chronological order:
+1. PS C:\Users\Cypher\Desktop\UAE\project-veetech-main> node download-images.js
+file:///C:/Users/Cypher/Desktop/UAE/project-veetech-main/download-images.js:1
+const https = require('https');
+ ...
+
+--- STEP 482 ---
+Created At: 2026-09-07T13:53:50+05:30
+Completed At: 2026-09-07T13:53:52+05:30
+The following changes were made by the replace_file_content tool to: c:\Users\Cypher\Desktop\UAE\project-veetech-main\src\routes\index.tsx. If relevant, proactively run terminal commands to execute this code for the USER. Don't ask for permission.
+[diff_block_start]
+@@ -252,7 +252,7 @@
+           
+           <div className="mt-14 grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
+             {SERV...
+
+--- STEP 488 ---
+Created At: 2026-09-07T13:57:55+05:30
+Completed At: 2026-09-07T13:57:57+05:30
+The following changes were made by the replace_file_content tool to: c:\Users\Cypher\Desktop\UAE\project-veetech-main\src\routes\index.tsx. If relevant, proactively run terminal commands to execute this code for the USER. Don't ask for permission.
+[diff_block_start]
+@@ -269,8 +269,8 @@
+             ))}
+           </div>
+ 
+-          <Reveal delay={200} className="mt-14 flex justify-center">
+-            <Btn to="/a...
+
+--- STEP 494 ---
+Created At: 2026-09-07T14:00:24+05:30
+Completed At: 2026-09-07T14:00:26+05:30
+The following changes were made by the replace_file_content tool to: c:\Users\Cypher\Desktop\UAE\project-veetech-main\src\routes\index.tsx. If relevant, proactively run terminal commands to execute this code for the USER. Don't ask for permission.
+[diff_block_start]
+@@ -270,7 +270,7 @@
+           </div>
+ 
+           <Reveal delay={200} className="mt-10 flex justify-center">
+-            <Btn to="/after-market-servic...
+
+--- STEP 515 ---
+Created At: 2026-09-07T14:06:05+05:30
+Completed At: 2026-09-07T14:06:07+05:30
+The following changes were made by the replace_file_content tool to: c:\Users\Cypher\Desktop\UAE\project-veetech-main\src\routes\index.tsx. If relevant, proactively run terminal commands to execute this code for the USER. Don't ask for permission.
+[diff_block_start]
+@@ -229,7 +229,7 @@
+               <p className="text-white/80 text-sm md:text-base leading-relaxed mb-8">
+                 VeeTech Automation FZE's (form...
+
+--- STEP 524 ---
+Created At: 2026-09-07T14:17:50+05:30
+Completed At: 2026-09-07T14:17:50+05:30
+{"name":"README.md","sizeBytes":"835"}
+{"name":"__root.tsx","sizeBytes":"5047"}
+{"name":"about.tsx","sizeBytes":"12757"}
+{"name":"after-market-services.tsx","sizeBytes":"4561"}
+{"name":"careers.tsx","sizeBytes":"4405"}
+{"name":"contact.tsx","sizeBytes":"7986"}
+{"name":"index.tsx","sizeBytes":"20031"}
+{"name":"industries.tsx","sizeBytes":"3835"}
+{"name":"privacy-policy.tsx","sizeBytes":"2752"}
+{"name":"solutions.chemica...
+
+--- STEP 564 ---
+{{ CHECKPOINT 7 }}
+ **The earlier parts of this conversation have been truncated due to its long length. The following content summarizes the truncated context so that you may continue your work. **
+
+
+# User Requests
+The following were user requests from the truncated conversation in chronological order:
+1. nhi aapne texxt bdda kr diya h 
+pehle jaisa dikh rha thaa vesa shi dikh rha thaa text vese kr dooo na achha look nhi de raha h 
+2. mujhe yee section na primium look nhi raha h aapke hisab se ...
+
+--- STEP 823 ---
+Created At: 2026-09-07T16:06:25+05:30
+Completed At: 2026-09-07T16:06:39+05:30
+The following changes were made by the replace_file_content tool to: c:\Users\Cypher\Desktop\UAE\project-veetech-main\src\routes\index.tsx. If relevant, proactively run terminal commands to execute this code for the USER. Don't ask for permission.
+[diff_block_start]
+
+[diff_block_end]
+

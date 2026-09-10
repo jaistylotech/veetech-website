@@ -50,6 +50,10 @@
   --color-on-navy: var(--on-navy);
   --color-on-navy-muted: var(--on-navy-muted);
   --color-hairline: var(--hairline);
+
+  /* Override standard slate grays to near-black to ensure all paragraphs are dark */
+  --color-slate-400: #1e293b;
+  --color-slate-500: #0f172a;
 }
 
 :root {
@@ -74,7 +78,7 @@
   --secondary: #d2a600;
   --secondary-foreground: #1c2a5e;
   --muted: #f1f5f9;
-  --muted-foreground: #64748b;
+  --muted-foreground: #0f172a; /* Changed from #64748b to ensure text is dark/black */
   --accent: #d2a600;
   --accent-foreground: #1c2a5e;
   --destructive: #ef4444;
@@ -157,12 +161,12 @@
 }
 
 @utility section-y {
-  padding-block: 3.5rem;
+  padding-block: 2.5rem;
   @media (width >= 768px) {
-    padding-block: 4.5rem;
+    padding-block: 3rem;
   }
   @media (width >= 1280px) {
-    padding-block: 5.5rem;
+    padding-block: 4rem;
   }
 }
 
@@ -309,4 +313,9 @@
 @utility reveal-in {
   opacity: 1;
   transform: none;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
 }

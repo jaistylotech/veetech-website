@@ -28,6 +28,7 @@ import {
 import { ProcessTrack } from "@/components/site/process-track";
 import { HeroScroller } from "@/components/site/hero-scroller";
 import { CERTIFICATIONS, MARKETS, SERVICES } from "@/lib/site-data";
+import { ClientMarquee } from "@/components/site/client-marquee";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -66,7 +67,7 @@ const solutionCards = [
     to: "/solutions/wellhead-control-systems",
     image: "/client-media/products/wellhead/dsc-7917.jpg",
     alt: "Stainless steel hydraulic wellhead control panel with pressure gauges and tubing manifold",
-    body: "Pneumatic, hydraulic and electric valve controls for sequential valve operation, manual override, emergency and safety shutdown â€” including multi-well modular panels.",
+    body: "Pneumatic, hydraulic and electric valve controls for sequential valve operation, manual override, emergency and safety shutdown - including multi-well modular panels.",
     specs: ["Single & multi-slot WHCP", "ESD systems", "HIPPS / IPF", "Hydraulic power units"],
   },
   {
@@ -208,89 +209,76 @@ function HomePage() {
 
 
 
-      {/* FACILITY */}
-      <section className="section-y">
-        <div className="container-vt max-w-4xl">
-          <Reveal>
-            <SectionHeading
-              eyebrow="Facility"
-              title="Manufacturing Capability at Scale"
-              lead="Veetech Automation operates from a state-of-the-art manufacturing facility and office in the world's largest free zone â€” Jebel Ali Free Zone, Dubai, UAE."
-            />
-            <p className="mt-5 max-w-xl text-base leading-relaxed text-muted-foreground">
-              The facility is equipped with modern technology for manufacturing hydraulic and
-              pneumatic control panels, large HPUs, multi-well control panels, chemical injection
-              systems and large skid-mounted packages.
-            </p>
-            <div className="mt-10 grid gap-5 sm:grid-cols-2">
-              <div className="hairline-card p-6">
-                <div className="font-display text-2xl font-semibold">
-                  <Counter value={95000} suffix="+" />
-                </div>
-                <div className="mt-2 font-mono text-[0.62rem] tracking-[0.16em] text-muted-foreground uppercase">
-                  sq. ft. fabrication facility
-                </div>
-              </div>
-              <div className="hairline-card p-6">
-                <div className="font-display text-2xl font-semibold">
-                  <Counter value={30000} suffix="+" />
-                </div>
-                <div className="mt-2 font-mono text-[0.62rem] tracking-[0.16em] text-muted-foreground uppercase">
-                  sq. ft. climate-controlled assembly & testing
-                </div>
-              </div>
+      {/* SUPERIOR VALUE CREATION */}
+      <section className="relative isolate overflow-hidden section-y border-y border-border/50">
+        <div className="absolute inset-0 -z-10">
+          <img
+            src={fieldService}
+            alt="Superior Value Creation Background"
+            className="w-full h-full object-cover object-center"
+            loading="lazy"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-navy-deep/95 via-navy-deep/70 to-transparent" />
+        </div>
+
+        <div className="container-vt relative z-10">
+          <Reveal className="grid gap-8 lg:grid-cols-2 items-center">
+            <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-3xl p-8 md:p-12 shadow-2xl relative overflow-hidden">
+              {/* Decorative accent glow */}
+              <div className="absolute -top-24 -right-24 w-48 h-48 bg-accent/20 rounded-full blur-3xl pointer-events-none" />
+              
+              <h2 className="text-2xl md:text-3xl font-bold mb-4 text-white tracking-tight">SUPERIOR VALUE CREATION</h2>
+              <div className="w-16 h-1 bg-accent mb-6 rounded-full" />
+              <p className="text-white/80 text-sm md:text-base leading-relaxed mb-8">
+                VeeTech Automation FZE's (formerly VersaTech Automation FZE) extensive knowledge and decades of expertise combined with core values enable the company to provide best-in-class solutions to its clients in complex and challenging assignments.
+              </p>
+              <Btn to="/superior-value-creation" variant="solid" className="!bg-navy-deep !text-accent hover:!bg-accent hover:!text-navy-deep transition-colors duration-300 font-medium border-none">
+                Read More
+              </Btn>
             </div>
-
+            {/* Empty column to allow the background image to show clearly on the right */}
+            <div className="hidden lg:block"></div>
           </Reveal>
-
         </div>
       </section>
 
       {/* AFTER-MARKET */}
       <section className="border-y border-border bg-surface section-y">
         <div className="container-vt">
-          <div className="grid gap-10 lg:grid-cols-[1fr_1.15fr] lg:gap-20">
-            <Reveal>
-              <SectionHeading
-                eyebrow="After-Market Services"
-                title="Engineering Support Beyond Delivery"
-                lead="Veetech Automationâ€™s extensive field service along with a dedicated after-market team ensures comprehensive support for onsite installation, commissioning, start-up, and maintenance of the equipment supplied worldwide. Veetech Automation is a one-stop solution provider for commissioning, troubleshooting & repair, refurbishment, and preventive maintenance services for its loyal customers."
-              />
-              <img
-                src={fieldService}
-                alt="Field service engineers in PPE inspecting a hydraulic control panel at a wellsite"
-                className="mt-10 aspect-16/10 w-full object-cover"
-                loading="lazy"
-                width={1600}
-                height={1008}
-              />
-            </Reveal>
-
-            <Reveal delay={80}>
-              <ol className="border-t border-border">
-                {SERVICES.map((s, i) => (
-                  <li key={s.title} className="group border-b border-border">
-                    <div className="flex items-baseline gap-5 py-4 transition-colors group-hover:bg-background">
-                      <span className="font-mono text-[0.65rem] text-accent">
-                        {String(i + 1).padStart(2, "0")}
-                      </span>
-                      <span className="font-display text-base font-semibold md:text-lg">
-                        {s.title}
-                      </span>
-                    </div>
-                  </li>
-                ))}
-              </ol>
-              <div className="mt-9">
-                <Btn to="/contact" variant="solid">
-                  Partner With Us
-                </Btn>
-              </div>
-            </Reveal>
+          <Reveal>
+            <SectionHeading
+              eyebrow="After-Market Services"
+              title="Engineering Support Beyond Delivery"
+              lead="Veetech Automation's extensive field service along with a dedicated after-market team ensures comprehensive support for onsite installation, commissioning, start-up, and maintenance of the equipment supplied worldwide."
+            />
+          </Reveal>
+          
+          <div className="mt-14 grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
+            {SERVICES.map((s, i) => (
+              <Reveal key={s.title} delay={i * 100} className="relative h-[450px] overflow-hidden rounded-xl group shadow-md border border-border/50">
+                <img
+                  src={s.image}
+                  alt={s.title}
+                  className="absolute inset-0 size-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-navy-deep/95 via-navy-deep/30 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute inset-x-0 bottom-0 p-6 flex flex-col items-center justify-end h-full">
+                  <h3 className="text-white text-center font-semibold text-lg md:text-[1.15rem] leading-tight mb-4 group-hover:-translate-y-2 transition-transform duration-300">
+                    {s.title}
+                  </h3>
+                </div>
+              </Reveal>
+            ))}
           </div>
+
+          <Reveal delay={200} className="mt-10 flex justify-center">
+            <Btn to="/after-market-services" variant="solid" className="!bg-navy-deep !text-accent hover:!bg-accent hover:!text-navy-deep transition-colors duration-300 font-medium">
+              Explore All Services
+            </Btn>
+          </Reveal>
         </div>
       </section>
-
 
       {/* GLOBAL PRESENCE */}
       <section className="relative isolate overflow-hidden surface-dark">
@@ -331,6 +319,9 @@ function HomePage() {
         </div>
       </section>
 
+
+      {/* Client Logos Marquee */}
+      <ClientMarquee />
 
       <CtaSection image={ctaPlant} />
     </>
@@ -458,3 +449,4 @@ function WorldMap() {
     </div>
   );
 }
+

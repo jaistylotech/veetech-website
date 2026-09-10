@@ -1,27 +1,26 @@
-import { Link } from "@tanstack/react-router";
+﻿import { Link } from "@tanstack/react-router";
 import { Mail, MapPin, Phone, Linkedin } from "lucide-react";
 import { COMPANY } from "@/lib/site-data";
 
 const columns = [
   {
-    heading: "Company",
+    heading: "Quick Links",
     links: [
-      { label: "About", to: "/about" },
-      { label: "Services", to: "/services" },
-      { label: "Industries", to: "/industries" },
+      { label: "About Us", to: "/about" },
+      { label: "Infrastructure", to: "/infrastructure" },
       { label: "Careers", to: "/careers" },
+      { label: "Contact Us", to: "/contact" },
     ],
   },
   {
-    heading: "Solutions",
+    heading: "Our Offerings",
     links: [
-      { label: "Chemical Injection Packages", to: "/solutions/chemical-injection-packages" },
-      { label: "Wellhead Control Systems", to: "/solutions/wellhead-control-systems" },
-      { label: "Modular Packages", to: "/solutions/modular-packages" },
+      { label: "Products", to: "/solutions" },
+      { label: "Superior Value Creation", to: "/superior-value-creation" },
+      { label: "After Market Services", to: "/after-market-services" },
       { label: "Engineered Solutions", to: "/solutions/engineered-solutions" },
     ],
   },
-
 ];
 
 export function SiteFooter() {
@@ -34,7 +33,7 @@ export function SiteFooter() {
               <img src="/veetech-logo.png" alt="Veetech Automation FZE Logo" className="h-10 w-auto md:h-14" />
             </Link>
             <p className="mt-6 max-w-sm text-sm leading-relaxed text-on-navy-muted">
-              Industrial control automation and packaged solutions for the energy sector â€” designed,
+              Industrial control automation and packaged solutions for the energy sector - designed,
               engineered, manufactured and tested in Jebel Ali Free Zone, Dubai.
             </p>
             <div className="mt-8 flex gap-4">
@@ -61,7 +60,7 @@ export function SiteFooter() {
                   {col.links.map((l) => (
                     <li key={l.label}>
                       <Link
-                        to={l.to}
+                        to={l.to as any}
                         className="text-sm text-on-navy-muted transition-colors hover:text-on-navy"
                       >
                         {l.label}
@@ -108,7 +107,7 @@ export function SiteFooter() {
       </div>
 
       <div className="container-vt flex flex-col gap-4 py-6 text-xs text-on-navy-muted sm:flex-row sm:items-center sm:justify-between">
-        <p className="flex-1">Â© {new Date().getFullYear()} Veetech Automation FZE. All rights reserved.</p>
+        <p className="flex-1">© {new Date().getFullYear()} Veetech Automation FZE. All rights reserved.</p>
         <div className="flex flex-1 gap-6 sm:justify-center">
           <Link to="/privacy-policy" className="transition-colors hover:text-on-navy">
             Privacy Policy
@@ -133,3 +132,4 @@ export function SiteFooter() {
     </footer>
   );
 }
+

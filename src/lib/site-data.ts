@@ -1,4 +1,4 @@
-export const COMPANY = {
+﻿export const COMPANY = {
   name: "Veetech Automation FZE",
   shortName: "Veetech Automation",
   formerName: "Versatech Automation FZE",
@@ -13,10 +13,44 @@ export const COMPANY = {
 export const NAV = [
   { label: "Home", to: "/" },
   { label: "About Us", to: "/about" },
-  { label: "Solutions", to: "/solutions" },
-  { label: "Products & Services", to: "/services" },
-  { label: "Careers", to: "/careers" },
-  { label: "Contact", to: "/contact" },
+  { 
+    label: "Products", 
+    to: "/solutions",
+    children: [
+      { label: "Chemical Injection Packages", to: "/solutions/chemical-injection-packages" },
+      { label: "Wellhead Control Systems", to: "/solutions/wellhead-control-systems" },
+      { label: "Modular Packages", to: "/solutions/modular-packages" },
+      { 
+        label: "Other Engineered Solutions", 
+        to: "/solutions/engineered-solutions",
+        children: [
+          { label: "Metering Skids", to: "/solutions/engineered-solutions/metering-skids" },
+          { label: "DRA Injection Systems", to: "/solutions/engineered-solutions/dra-injection-systems" },
+          { label: "HIPPS Systems", to: "/solutions/engineered-solutions/hipps-systems" },
+          { label: "Nitrogen Generator Packages", to: "/solutions/engineered-solutions/nitrogen-generator-packages" },
+          { label: "Surge Relief Skids", to: "/solutions/engineered-solutions/surge-relief-skids" },
+          { label: "Lube Oil Systems", to: "/solutions/engineered-solutions/lube-oil-systems" },
+        ]
+      },
+    ]
+  },
+  { 
+    label: "Superior Value Creation", 
+    to: "/superior-value-creation",
+    children: [
+      { label: "Refurbishments & Recertification", to: "/superior-value-creation/refurbishments-recertification" },
+      { label: "Maintenance Contracts", to: "/superior-value-creation/maintenance-contracts" },
+      { label: "Long Term Service Agreement", to: "/superior-value-creation/long-term-service-agreement" },
+      { label: "Flushing", to: "/superior-value-creation/flushing" },
+      { label: "Pressure Testing", to: "/superior-value-creation/pressure-testing" },
+      { label: "Equipment Rental", to: "/superior-value-creation/equipment-rental" },
+      { label: "Product Training", to: "/superior-value-creation/product-training" },
+    ]
+  },
+  { label: "After Market Services", to: "/after-market-services" },
+  { label: "Infrastructure", to: "/infrastructure" },
+  { label: "Career", to: "/careers" },
+  { label: "Contact Us", to: "/contact-us" },
 ] as const;
 
 export const CAPABILITIES = [
@@ -115,23 +149,66 @@ export const ENGINEERED_SOLUTIONS = [
 export const SERVICES = [
   {
     title: "Installation & Commissioning",
+    image: "/client-media/after-market/installation.jpg",
     body: "Veetech Automation has the in-house capabilities to provide its valued customers with all the necessary services related to onsite installation, pre-commissioning, and commissioning activities for the entire range of products and solution packages.",
   },
   {
     title: "Spare Parts Management",
+    image: "/client-media/after-market/spare-parts.jpg",
     body: "Supply of required spares at competitive prices with the minimum lead time possible. Special spares are stocked for easy availability, and customized spare parts management solutions can be offered on request.",
   },
   {
     title: "Preventive Maintenance",
+    image: "/client-media/after-market/preventive-maintenance.jpg",
     body: "Timely preventive maintenance is key to proper and safe site operations. Well-trained personnel carry out the necessary health checks, repair and periodic maintenance.",
   },
   {
     title: "Troubleshooting & Field Repairing",
+    image: "/client-media/after-market/troubleshooting.jpg",
     body: "A qualified team of service engineers and technicians equipped for troubleshooting and site repair works with minimum equipment downtime, onshore and offshore, including equipment supplied by other manufacturers.",
   },
   {
     title: "Refurbishment & Recertification",
-    body: "Restoration of aged equipment including complete revamp: inspection, testing, repairing, replacing and upgrading worn components, followed by recertification â€” at our facility or at the customer site.",
+    image: "/client-media/after-market/refurbishment.jpg",
+    body: "Restoration of aged equipment including complete revamp: inspection, testing, repairing, replacing and upgrading worn components, followed by recertification - at our facility or at the customer site.",
+  },
+] as const;
+
+export const SUPERIOR_VALUE_CREATION_SERVICES = [
+  {
+    slug: "/superior-value-creation/refurbishments-recertification",
+    title: "Refurbishment & Recertification",
+    short: "Extend the life of your products while meeting operational requirements.",
+  },
+  {
+    slug: "/superior-value-creation/maintenance-contracts",
+    title: "Maintenance Contracts",
+    short: "Comprehensive maintenance contracts for equipment supplied by Veetech or OEMs.",
+  },
+  {
+    slug: "/superior-value-creation/long-term-service-agreement",
+    title: "Long Term Service Agreement",
+    short: "LTSAs to prevent system malfunctioning and significantly increase reliability.",
+  },
+  {
+    slug: "/superior-value-creation/flushing",
+    title: "Flushing",
+    short: "Power flushing hydraulic systems to eliminate sludge, varnish, and debris.",
+  },
+  {
+    slug: "/superior-value-creation/pressure-testing",
+    title: "Pressure Testing",
+    short: "On-site pressure testing activities for field tubing of wellhead control panels.",
+  },
+  {
+    slug: "/superior-value-creation/equipment-rental",
+    title: "Equipment Rental",
+    short: "Mission critical equipment like flushing units and pressure testing tools on rent.",
+  },
+  {
+    slug: "/superior-value-creation/product-training",
+    title: "Product Training",
+    short: "On-site equipment and operational training for client personnel by experts.",
   },
 ] as const;
 
@@ -181,12 +258,12 @@ export const REGIONAL_OFFICES = [
 ] as const;
 
 export const CERTIFICATIONS = [
-  { title: "ISO 9001: 2015", note: "Quality management system" },
-  { title: "ISO 14001: 2015", note: "Environmental management" },
-  { title: "ISO 45001: 2018", note: "Occupational health & safety" },
-  { title: "API Spec Q1", note: "Petroleum industry quality specification" },
-  { title: "Quality Policy", note: "Company policy document" },
-  { title: "HSE Policy", note: "Company policy document" },
+  { title: "ISO 9001: 2015", note: "Quality management system", link: "https://veetech.ae/wp-content/uploads/2023/05/ISO-9001-2015-Certificate-VEETECH.pdf" },
+  { title: "ISO 14001: 2015", note: "Environmental management", link: "https://veetech.ae/wp-content/uploads/2025/01/dorabot.io_page-1.jpg" },
+  { title: "ISO 45001: 2018", note: "Occupational health & safety", link: "https://veetech.ae/wp-content/uploads/2025/01/ISO-45001-2018-Certificate-Veetech_page-0001.jpg" },
+  { title: "API Spec Q1", note: "Petroleum industry quality specification", link: "https://veetech.ae/wp-content/uploads/2025/01/API-Q1-10th-Ed-Certificate-Veetech.pdf" },
+  { title: "Quality Policy", note: "Company policy document", link: "https://veetech.ae/wp-content/uploads/2025/05/Quality-Policy-CQPREV.05.pdf" },
+  { title: "HSE Policy", note: "Company policy document", link: "https://veetech.ae/wp-content/uploads/2022/04/HSE-Policy-2.jpg" },
 ] as const;
 
 export const OPENINGS = [
@@ -212,11 +289,11 @@ export const OPENINGS = [
 
 export const QUICK_LINKS = [
   { label: "ABOUT US", to: "/about" },
-  { label: "Chemical Injection Packages", to: "/solutions/chemical-injection-packages" },
-  { label: "Wellhead Control Systems", to: "/solutions/wellhead-control-systems" },
-  { label: "Modular Packages", to: "/solutions/modular-packages" },
-  { label: "Engineered Solutions", to: "/solutions/engineered-solutions" },
-  { label: "Services", to: "/services" },
-  { label: "Careers", to: "/careers" },
+  { label: "PRODUCTS", to: "/solutions" },
+  { label: "SUPERIOR VALUE CREATION", to: "/superior-value-creation" },
+  { label: "AFTER MARKET SERVICES", to: "/after-market-services" },
+  { label: "INFRASTRUCTURE", to: "/infrastructure" },
+  { label: "CAREER", to: "/careers" },
 ] as const;
+
 

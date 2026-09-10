@@ -1,8 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useState } from "react";
+import { X, Eye } from "lucide-react";
 
 import heroFacility from "@/assets/hero-facility.jpg";
 import manufacturing from "@/assets/manufacturing.jpg";
-import jebelAli from "@/assets/jebel-ali.jpg";
 import ctaPlant from "@/assets/cta-plant.jpg";
 
 import {
@@ -75,6 +76,8 @@ const values = [
 ];
 
 function AboutPage() {
+  const [activeCert, setActiveCert] = useState<string | null>(null);
+
   return (
     <>
       <PageHero
@@ -115,8 +118,8 @@ function AboutPage() {
           </Reveal>
           <Reveal delay={80} className="relative h-full min-h-[300px]">
             <img
-              src={manufacturing}
-              alt="Interior of the Veetech fabrication workshop with steel skid frames"
+              src="/client-media/about/about-banner.jpg"
+              alt="Veetech Automation FZE Company Overview"
               className="absolute inset-0 h-full w-full object-cover rounded-2xl"
               loading="lazy"
               width={1600}
@@ -126,103 +129,43 @@ function AboutPage() {
         </div>
       </section>
 
-      <section id="value-creation" className="border-t border-border bg-surface section-y">
-        <div className="container-vt grid gap-12 lg:grid-cols-2 lg:gap-20">
-          <Reveal>
-            <SectionHeading
-              eyebrow="Superior Value Creation"
-              title="Best-in-class solutions for complex assignments"
-              lead="Veetech Automation's extensive knowledge and decades of expertise combined with core values enable the company to provide best-in-class solutions to its clients in complex and challenging assignments."
-            />
-            <div className="mt-8 text-base leading-relaxed text-muted-foreground">
-              <p>
-                The highly talented engineers at Veetech offer innovative solutions meeting the
-                specific needs of customers. As a proficient equipment manufacturer, Veetech
-                Automation supports and extends its value-added services to ensure reliable and
-                long-lasting service of the products.
-              </p>
-            </div>
-          </Reveal>
-          <Reveal delay={80}>
-             <div className="grid grid-cols-2 gap-6">
-              <div className="hairline-card p-6">
-                <h4 className="font-display font-semibold">Engineering</h4>
-                <p className="mt-2 text-sm text-muted-foreground">Innovative solutions meeting specific customer needs.</p>
-              </div>
-              <div className="hairline-card p-6">
-                <h4 className="font-display font-semibold">Manufacturing</h4>
-                <p className="mt-2 text-sm text-muted-foreground">Proficient equipment manufacturing ensuring reliability.</p>
-              </div>
-              <div className="hairline-card p-6">
-                <h4 className="font-display font-semibold">Quality</h4>
-                <p className="mt-2 text-sm text-muted-foreground">Decades of expertise and strict adherence to core values.</p>
-              </div>
-              <div className="hairline-card p-6">
-                <h4 className="font-display font-semibold">Support</h4>
-                <p className="mt-2 text-sm text-muted-foreground">Value-added services for long-lasting product lifecycle.</p>
-              </div>
-            </div>
-          </Reveal>
-        </div>
-      </section>
+
 
       <section className="border-y border-border section-y">
         <div className="container-vt">
           <Reveal>
             <SectionHeading eyebrow="Our History" title="From Versatech to Veetech" />
           </Reveal>
-          <ol className="mt-14 grid gap-px border border-border bg-border md:grid-cols-2 lg:grid-cols-4">
-            {timeline.map((t, i) => (
-              <Reveal as="li" key={t.marker} delay={i * 60}>
-                <div className="h-full bg-background p-8">
-                  <div className="flex items-center gap-3">
-                    <span className="block size-2 bg-accent" aria-hidden="true" />
-                    <span className="font-mono text-[0.68rem] tracking-[0.2em] text-accent uppercase">
-                      {t.marker}
-                    </span>
-                  </div>
-                  <h3 className="mt-5 font-display text-lg font-semibold">{t.title}</h3>
-                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{t.body}</p>
-                </div>
-              </Reveal>
-            ))}
-          </ol>
-        </div>
-      </section>
+          
+          <div className="mt-14 grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            {/* Left Image Column */}
+            <Reveal className="relative h-full min-h-[300px] lg:min-h-[500px] w-full rounded-2xl overflow-hidden shadow-2xl border border-border/50">
+               <img 
+                 src="/client-media/about/factory_building.jpg" 
+                 alt="Veetech History" 
+                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+               />
+               <div className="absolute inset-0 bg-gradient-to-t from-navy-deep/80 via-transparent to-transparent opacity-60" />
+            </Reveal>
 
-      <section className="section-y">
-        <div className="container-vt grid gap-12 lg:grid-cols-2 lg:gap-20">
-          <Reveal className="relative h-full min-h-[300px]">
-            <img
-              src={jebelAli}
-              alt="Aerial view of the Jebel Ali Free Zone industrial area in Dubai"
-              className="absolute inset-0 h-full w-full object-cover rounded-2xl"
-              loading="lazy"
-              width={1600}
-              height={1008}
-            />
-          </Reveal>
-          <Reveal delay={80}>
-            <SectionHeading
-              eyebrow="Manufacturing"
-              title="A world-class facility in Jebel Ali Free Zone"
-              lead="The facility is equipped with modern technology for manufacturing hydraulic and pneumatic control panels, large HPUs, multi-well control panels, chemical injection systems and large skid-mounted packages."
-            />
-            <div className="mt-10 grid gap-5 sm:grid-cols-2">
-              <div className="hairline-card p-6">
-                <div className="font-display text-2xl font-semibold">95,000+ sq. ft.</div>
-                <p className="mt-2 text-sm text-muted-foreground">
-                  Fabrication area, with arrangements in place for capacity augmentation as needed.
-                </p>
-              </div>
-              <div className="hairline-card p-6">
-                <div className="font-display text-2xl font-semibold">30,000+ sq. ft.</div>
-                <p className="mt-2 text-sm text-muted-foreground">
-                  Fully climate-controlled assembly and testing facility.
-                </p>
-              </div>
-            </div>
-          </Reveal>
+            {/* Right Timeline Column */}
+            <ol className="grid gap-px border border-border bg-border sm:grid-cols-2 h-full">
+              {timeline.map((t, i) => (
+                <Reveal as="li" key={t.marker} delay={i * 60}>
+                  <div className="h-full bg-background p-8 hover:bg-accent/5 transition-colors">
+                    <div className="flex items-center gap-3">
+                      <span className="block size-2 bg-accent" aria-hidden="true" />
+                      <span className="font-mono text-[0.68rem] tracking-[0.2em] text-accent uppercase">
+                        {t.marker}
+                      </span>
+                    </div>
+                    <h3 className="mt-5 font-display text-lg font-semibold">{t.title}</h3>
+                    <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{t.body}</p>
+                  </div>
+                </Reveal>
+              ))}
+            </ol>
+          </div>
         </div>
       </section>
 
@@ -237,12 +180,61 @@ function AboutPage() {
           </Reveal>
           <div className="mt-12 grid gap-px border border-border bg-border sm:grid-cols-2 lg:grid-cols-3">
             {CERTIFICATIONS.map((c) => (
-              <div key={c.title} className="bg-background p-8">
-                <h3 className="font-display text-lg font-semibold">{c.title}</h3>
-                <p className="mt-2 text-sm text-muted-foreground">{c.note}</p>
+              <div 
+                key={c.title} 
+                className="group relative bg-background p-8 cursor-pointer hover:bg-accent/5 transition-colors overflow-hidden"
+                onClick={() => setActiveCert(c.link)}
+              >
+                <div className="flex justify-between items-start">
+                  <div>
+                    <h3 className="font-display text-lg font-semibold group-hover:text-accent transition-colors">{c.title}</h3>
+                    <p className="mt-2 text-sm text-muted-foreground">{c.note}</p>
+                  </div>
+                  <div className="size-10 rounded-full bg-border flex items-center justify-center text-muted-foreground group-hover:bg-accent group-hover:text-navy-deep transition-all duration-300 transform group-hover:scale-110">
+                    <Eye className="size-4" />
+                  </div>
+                </div>
               </div>
             ))}
           </div>
+
+          {/* Certificate Modal */}
+          {activeCert && (
+            <div 
+              className="fixed inset-0 z-50 flex items-center justify-center p-4 lg:p-8 bg-navy-deep/90 backdrop-blur-sm animate-in fade-in duration-300"
+              onClick={() => setActiveCert(null)}
+            >
+              <div 
+                className="relative max-w-5xl w-full h-full max-h-[90vh] flex flex-col bg-surface rounded-2xl overflow-hidden shadow-2xl animate-in zoom-in-95 duration-300 border border-border"
+                onClick={(e) => e.stopPropagation()}
+              >
+                <div className="flex items-center justify-between p-4 border-b border-border bg-background">
+                  <h3 className="font-display font-semibold text-lg">Certificate Viewer</h3>
+                  <button 
+                    onClick={() => setActiveCert(null)}
+                    className="size-10 flex items-center justify-center rounded-full bg-surface text-foreground hover:bg-accent hover:text-navy-deep transition-colors"
+                  >
+                    <X className="size-5" />
+                  </button>
+                </div>
+                <div className="flex-1 w-full h-full bg-muted/20 flex items-center justify-center p-4 lg:p-8">
+                  {activeCert.toLowerCase().endsWith(".pdf") ? (
+                    <iframe 
+                      src={`${activeCert}#toolbar=0&navpanes=0&scrollbar=0&view=Fit`} 
+                      className="w-full h-full border-0 rounded-b-2xl"
+                      title="Certificate PDF"
+                    />
+                  ) : (
+                    <img 
+                      src={activeCert} 
+                      alt="Certificate" 
+                      className="max-w-full max-h-full object-contain rounded-xl shadow-sm"
+                    />
+                  )}
+                </div>
+              </div>
+            </div>
+          )}
         </div>
       </section>
 

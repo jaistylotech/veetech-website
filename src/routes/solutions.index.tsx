@@ -161,7 +161,7 @@ function SolutionsPage() {
                       </ul>
                     </div>
                   </div>
-                  <Link to={s.to} className="link-arrow group mt-9">
+                  <Link to={s.to as any} className="link-arrow group mt-9">
                     View full details
                     <ArrowUpRight className="size-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
                   </Link>

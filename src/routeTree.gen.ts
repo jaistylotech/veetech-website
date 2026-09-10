@@ -11,17 +11,28 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
+import { Route as AfterMarketServicesRouteImport } from './routes/after-market-services'
 import { Route as CareersRouteImport } from './routes/careers'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as IndustriesRouteImport } from './routes/industries'
+import { Route as InfrastructureRouteImport } from './routes/infrastructure'
 import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
-import { Route as ServicesRouteImport } from './routes/services'
+import { Route as SuperiorValueCreationRouteImport } from './routes/superior-value-creation'
 import { Route as TermsRouteImport } from './routes/terms'
 import { Route as SolutionsIndexRouteImport } from './routes/solutions.index'
 import { Route as SolutionsChemicalInjectionPackagesRouteImport } from './routes/solutions.chemical-injection-packages'
 import { Route as SolutionsEngineeredSolutionsRouteImport } from './routes/solutions.engineered-solutions'
 import { Route as SolutionsModularPackagesRouteImport } from './routes/solutions.modular-packages'
 import { Route as SolutionsWellheadControlSystemsRouteImport } from './routes/solutions.wellhead-control-systems'
+import { Route as SuperiorValueCreationIndexRouteImport } from './routes/superior-value-creation.index'
+import { Route as SuperiorValueCreationEquipmentRentalRouteImport } from './routes/superior-value-creation.equipment-rental'
+import { Route as SuperiorValueCreationFlushingRouteImport } from './routes/superior-value-creation.flushing'
+import { Route as SuperiorValueCreationLongTermServiceAgreementRouteImport } from './routes/superior-value-creation.long-term-service-agreement'
+import { Route as SuperiorValueCreationMaintenanceContractsRouteImport } from './routes/superior-value-creation.maintenance-contracts'
+import { Route as SuperiorValueCreationPressureTestingRouteImport } from './routes/superior-value-creation.pressure-testing'
+import { Route as SuperiorValueCreationProductTrainingRouteImport } from './routes/superior-value-creation.product-training'
+import { Route as SuperiorValueCreationRefurbishmentsRecertificationRouteImport } from './routes/superior-value-creation.refurbishments-recertification'
+import { Route as SolutionsEngineeredSolutionsIndexRouteImport } from './routes/solutions.engineered-solutions.index'
 import { Route as SolutionsEngineeredSolutionsDraInjectionSystemsRouteImport } from './routes/solutions.engineered-solutions.dra-injection-systems'
 import { Route as SolutionsEngineeredSolutionsHippsSystemsRouteImport } from './routes/solutions.engineered-solutions.hipps-systems'
 import { Route as SolutionsEngineeredSolutionsLubeOilSystemsRouteImport } from './routes/solutions.engineered-solutions.lube-oil-systems'
@@ -39,6 +50,11 @@ const AboutRoute = AboutRouteImport.update({
   path: '/about',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AfterMarketServicesRoute = AfterMarketServicesRouteImport.update({
+  id: '/after-market-services',
+  path: '/after-market-services',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const CareersRoute = CareersRouteImport.update({
   id: '/careers',
   path: '/careers',
@@ -54,14 +70,19 @@ const IndustriesRoute = IndustriesRouteImport.update({
   path: '/industries',
   getParentRoute: () => rootRouteImport,
 } as any)
+const InfrastructureRoute = InfrastructureRouteImport.update({
+  id: '/infrastructure',
+  path: '/infrastructure',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const PrivacyPolicyRoute = PrivacyPolicyRouteImport.update({
   id: '/privacy-policy',
   path: '/privacy-policy',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ServicesRoute = ServicesRouteImport.update({
-  id: '/services',
-  path: '/services',
+const SuperiorValueCreationRoute = SuperiorValueCreationRouteImport.update({
+  id: '/superior-value-creation',
+  path: '/superior-value-creation',
   getParentRoute: () => rootRouteImport,
 } as any)
 const TermsRoute = TermsRouteImport.update({
@@ -97,6 +118,60 @@ const SolutionsWellheadControlSystemsRoute =
     id: '/solutions/wellhead-control-systems',
     path: '/solutions/wellhead-control-systems',
     getParentRoute: () => rootRouteImport,
+  } as any)
+const SuperiorValueCreationIndexRoute =
+  SuperiorValueCreationIndexRouteImport.update({
+    id: '/',
+    path: '/',
+    getParentRoute: () => SuperiorValueCreationRoute,
+  } as any)
+const SuperiorValueCreationEquipmentRentalRoute =
+  SuperiorValueCreationEquipmentRentalRouteImport.update({
+    id: '/equipment-rental',
+    path: '/equipment-rental',
+    getParentRoute: () => SuperiorValueCreationRoute,
+  } as any)
+const SuperiorValueCreationFlushingRoute =
+  SuperiorValueCreationFlushingRouteImport.update({
+    id: '/flushing',
+    path: '/flushing',
+    getParentRoute: () => SuperiorValueCreationRoute,
+  } as any)
+const SuperiorValueCreationLongTermServiceAgreementRoute =
+  SuperiorValueCreationLongTermServiceAgreementRouteImport.update({
+    id: '/long-term-service-agreement',
+    path: '/long-term-service-agreement',
+    getParentRoute: () => SuperiorValueCreationRoute,
+  } as any)
+const SuperiorValueCreationMaintenanceContractsRoute =
+  SuperiorValueCreationMaintenanceContractsRouteImport.update({
+    id: '/maintenance-contracts',
+    path: '/maintenance-contracts',
+    getParentRoute: () => SuperiorValueCreationRoute,
+  } as any)
+const SuperiorValueCreationPressureTestingRoute =
+  SuperiorValueCreationPressureTestingRouteImport.update({
+    id: '/pressure-testing',
+    path: '/pressure-testing',
+    getParentRoute: () => SuperiorValueCreationRoute,
+  } as any)
+const SuperiorValueCreationProductTrainingRoute =
+  SuperiorValueCreationProductTrainingRouteImport.update({
+    id: '/product-training',
+    path: '/product-training',
+    getParentRoute: () => SuperiorValueCreationRoute,
+  } as any)
+const SuperiorValueCreationRefurbishmentsRecertificationRoute =
+  SuperiorValueCreationRefurbishmentsRecertificationRouteImport.update({
+    id: '/refurbishments-recertification',
+    path: '/refurbishments-recertification',
+    getParentRoute: () => SuperiorValueCreationRoute,
+  } as any)
+const SolutionsEngineeredSolutionsIndexRoute =
+  SolutionsEngineeredSolutionsIndexRouteImport.update({
+    id: '/',
+    path: '/',
+    getParentRoute: () => SolutionsEngineeredSolutionsRoute,
   } as any)
 const SolutionsEngineeredSolutionsDraInjectionSystemsRoute =
   SolutionsEngineeredSolutionsDraInjectionSystemsRouteImport.update({
@@ -138,141 +213,205 @@ const SolutionsEngineeredSolutionsSurgeReliefSkidsRoute =
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/after-market-services': typeof AfterMarketServicesRoute
   '/careers': typeof CareersRoute
   '/contact': typeof ContactRoute
   '/industries': typeof IndustriesRoute
+  '/infrastructure': typeof InfrastructureRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
-  '/services': typeof ServicesRoute
+  '/superior-value-creation': typeof SuperiorValueCreationRouteWithChildren
   '/terms': typeof TermsRoute
   '/solutions/chemical-injection-packages': typeof SolutionsChemicalInjectionPackagesRoute
   '/solutions/engineered-solutions': typeof SolutionsEngineeredSolutionsRouteWithChildren
   '/solutions/modular-packages': typeof SolutionsModularPackagesRoute
   '/solutions/wellhead-control-systems': typeof SolutionsWellheadControlSystemsRoute
+  '/superior-value-creation/equipment-rental': typeof SuperiorValueCreationEquipmentRentalRoute
+  '/superior-value-creation/flushing': typeof SuperiorValueCreationFlushingRoute
+  '/superior-value-creation/long-term-service-agreement': typeof SuperiorValueCreationLongTermServiceAgreementRoute
+  '/superior-value-creation/maintenance-contracts': typeof SuperiorValueCreationMaintenanceContractsRoute
+  '/superior-value-creation/pressure-testing': typeof SuperiorValueCreationPressureTestingRoute
+  '/superior-value-creation/product-training': typeof SuperiorValueCreationProductTrainingRoute
+  '/superior-value-creation/refurbishments-recertification': typeof SuperiorValueCreationRefurbishmentsRecertificationRoute
   '/solutions/': typeof SolutionsIndexRoute
+  '/superior-value-creation/': typeof SuperiorValueCreationIndexRoute
   '/solutions/engineered-solutions/dra-injection-systems': typeof SolutionsEngineeredSolutionsDraInjectionSystemsRoute
   '/solutions/engineered-solutions/hipps-systems': typeof SolutionsEngineeredSolutionsHippsSystemsRoute
   '/solutions/engineered-solutions/lube-oil-systems': typeof SolutionsEngineeredSolutionsLubeOilSystemsRoute
   '/solutions/engineered-solutions/metering-skids': typeof SolutionsEngineeredSolutionsMeteringSkidsRoute
   '/solutions/engineered-solutions/nitrogen-generator-packages': typeof SolutionsEngineeredSolutionsNitrogenGeneratorPackagesRoute
   '/solutions/engineered-solutions/surge-relief-skids': typeof SolutionsEngineeredSolutionsSurgeReliefSkidsRoute
+  '/solutions/engineered-solutions/': typeof SolutionsEngineeredSolutionsIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/after-market-services': typeof AfterMarketServicesRoute
   '/careers': typeof CareersRoute
   '/contact': typeof ContactRoute
   '/industries': typeof IndustriesRoute
+  '/infrastructure': typeof InfrastructureRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
-  '/services': typeof ServicesRoute
   '/terms': typeof TermsRoute
   '/solutions/chemical-injection-packages': typeof SolutionsChemicalInjectionPackagesRoute
-  '/solutions/engineered-solutions': typeof SolutionsEngineeredSolutionsRouteWithChildren
   '/solutions/modular-packages': typeof SolutionsModularPackagesRoute
   '/solutions/wellhead-control-systems': typeof SolutionsWellheadControlSystemsRoute
+  '/superior-value-creation/equipment-rental': typeof SuperiorValueCreationEquipmentRentalRoute
+  '/superior-value-creation/flushing': typeof SuperiorValueCreationFlushingRoute
+  '/superior-value-creation/long-term-service-agreement': typeof SuperiorValueCreationLongTermServiceAgreementRoute
+  '/superior-value-creation/maintenance-contracts': typeof SuperiorValueCreationMaintenanceContractsRoute
+  '/superior-value-creation/pressure-testing': typeof SuperiorValueCreationPressureTestingRoute
+  '/superior-value-creation/product-training': typeof SuperiorValueCreationProductTrainingRoute
+  '/superior-value-creation/refurbishments-recertification': typeof SuperiorValueCreationRefurbishmentsRecertificationRoute
   '/solutions': typeof SolutionsIndexRoute
+  '/superior-value-creation': typeof SuperiorValueCreationIndexRoute
   '/solutions/engineered-solutions/dra-injection-systems': typeof SolutionsEngineeredSolutionsDraInjectionSystemsRoute
   '/solutions/engineered-solutions/hipps-systems': typeof SolutionsEngineeredSolutionsHippsSystemsRoute
   '/solutions/engineered-solutions/lube-oil-systems': typeof SolutionsEngineeredSolutionsLubeOilSystemsRoute
   '/solutions/engineered-solutions/metering-skids': typeof SolutionsEngineeredSolutionsMeteringSkidsRoute
   '/solutions/engineered-solutions/nitrogen-generator-packages': typeof SolutionsEngineeredSolutionsNitrogenGeneratorPackagesRoute
   '/solutions/engineered-solutions/surge-relief-skids': typeof SolutionsEngineeredSolutionsSurgeReliefSkidsRoute
+  '/solutions/engineered-solutions': typeof SolutionsEngineeredSolutionsIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/after-market-services': typeof AfterMarketServicesRoute
   '/careers': typeof CareersRoute
   '/contact': typeof ContactRoute
   '/industries': typeof IndustriesRoute
+  '/infrastructure': typeof InfrastructureRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
-  '/services': typeof ServicesRoute
+  '/superior-value-creation': typeof SuperiorValueCreationRouteWithChildren
   '/terms': typeof TermsRoute
   '/solutions/chemical-injection-packages': typeof SolutionsChemicalInjectionPackagesRoute
   '/solutions/engineered-solutions': typeof SolutionsEngineeredSolutionsRouteWithChildren
   '/solutions/modular-packages': typeof SolutionsModularPackagesRoute
   '/solutions/wellhead-control-systems': typeof SolutionsWellheadControlSystemsRoute
+  '/superior-value-creation/equipment-rental': typeof SuperiorValueCreationEquipmentRentalRoute
+  '/superior-value-creation/flushing': typeof SuperiorValueCreationFlushingRoute
+  '/superior-value-creation/long-term-service-agreement': typeof SuperiorValueCreationLongTermServiceAgreementRoute
+  '/superior-value-creation/maintenance-contracts': typeof SuperiorValueCreationMaintenanceContractsRoute
+  '/superior-value-creation/pressure-testing': typeof SuperiorValueCreationPressureTestingRoute
+  '/superior-value-creation/product-training': typeof SuperiorValueCreationProductTrainingRoute
+  '/superior-value-creation/refurbishments-recertification': typeof SuperiorValueCreationRefurbishmentsRecertificationRoute
   '/solutions/': typeof SolutionsIndexRoute
+  '/superior-value-creation/': typeof SuperiorValueCreationIndexRoute
   '/solutions/engineered-solutions/dra-injection-systems': typeof SolutionsEngineeredSolutionsDraInjectionSystemsRoute
   '/solutions/engineered-solutions/hipps-systems': typeof SolutionsEngineeredSolutionsHippsSystemsRoute
   '/solutions/engineered-solutions/lube-oil-systems': typeof SolutionsEngineeredSolutionsLubeOilSystemsRoute
   '/solutions/engineered-solutions/metering-skids': typeof SolutionsEngineeredSolutionsMeteringSkidsRoute
   '/solutions/engineered-solutions/nitrogen-generator-packages': typeof SolutionsEngineeredSolutionsNitrogenGeneratorPackagesRoute
   '/solutions/engineered-solutions/surge-relief-skids': typeof SolutionsEngineeredSolutionsSurgeReliefSkidsRoute
+  '/solutions/engineered-solutions/': typeof SolutionsEngineeredSolutionsIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
     | '/about'
+    | '/after-market-services'
     | '/careers'
     | '/contact'
     | '/industries'
+    | '/infrastructure'
     | '/privacy-policy'
-    | '/services'
+    | '/superior-value-creation'
     | '/terms'
     | '/solutions/chemical-injection-packages'
     | '/solutions/engineered-solutions'
     | '/solutions/modular-packages'
     | '/solutions/wellhead-control-systems'
+    | '/superior-value-creation/equipment-rental'
+    | '/superior-value-creation/flushing'
+    | '/superior-value-creation/long-term-service-agreement'
+    | '/superior-value-creation/maintenance-contracts'
+    | '/superior-value-creation/pressure-testing'
+    | '/superior-value-creation/product-training'
+    | '/superior-value-creation/refurbishments-recertification'
     | '/solutions/'
+    | '/superior-value-creation/'
     | '/solutions/engineered-solutions/dra-injection-systems'
     | '/solutions/engineered-solutions/hipps-systems'
     | '/solutions/engineered-solutions/lube-oil-systems'
     | '/solutions/engineered-solutions/metering-skids'
     | '/solutions/engineered-solutions/nitrogen-generator-packages'
     | '/solutions/engineered-solutions/surge-relief-skids'
+    | '/solutions/engineered-solutions/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/about'
+    | '/after-market-services'
     | '/careers'
     | '/contact'
     | '/industries'
+    | '/infrastructure'
     | '/privacy-policy'
-    | '/services'
     | '/terms'
     | '/solutions/chemical-injection-packages'
-    | '/solutions/engineered-solutions'
     | '/solutions/modular-packages'
     | '/solutions/wellhead-control-systems'
+    | '/superior-value-creation/equipment-rental'
+    | '/superior-value-creation/flushing'
+    | '/superior-value-creation/long-term-service-agreement'
+    | '/superior-value-creation/maintenance-contracts'
+    | '/superior-value-creation/pressure-testing'
+    | '/superior-value-creation/product-training'
+    | '/superior-value-creation/refurbishments-recertification'
     | '/solutions'
+    | '/superior-value-creation'
     | '/solutions/engineered-solutions/dra-injection-systems'
     | '/solutions/engineered-solutions/hipps-systems'
     | '/solutions/engineered-solutions/lube-oil-systems'
     | '/solutions/engineered-solutions/metering-skids'
     | '/solutions/engineered-solutions/nitrogen-generator-packages'
     | '/solutions/engineered-solutions/surge-relief-skids'
+    | '/solutions/engineered-solutions'
   id:
     | '__root__'
     | '/'
     | '/about'
+    | '/after-market-services'
     | '/careers'
     | '/contact'
     | '/industries'
+    | '/infrastructure'
     | '/privacy-policy'
-    | '/services'
+    | '/superior-value-creation'
     | '/terms'
     | '/solutions/chemical-injection-packages'
     | '/solutions/engineered-solutions'
     | '/solutions/modular-packages'
     | '/solutions/wellhead-control-systems'
+    | '/superior-value-creation/equipment-rental'
+    | '/superior-value-creation/flushing'
+    | '/superior-value-creation/long-term-service-agreement'
+    | '/superior-value-creation/maintenance-contracts'
+    | '/superior-value-creation/pressure-testing'
+    | '/superior-value-creation/product-training'
+    | '/superior-value-creation/refurbishments-recertification'
     | '/solutions/'
+    | '/superior-value-creation/'
     | '/solutions/engineered-solutions/dra-injection-systems'
     | '/solutions/engineered-solutions/hipps-systems'
     | '/solutions/engineered-solutions/lube-oil-systems'
     | '/solutions/engineered-solutions/metering-skids'
     | '/solutions/engineered-solutions/nitrogen-generator-packages'
     | '/solutions/engineered-solutions/surge-relief-skids'
+    | '/solutions/engineered-solutions/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  AfterMarketServicesRoute: typeof AfterMarketServicesRoute
   CareersRoute: typeof CareersRoute
   ContactRoute: typeof ContactRoute
   IndustriesRoute: typeof IndustriesRoute
+  InfrastructureRoute: typeof InfrastructureRoute
   PrivacyPolicyRoute: typeof PrivacyPolicyRoute
-  ServicesRoute: typeof ServicesRoute
+  SuperiorValueCreationRoute: typeof SuperiorValueCreationRouteWithChildren
   TermsRoute: typeof TermsRoute
   SolutionsChemicalInjectionPackagesRoute: typeof SolutionsChemicalInjectionPackagesRoute
   SolutionsEngineeredSolutionsRoute: typeof SolutionsEngineeredSolutionsRouteWithChildren
@@ -297,6 +436,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AboutRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/after-market-services': {
+      id: '/after-market-services'
+      path: '/after-market-services'
+      fullPath: '/after-market-services'
+      preLoaderRoute: typeof AfterMarketServicesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/careers': {
       id: '/careers'
       path: '/careers'
@@ -318,6 +464,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndustriesRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/infrastructure': {
+      id: '/infrastructure'
+      path: '/infrastructure'
+      fullPath: '/infrastructure'
+      preLoaderRoute: typeof InfrastructureRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/privacy-policy': {
       id: '/privacy-policy'
       path: '/privacy-policy'
@@ -325,11 +478,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PrivacyPolicyRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/services': {
-      id: '/services'
-      path: '/services'
-      fullPath: '/services'
-      preLoaderRoute: typeof ServicesRouteImport
+    '/superior-value-creation': {
+      id: '/superior-value-creation'
+      path: '/superior-value-creation'
+      fullPath: '/superior-value-creation'
+      preLoaderRoute: typeof SuperiorValueCreationRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/terms': {
@@ -373,6 +526,69 @@ declare module '@tanstack/react-router' {
       fullPath: '/solutions/wellhead-control-systems'
       preLoaderRoute: typeof SolutionsWellheadControlSystemsRouteImport
       parentRoute: typeof rootRouteImport
+    }
+    '/superior-value-creation/': {
+      id: '/superior-value-creation/'
+      path: '/'
+      fullPath: '/superior-value-creation/'
+      preLoaderRoute: typeof SuperiorValueCreationIndexRouteImport
+      parentRoute: typeof SuperiorValueCreationRoute
+    }
+    '/superior-value-creation/equipment-rental': {
+      id: '/superior-value-creation/equipment-rental'
+      path: '/equipment-rental'
+      fullPath: '/superior-value-creation/equipment-rental'
+      preLoaderRoute: typeof SuperiorValueCreationEquipmentRentalRouteImport
+      parentRoute: typeof SuperiorValueCreationRoute
+    }
+    '/superior-value-creation/flushing': {
+      id: '/superior-value-creation/flushing'
+      path: '/flushing'
+      fullPath: '/superior-value-creation/flushing'
+      preLoaderRoute: typeof SuperiorValueCreationFlushingRouteImport
+      parentRoute: typeof SuperiorValueCreationRoute
+    }
+    '/superior-value-creation/long-term-service-agreement': {
+      id: '/superior-value-creation/long-term-service-agreement'
+      path: '/long-term-service-agreement'
+      fullPath: '/superior-value-creation/long-term-service-agreement'
+      preLoaderRoute: typeof SuperiorValueCreationLongTermServiceAgreementRouteImport
+      parentRoute: typeof SuperiorValueCreationRoute
+    }
+    '/superior-value-creation/maintenance-contracts': {
+      id: '/superior-value-creation/maintenance-contracts'
+      path: '/maintenance-contracts'
+      fullPath: '/superior-value-creation/maintenance-contracts'
+      preLoaderRoute: typeof SuperiorValueCreationMaintenanceContractsRouteImport
+      parentRoute: typeof SuperiorValueCreationRoute
+    }
+    '/superior-value-creation/pressure-testing': {
+      id: '/superior-value-creation/pressure-testing'
+      path: '/pressure-testing'
+      fullPath: '/superior-value-creation/pressure-testing'
+      preLoaderRoute: typeof SuperiorValueCreationPressureTestingRouteImport
+      parentRoute: typeof SuperiorValueCreationRoute
+    }
+    '/superior-value-creation/product-training': {
+      id: '/superior-value-creation/product-training'
+      path: '/product-training'
+      fullPath: '/superior-value-creation/product-training'
+      preLoaderRoute: typeof SuperiorValueCreationProductTrainingRouteImport
+      parentRoute: typeof SuperiorValueCreationRoute
+    }
+    '/superior-value-creation/refurbishments-recertification': {
+      id: '/superior-value-creation/refurbishments-recertification'
+      path: '/refurbishments-recertification'
+      fullPath: '/superior-value-creation/refurbishments-recertification'
+      preLoaderRoute: typeof SuperiorValueCreationRefurbishmentsRecertificationRouteImport
+      parentRoute: typeof SuperiorValueCreationRoute
+    }
+    '/solutions/engineered-solutions/': {
+      id: '/solutions/engineered-solutions/'
+      path: '/'
+      fullPath: '/solutions/engineered-solutions/'
+      preLoaderRoute: typeof SolutionsEngineeredSolutionsIndexRouteImport
+      parentRoute: typeof SolutionsEngineeredSolutionsRoute
     }
     '/solutions/engineered-solutions/dra-injection-systems': {
       id: '/solutions/engineered-solutions/dra-injection-systems'
@@ -419,6 +635,39 @@ declare module '@tanstack/react-router' {
   }
 }
 
+interface SuperiorValueCreationRouteChildren {
+  SuperiorValueCreationEquipmentRentalRoute: typeof SuperiorValueCreationEquipmentRentalRoute
+  SuperiorValueCreationFlushingRoute: typeof SuperiorValueCreationFlushingRoute
+  SuperiorValueCreationLongTermServiceAgreementRoute: typeof SuperiorValueCreationLongTermServiceAgreementRoute
+  SuperiorValueCreationMaintenanceContractsRoute: typeof SuperiorValueCreationMaintenanceContractsRoute
+  SuperiorValueCreationPressureTestingRoute: typeof SuperiorValueCreationPressureTestingRoute
+  SuperiorValueCreationProductTrainingRoute: typeof SuperiorValueCreationProductTrainingRoute
+  SuperiorValueCreationRefurbishmentsRecertificationRoute: typeof SuperiorValueCreationRefurbishmentsRecertificationRoute
+  SuperiorValueCreationIndexRoute: typeof SuperiorValueCreationIndexRoute
+}
+
+const SuperiorValueCreationRouteChildren: SuperiorValueCreationRouteChildren = {
+  SuperiorValueCreationEquipmentRentalRoute:
+    SuperiorValueCreationEquipmentRentalRoute,
+  SuperiorValueCreationFlushingRoute: SuperiorValueCreationFlushingRoute,
+  SuperiorValueCreationLongTermServiceAgreementRoute:
+    SuperiorValueCreationLongTermServiceAgreementRoute,
+  SuperiorValueCreationMaintenanceContractsRoute:
+    SuperiorValueCreationMaintenanceContractsRoute,
+  SuperiorValueCreationPressureTestingRoute:
+    SuperiorValueCreationPressureTestingRoute,
+  SuperiorValueCreationProductTrainingRoute:
+    SuperiorValueCreationProductTrainingRoute,
+  SuperiorValueCreationRefurbishmentsRecertificationRoute:
+    SuperiorValueCreationRefurbishmentsRecertificationRoute,
+  SuperiorValueCreationIndexRoute: SuperiorValueCreationIndexRoute,
+}
+
+const SuperiorValueCreationRouteWithChildren =
+  SuperiorValueCreationRoute._addFileChildren(
+    SuperiorValueCreationRouteChildren,
+  )
+
 interface SolutionsEngineeredSolutionsRouteChildren {
   SolutionsEngineeredSolutionsDraInjectionSystemsRoute: typeof SolutionsEngineeredSolutionsDraInjectionSystemsRoute
   SolutionsEngineeredSolutionsHippsSystemsRoute: typeof SolutionsEngineeredSolutionsHippsSystemsRoute
@@ -426,6 +675,7 @@ interface SolutionsEngineeredSolutionsRouteChildren {
   SolutionsEngineeredSolutionsMeteringSkidsRoute: typeof SolutionsEngineeredSolutionsMeteringSkidsRoute
   SolutionsEngineeredSolutionsNitrogenGeneratorPackagesRoute: typeof SolutionsEngineeredSolutionsNitrogenGeneratorPackagesRoute
   SolutionsEngineeredSolutionsSurgeReliefSkidsRoute: typeof SolutionsEngineeredSolutionsSurgeReliefSkidsRoute
+  SolutionsEngineeredSolutionsIndexRoute: typeof SolutionsEngineeredSolutionsIndexRoute
 }
 
 const SolutionsEngineeredSolutionsRouteChildren: SolutionsEngineeredSolutionsRouteChildren =
@@ -442,6 +692,8 @@ const SolutionsEngineeredSolutionsRouteChildren: SolutionsEngineeredSolutionsRou
       SolutionsEngineeredSolutionsNitrogenGeneratorPackagesRoute,
     SolutionsEngineeredSolutionsSurgeReliefSkidsRoute:
       SolutionsEngineeredSolutionsSurgeReliefSkidsRoute,
+    SolutionsEngineeredSolutionsIndexRoute:
+      SolutionsEngineeredSolutionsIndexRoute,
   }
 
 const SolutionsEngineeredSolutionsRouteWithChildren =
@@ -452,11 +704,13 @@ const SolutionsEngineeredSolutionsRouteWithChildren =
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  AfterMarketServicesRoute: AfterMarketServicesRoute,
   CareersRoute: CareersRoute,
   ContactRoute: ContactRoute,
   IndustriesRoute: IndustriesRoute,
+  InfrastructureRoute: InfrastructureRoute,
   PrivacyPolicyRoute: PrivacyPolicyRoute,
-  ServicesRoute: ServicesRoute,
+  SuperiorValueCreationRoute: SuperiorValueCreationRouteWithChildren,
   TermsRoute: TermsRoute,
   SolutionsChemicalInjectionPackagesRoute:
     SolutionsChemicalInjectionPackagesRoute,
