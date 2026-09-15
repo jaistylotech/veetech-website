@@ -6,7 +6,7 @@ WORKDIR /app
 # Stage 2: Install dependencies
 FROM base AS deps
 COPY package.json package-lock.json ./
-RUN npm install
+RUN npm install --legacy-peer-deps
 
 # Stage 3: Build application
 FROM base AS builder
@@ -19,7 +19,7 @@ RUN npm run build
 FROM base AS dev
 ENV NODE_ENV=development
 COPY package.json package-lock.json ./
-RUN npm install
+RUN npm install --legacy-peer-deps
 COPY . .
 EXPOSE 5173
 CMD ["npm", "run", "dev", "--", "--host", "0.0.0.0"]
