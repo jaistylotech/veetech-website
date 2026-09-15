@@ -1,4 +1,4 @@
-﻿export const COMPANY = {
+export const COMPANY = {
   name: "Veetech Automation FZE",
   shortName: "Veetech Automation",
   formerName: "Versatech Automation FZE",
@@ -183,12 +183,12 @@ export const SUPERIOR_VALUE_CREATION_SERVICES = [
   {
     slug: "/superior-value-creation/maintenance-contracts",
     title: "Maintenance Contracts",
-    short: "Comprehensive maintenance contracts for equipment supplied by Veetech or OEMs.",
+    short: "Full maintenance and service contracts for equipment provided by Veetech or OEMs.",
   },
   {
     slug: "/superior-value-creation/long-term-service-agreement",
     title: "Long Term Service Agreement",
-    short: "LTSAs to prevent system malfunctioning and significantly increase reliability.",
+    short: "LTSAs help to prevent system faults and boost overall plant reliability.",
   },
   {
     slug: "/superior-value-creation/flushing",
@@ -198,12 +198,12 @@ export const SUPERIOR_VALUE_CREATION_SERVICES = [
   {
     slug: "/superior-value-creation/pressure-testing",
     title: "Pressure Testing",
-    short: "On-site pressure testing activities for field tubing of wellhead control panels.",
+    short: "On-site pressure testing services for field tubes and wellhead control panels.",
   },
   {
     slug: "/superior-value-creation/equipment-rental",
     title: "Equipment Rental",
-    short: "Mission critical equipment like flushing units and pressure testing tools on rent.",
+    short: "Vital equipment like power flushing units and pressure test tools available on rent.",
   },
   {
     slug: "/superior-value-creation/product-training",
@@ -258,11 +258,11 @@ export const REGIONAL_OFFICES = [
 ] as const;
 
 export const CERTIFICATIONS = [
-  { title: "ISO 9001: 2015", note: "Quality management system", link: "https://veetech.ae/wp-content/uploads/2023/05/ISO-9001-2015-Certificate-VEETECH.pdf" },
+  { title: "ISO 9001: 2015", note: "Quality management system", link: "/certificates/ISO-9001-2015.pdf" },
   { title: "ISO 14001: 2015", note: "Environmental management", link: "https://veetech.ae/wp-content/uploads/2025/01/dorabot.io_page-1.jpg" },
   { title: "ISO 45001: 2018", note: "Occupational health & safety", link: "https://veetech.ae/wp-content/uploads/2025/01/ISO-45001-2018-Certificate-Veetech_page-0001.jpg" },
-  { title: "API Spec Q1", note: "Petroleum industry quality specification", link: "https://veetech.ae/wp-content/uploads/2025/01/API-Q1-10th-Ed-Certificate-Veetech.pdf" },
-  { title: "Quality Policy", note: "Company policy document", link: "https://veetech.ae/wp-content/uploads/2025/05/Quality-Policy-CQPREV.05.pdf" },
+  { title: "API Spec Q1", note: "Petroleum industry quality specification", link: "/certificates/API-Q1.pdf" },
+  { title: "Quality Policy", note: "Company policy document", link: "/certificates/Quality-Policy.pdf" },
   { title: "HSE Policy", note: "Company policy document", link: "https://veetech.ae/wp-content/uploads/2022/04/HSE-Policy-2.jpg" },
 ] as const;
 

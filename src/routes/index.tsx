@@ -1,4 +1,4 @@
-﻿import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { ComposableMap, Geographies, Geography, Marker, Line } from "react-simple-maps";
 import { ArrowUpRight, Volume2, VolumeX } from "lucide-react";
 import { useState, useRef, useEffect } from "react";
@@ -99,6 +99,29 @@ function HomePage() {
     }
   }, [isMuted]);
 
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    // Yahan hum set kar rahe hain ki audio kitne seconds par khatam ho jani chahiye
+    // User requirement: Audio 9.0 sec tak full volume pe rakhein, fir achanak mute kar dein.
+    const AUDIO_CUTOFF_TIME = 9.0; 
+
+    const handleTimeUpdate = () => {
+      // Agar video cutoff time cross kar chuki hai (8 to 10 seconds), toh volume 0 (mute).
+      if (video.currentTime > AUDIO_CUTOFF_TIME) {
+        video.volume = 0;
+      } 
+      // Shuruwat me (0 to 8 seconds), full volume bina kisi fade ke.
+      else {
+        video.volume = 1;
+      }
+    };
+
+    video.addEventListener("timeupdate", handleTimeUpdate);
+    return () => video.removeEventListener("timeupdate", handleTimeUpdate);
+  }, []);
+
   return (
     <>
       {/* HERO */}
@@ -112,7 +135,7 @@ function HomePage() {
           playsInline
           className="absolute inset-0 -z-10 size-full object-cover opacity-100"
         />
-        <button 
+        <button
           onClick={() => setIsMuted((m) => !m)}
           className="absolute right-4 top-24 z-20 flex size-10 items-center justify-center rounded-full bg-black/30 text-white backdrop-blur-md border border-white/10 transition-all duration-300 hover:scale-110 hover:bg-accent hover:text-navy-deep md:right-8 md:top-32 opacity-50 md:opacity-0 md:group-hover:opacity-100"
           aria-label={isMuted ? "Unmute video" : "Mute video"}
@@ -167,17 +190,17 @@ function HomePage() {
             <div className="grid grid-cols-1 gap-y-8 gap-x-6 sm:grid-cols-3 lg:grid-cols-1 border-y border-border py-8 lg:border-y-0 lg:border-l lg:border-border/50 lg:py-4 lg:pl-10">
               <Stat value={<Counter value={40} suffix="+" />} label="Years of experience" />
               <Stat value={<Counter value={2000} suffix="+" />} label="Projects" />
-              <Stat 
+              <Stat
                 value={
                   <div className="flex flex-col gap-0.5 leading-none">
                     <span>2009</span>
                   </div>
-                } 
-                label="COE Middle East" 
+                }
+                label="COE Middle East"
               />
             </div>
           </Reveal>
-          
+
           <Reveal className="w-full">
             <img
               src={whoWeAreImg}
@@ -226,7 +249,7 @@ function HomePage() {
             <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-3xl p-8 md:p-12 shadow-2xl relative overflow-hidden">
               {/* Decorative accent glow */}
               <div className="absolute -top-24 -right-24 w-48 h-48 bg-accent/20 rounded-full blur-3xl pointer-events-none" />
-              
+
               <h2 className="text-2xl md:text-3xl font-bold mb-4 text-white tracking-tight">SUPERIOR VALUE CREATION</h2>
               <div className="w-16 h-1 bg-accent mb-6 rounded-full" />
               <p className="text-white/80 text-sm md:text-base leading-relaxed mb-8">
@@ -252,7 +275,7 @@ function HomePage() {
               lead="Veetech Automation's extensive field service along with a dedicated after-market team ensures comprehensive support for onsite installation, commissioning, start-up, and maintenance of the equipment supplied worldwide."
             />
           </Reveal>
-          
+
           <div className="mt-14 grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
             {SERVICES.map((s, i) => (
               <Reveal key={s.title} delay={i * 100} className="relative h-[450px] overflow-hidden rounded-xl group shadow-md border border-border/50">
@@ -346,7 +369,7 @@ function WorldMap() {
   return (
     <div className="relative w-full overflow-hidden rounded-3xl border border-border/50 bg-navy-deep shadow-2xl aspect-square md:aspect-[16/10] xl:aspect-[21/9]">
       <div className="absolute inset-0 tech-grid opacity-20" aria-hidden="true" />
-      
+
       <ComposableMap
         projection="geoMercator"
         projectionConfig={{

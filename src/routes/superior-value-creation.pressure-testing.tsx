@@ -1,4 +1,4 @@
-﻿import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import { CheckCircle2 } from "lucide-react";
 
 import { PageHero, Reveal, CtaSection } from "@/components/site/primitives";
@@ -63,15 +63,17 @@ function PressureTestingPage() {
             </Reveal>
           </div>
 
-          {/* Right Side: Edge-to-Edge Image */}
-          <div className="relative min-h-[300px] lg:min-h-[400px] overflow-hidden group">
-            <Reveal delay={150} className="w-full h-full">
-              <img
-                src="/client-media/superior-value-creation/sub-pages/pressure-testing-1.jpg"
-                alt="Technician performing pressure testing"
-                className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
-                loading="lazy"
-              />
+          {/* Right Side: Padded Image Showcase */}
+          <div className="flex items-center justify-center p-8 lg:p-16">
+            <Reveal delay={150} className="w-full">
+              <div className="relative rounded-3xl overflow-hidden shadow-xl border-[6px] border-white bg-slate-50">
+                <img
+                  src="/client-media/superior-value-creation/sub-pages/equipment-rental-1.jpg"
+                  alt="Technician performing pressure testing"
+                  className="w-full h-auto max-h-[500px] object-cover"
+                  loading="lazy"
+                />
+              </div>
             </Reveal>
           </div>
 

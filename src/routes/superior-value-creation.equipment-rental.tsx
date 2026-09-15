@@ -1,4 +1,4 @@
-﻿import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import { Droplets, Gauge, Wind } from "lucide-react";
 
 import { PageHero, Reveal, CtaSection } from "@/components/site/primitives";
@@ -104,7 +104,7 @@ function EquipmentRentalPage() {
                 <div className="relative rounded-3xl overflow-hidden shadow-2xl border-[6px] border-white bg-slate-50">
                   <div className="absolute inset-0 bg-navy/5 mix-blend-multiply z-10" />
                   <img
-                    src="/client-media/superior-value-creation/sub-pages/equipment-rental-1.jpg"
+                    src="/client-media/superior-value-creation/sub-pages/mission-critical-new.jpg"
                     alt="Industrial valve and piping equipment"
                     className="w-full h-full min-h-[400px] object-cover transition-transform duration-1000 hover:scale-105"
                     loading="lazy"

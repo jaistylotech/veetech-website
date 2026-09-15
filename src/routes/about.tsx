@@ -1,6 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
+import { useState, lazy, Suspense } from "react";
 import { X, Eye } from "lucide-react";
+
+const PdfViewer = lazy(() => import('@/components/PdfViewer'));
 
 import heroFacility from "@/assets/hero-facility.jpg";
 import manufacturing from "@/assets/manufacturing.jpg";
@@ -201,14 +203,24 @@ function AboutPage() {
           {/* Certificate Modal */}
           {activeCert && (
             <div 
-              className="fixed inset-0 z-50 flex items-center justify-center p-4 lg:p-8 bg-navy-deep/90 backdrop-blur-sm animate-in fade-in duration-300"
+              className="fixed inset-0 z-50 flex items-center justify-center p-4 lg:p-8 bg-navy-deep/90 backdrop-blur-sm animate-in fade-in duration-300 print:hidden"
               onClick={() => setActiveCert(null)}
+              onContextMenu={(e) => e.preventDefault()}
+              onKeyDown={(e) => {
+                if (e.key === 'PrintScreen' || (e.ctrlKey && e.key === 'p') || (e.metaKey && e.key === 'p')) {
+                  e.preventDefault();
+                  alert("Screenshots and printing are disabled for security reasons.");
+                }
+              }}
+              tabIndex={0}
+              ref={(el) => el?.focus()}
             >
               <div 
                 className="relative max-w-5xl w-full h-full max-h-[90vh] flex flex-col bg-surface rounded-2xl overflow-hidden shadow-2xl animate-in zoom-in-95 duration-300 border border-border"
                 onClick={(e) => e.stopPropagation()}
+                style={{ WebkitTouchCallout: 'none', WebkitUserSelect: 'none', userSelect: 'none' }}
               >
-                <div className="flex items-center justify-between p-4 border-b border-border bg-background">
+                <div className="flex items-center justify-between p-4 border-b border-border bg-background relative z-20">
                   <h3 className="font-display font-semibold text-lg">Certificate Viewer</h3>
                   <button 
                     onClick={() => setActiveCert(null)}
@@ -217,20 +229,30 @@ function AboutPage() {
                     <X className="size-5" />
                   </button>
                 </div>
-                <div className="flex-1 w-full h-full bg-muted/20 flex items-center justify-center p-4 lg:p-8">
-                  {activeCert.toLowerCase().endsWith(".pdf") ? (
-                    <iframe 
-                      src={`${activeCert}#toolbar=0&navpanes=0&scrollbar=0&view=Fit`} 
-                      className="w-full h-full border-0 rounded-b-2xl"
-                      title="Certificate PDF"
-                    />
-                  ) : (
-                    <img 
-                      src={activeCert} 
-                      alt="Certificate" 
-                      className="max-w-full max-h-full object-contain rounded-xl shadow-sm"
-                    />
-                  )}
+                
+                <div className="flex-1 w-full h-full bg-muted/20 flex items-center justify-center p-4 lg:p-8 relative overflow-hidden">
+                  {/* Watermark Overlay for anti-screenshot */}
+                  <div className="absolute inset-0 z-10 pointer-events-none flex flex-wrap items-center justify-center overflow-hidden opacity-[0.03] select-none">
+                    {Array.from({ length: 40 }).map((_, i) => (
+                      <span key={i} className="text-3xl font-bold text-navy-deep -rotate-45 p-6 whitespace-nowrap">VEETECH CONFIDENTIAL</span>
+                    ))}
+                  </div>
+
+                  {/* Secure Viewer (Pointer events disabled to prevent long press save on mobile) */}
+                  <div className="relative z-0 max-w-full max-h-full overflow-auto pointer-events-none flex items-center justify-center">
+                    {activeCert.toLowerCase().endsWith(".pdf") ? (
+                      <Suspense fallback={<div className="animate-pulse flex space-x-4"><div className="h-4 w-48 bg-slate-300 rounded"></div></div>}>
+                        <PdfViewer url={activeCert} />
+                      </Suspense>
+                    ) : (
+                      <img 
+                        src={activeCert} 
+                        alt="Certificate" 
+                        className="max-w-full max-h-[70vh] object-contain rounded-xl shadow-sm"
+                        draggable="false"
+                      />
+                    )}
+                  </div>
                 </div>
               </div>
             </div>

@@ -44,7 +44,7 @@ function SubMenuItem({ child, setOpen }: { child: any, setOpen: (v: boolean) => 
         "hidden md:block absolute left-[100%] top-0 pl-1 z-50 transition-all duration-300",
         expanded ? "opacity-100 translate-x-0 pointer-events-auto" : "opacity-0 -translate-x-4 pointer-events-none"
       )}>
-        <div 
+        <div
           className="flex min-w-[260px] flex-col gap-2 bg-white border border-border/50 p-4 shadow-2xl rounded-lg"
         >
           {child.children!.map((subChild: any) => (
@@ -54,9 +54,9 @@ function SubMenuItem({ child, setOpen }: { child: any, setOpen: (v: boolean) => 
       </div>
 
       {/* Mobile accordion */}
-      <div 
+      <div
         className={cn(
-          "md:hidden grid transition-all duration-300 ease-in-out", 
+          "md:hidden grid transition-all duration-300 ease-in-out",
           expanded ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
         )}
       >
@@ -103,23 +103,19 @@ export function SiteHeader() {
   const isSolid = scrolled || open || !isHome;
 
   return (
-    <header
+    <>
+      <header
       className={cn(
         "fixed inset-x-0 top-0 z-50 transition-all duration-300",
-        isSolid ? "bg-[#1f232a] text-white shadow-md" : "bg-transparent text-white"
+        isSolid ? "bg-navy-deep/95 backdrop-blur-md shadow-lg text-white" : "bg-transparent text-white"
       )}
     >
-      <div
-        className={cn(
-          "container-vt flex items-center justify-between transition-all duration-300",
-          scrolled ? "h-16" : "h-[4.5rem] md:h-20",
-        )}
-      >
-        <Link to="/" className="group flex items-center transition-transform hover:scale-105 bg-white p-1.5 md:p-2 rounded-lg shadow-sm" onClick={() => setOpen(false)}>
-          <img 
-            src="/veetech-logo.png" 
-            alt="Veetech Automation FZE Logo" 
-            className="h-8 md:h-10 w-auto object-contain transition-opacity hover:opacity-100"
+      <div className="container-vt flex items-center justify-between transition-all duration-300 h-[4.5rem] md:h-20">
+        <Link to="/" className="group flex items-center transition-transform hover:scale-105 bg-white p-2 md:p-3 rounded-lg shadow-sm" onClick={() => setOpen(false)}>
+          <img
+            src="/veetech-logo.png"
+            alt="Veetech Automation FZE Logo"
+            className="h-10 md:h-14 w-auto object-contain transition-opacity hover:opacity-100"
           />
         </Link>
 
@@ -147,6 +143,7 @@ export function SiteHeader() {
           </button>
         </div>
       </div>
+    </header>
 
       {open ? (
         <div className="fixed inset-x-0 top-[4.5rem] md:top-20 bottom-0 z-40 overflow-y-auto bg-white text-navy transition-all">
@@ -177,13 +174,13 @@ export function SiteHeader() {
                               <ChevronRight className={cn("size-4 transition-transform duration-300", isExpanded && "rotate-90 md:rotate-0")} />
                             </button>
                           </div>
-                          
+
                           {/* Desktop side-flyout */}
                           <div className={cn(
                             "hidden md:block absolute left-[100%] top-0 pl-1 z-50 transition-all duration-300",
                             isExpanded ? "opacity-100 translate-x-0 pointer-events-auto" : "opacity-0 -translate-x-4 pointer-events-none"
                           )}>
-                            <div 
+                            <div
                               className="flex min-w-[280px] flex-col gap-2 bg-white border border-border/50 p-5 shadow-2xl rounded-lg"
                             >
                               {item.children!.map((child) => (
@@ -193,9 +190,9 @@ export function SiteHeader() {
                           </div>
 
                           {/* Mobile accordion */}
-                          <div 
+                          <div
                             className={cn(
-                              "md:hidden grid transition-all duration-300 ease-in-out", 
+                              "md:hidden grid transition-all duration-300 ease-in-out",
                               isExpanded ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
                             )}
                           >
@@ -225,7 +222,7 @@ export function SiteHeader() {
           </nav>
         </div>
       ) : null}
-    </header>
+    </>
   );
 }
 

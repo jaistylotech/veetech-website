@@ -1,4 +1,4 @@
-﻿import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import { MapPin, Mail, Phone, Linkedin, Send, Globe2 } from "lucide-react";
 
 import jebelAli from "@/assets/jebel-ali.jpg";
@@ -118,7 +118,7 @@ function ContactPage() {
                 <div className="w-full h-full min-h-[400px] md:min-h-[500px] rounded-3xl overflow-hidden shadow-2xl border-[8px] border-white bg-slate-100 relative group">
                   <iframe
                     title="Veetech Automation Map"
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d115622.76673551528!2d54.9806456!3d24.9604106!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f0e3400000001%3A0xa9457635fb88b3!2sJebel%20Ali%20Free%20Zone%20-%20Dubai%20-%20United%20Arab%20Emirates!5e0!3m2!1sen!2s!4v1700000000000!5m2!1sen!2s"
+                    src="https://maps.google.com/maps?q=24.971167,55.116694&hl=en&z=14&output=embed"
                     width="100%"
                     height="100%"
                     style={{ border: 0, filter: 'contrast(1.05) saturate(1.1)' }}

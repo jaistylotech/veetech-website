@@ -96,7 +96,7 @@ function EngineeredPage() {
               <Reveal key={solution.slug} delay={i * 50}>
                 <Link to={solution.slug} className="group block h-full">
                   <div className="hairline-card flex h-full flex-col p-8 transition-colors group-hover:border-accent/50 group-hover:bg-accent/5">
-                    <h3 className="font-display text-xl font-semibold text-on-navy transition-colors group-hover:text-accent">
+                    <h3 className="font-display text-xl font-semibold text-navy transition-colors group-hover:text-accent">
                       {solution.title}
                     </h3>
                     <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">

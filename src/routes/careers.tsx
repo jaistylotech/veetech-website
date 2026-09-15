@@ -1,4 +1,4 @@
-﻿import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Briefcase, PlayCircle, Star, Users } from "lucide-react";
 
 import { PageHero, Reveal, CtaSection } from "@/components/site/primitives";
@@ -224,11 +224,33 @@ function CareersPage() {
         </div>
       </section>
 
-      <CtaSection
-        image={ctaPlant}
-        title="Send Us Your CV"
-        lead="Don't see a role that fits? We review every application from engineers and technicians with energy-sector experience."
-      />
+      <section className="relative isolate overflow-hidden py-16 sm:py-24 lg:py-32">
+        <img
+          src={ctaPlant}
+          alt="Engineering plant"
+          className="absolute inset-0 -z-10 h-full w-full object-cover"
+        />
+        <div className="absolute inset-0 -z-10 bg-navy/80 mix-blend-multiply" />
+        
+        <div className="container-vt text-center">
+          <div className="mx-auto max-w-2xl">
+            <h2 className="font-display text-3xl font-bold tracking-tight text-white sm:text-4xl">
+              Send Us Your CV
+            </h2>
+            <p className="mt-6 text-lg leading-8 text-slate-300">
+              Don't see a role that fits? We review every application from engineers and technicians with energy-sector experience.
+            </p>
+            <div className="mt-10 flex items-center justify-center gap-x-6">
+              <a
+                href="mailto:careers@veetech.ae"
+                className="rounded-md bg-accent px-8 py-3.5 text-sm font-semibold text-navy shadow-sm hover:brightness-110 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent transition-all"
+              >
+                Email careers@veetech.ae
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
     </>
   );
 }

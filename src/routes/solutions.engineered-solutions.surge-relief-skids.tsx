@@ -45,7 +45,12 @@ const applicationAreas = [
 ];
 
 function SurgeReliefSkidsPage() {
-  const relatedSolutions = ENGINEERED_SOLUTIONS.filter((s) => s.slug !== "/solutions/engineered-solutions/surge-relief-skids").slice(0, 3);
+  const currentIndex = ENGINEERED_SOLUTIONS.findIndex((s) => s.slug === "/solutions/engineered-solutions/surge-relief-skids");
+  const relatedSolutions = [
+    ENGINEERED_SOLUTIONS[(currentIndex + 1) % ENGINEERED_SOLUTIONS.length],
+    ENGINEERED_SOLUTIONS[(currentIndex + 2) % ENGINEERED_SOLUTIONS.length],
+    ENGINEERED_SOLUTIONS[(currentIndex + 3) % ENGINEERED_SOLUTIONS.length],
+  ];
 
   return (
     <>
@@ -217,7 +222,7 @@ function SurgeReliefSkidsPage() {
               <Reveal key={solution.slug} delay={i * 50}>
                 <Link to={solution.slug} className="group block h-full">
                   <div className="hairline-card flex h-full flex-col p-8 transition-colors group-hover:border-accent/50 group-hover:bg-accent/5">
-                    <h3 className="font-display text-lg font-semibold text-on-navy transition-colors group-hover:text-accent">
+                    <h3 className="font-display text-lg font-semibold text-navy transition-colors group-hover:text-accent">
                       {solution.title}
                     </h3>
                     <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">
