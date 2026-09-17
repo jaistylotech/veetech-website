@@ -223,7 +223,7 @@ function CareersPage() {
         </div>
       </section>
 
-      <section className="relative isolate overflow-hidden py-24 sm:py-32 lg:py-40">
+      <section className="relative isolate overflow-hidden py-16 sm:py-20 lg:py-24">
         <img
           src="/client-media/careers/careers-cta-bg.png"
           alt="Careers at Veetech Automation"
