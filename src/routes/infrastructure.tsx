@@ -1,4 +1,4 @@
-﻿import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Box, Maximize } from "lucide-react";
 
@@ -62,7 +62,7 @@ function InfrastructurePage() {
         eyebrow="Infrastructure"
         title="State-of-the-art Manufacturing Facility"
         lead="Ultra-modern technology in the heart of Jebel Ali Free Zone."
-        image="/client-media/infra/hero.jpg"
+        image="/client-media/banners/hero-infrastructure.webp"
         imageAlt="Infrastructure Hero Banner"
         breadcrumbs={[
           { label: "Home", to: "/" },

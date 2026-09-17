@@ -26,7 +26,7 @@ function CareersPage() {
         eyebrow="Careers"
         title="Achieving Greater Heights Through Innovation"
         lead="Join a team of dedicated professionals delivering mission-critical control systems to the world's leading energy companies."
-        image="/client-media/careers/hero.jpg"
+        image="/client-media/banners/hero-careers.webp"
         imageAlt="Veetech engineering team collaborating"
         breadcrumbs={[
           { label: "Home", to: "/" },

@@ -8,6 +8,7 @@ import engineeringImg from "@/assets/engineering.jpg";
 import offshore from "@/assets/offshore.jpg";
 import ctaPlant from "@/assets/cta-plant.jpg";
 
+import { ENGINEERED_SOLUTIONS } from "@/lib/site-data";
 import { CtaSection, PageHero, Reveal, SectionHeading } from "@/components/site/primitives";
 
 export const Route = createFileRoute("/solutions/")({
@@ -98,6 +99,7 @@ const solutions = [
       "Manufacturing & assembly",
       "Testing & commissioning",
     ],
+    subProducts: ENGINEERED_SOLUTIONS,
   },
 ];
 
@@ -108,7 +110,7 @@ function SolutionsPage() {
         eyebrow="Products & Solutions"
         title="Solutions Engineered for the Energy Sector"
         lead="The entire range of chemical injection systems, wellhead control systems, modular skid packages and customized engineered solutions â€” designed, engineered, manufactured and tested to international standards."
-        image={offshore}
+        image="/client-media/banners/hero-products.webp"
         imageAlt="Offshore oil and gas platform at sunset"
         breadcrumbs={[
           { label: "Home", to: "/" },
@@ -161,6 +163,27 @@ function SolutionsPage() {
                       </ul>
                     </div>
                   </div>
+
+                  {/* Optional Sub-Products Links */}
+                  {'subProducts' in s && s.subProducts && (
+                    <div className="mt-8 pt-6 border-t border-slate-200">
+                      <h3 className="font-mono text-[0.62rem] tracking-[0.2em] text-accent uppercase mb-4">
+                        Explore Specialized Solutions
+                      </h3>
+                      <div className="flex flex-wrap gap-2.5">
+                        {s.subProducts.map((sub) => (
+                          <Link 
+                            key={sub.slug} 
+                            to={sub.slug as any}
+                            className="inline-flex items-center gap-1.5 text-[0.8rem] font-bold px-4 py-2 bg-slate-100 text-navy rounded-md hover:bg-accent hover:text-navy transition-colors border border-slate-200 hover:border-accent"
+                          >
+                            {sub.title}
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+
                   <Link to={s.to as any} className="link-arrow group mt-9">
                     View full details
                     <ArrowUpRight className="size-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />

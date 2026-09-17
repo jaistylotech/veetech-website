@@ -89,7 +89,7 @@ const solutionCards = [
 ];
 
 function HomePage() {
-  const [isMuted, setIsMuted] = useState(false);
+  const [isMuted, setIsMuted] = useState(true);
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
@@ -125,7 +125,7 @@ function HomePage() {
   return (
     <>
       {/* HERO */}
-      <section className="group relative isolate flex min-h-svh flex-col justify-end overflow-hidden surface-dark">
+      <section className="group relative isolate flex min-h-[calc(100svh-4rem)] md:min-h-[calc(100svh-5rem)] flex-col justify-end overflow-hidden surface-dark">
         <video
           ref={videoRef}
           src="/factory-demo.mp4"
@@ -148,7 +148,7 @@ function HomePage() {
           aria-hidden="true"
         />
 
-        <div className="container-vt w-full pt-24 pb-6 md:pt-32 md:pb-8 mt-auto">
+        <div className="container-vt w-full pt-12 pb-6 md:pt-16 md:pb-8 mt-auto">
           <Reveal>
             <h1 className="mt-7 max-w-4xl text-[clamp(2.4rem,6.2vw,5rem)] leading-[1.02] font-semibold text-on-navy">
               Engineering Excellence.

@@ -104,46 +104,55 @@ export function SiteHeader() {
 
   return (
     <>
+      <style>{`
+        @keyframes phone-ring {
+          0%, 80%, 100% { transform: rotate(0deg) scale(1); }
+          85% { transform: rotate(10deg) scale(1.1); }
+          90% { transform: rotate(-10deg) scale(1.1); }
+          95% { transform: rotate(10deg) scale(1.1); }
+        }
+        .animate-phone-ring {
+          animation: phone-ring 3s ease-in-out infinite;
+          transform-origin: center;
+        }
+      `}</style>
       <header
-      className={cn(
-        "fixed inset-x-0 top-0 z-50 transition-all duration-300",
-        isSolid ? "bg-navy-deep/95 backdrop-blur-md shadow-lg text-white" : "bg-transparent text-white"
-      )}
-    >
-      <div className="container-vt flex items-center justify-between transition-all duration-300 h-[4.5rem] md:h-20">
-        <Link to="/" className="group flex items-center transition-transform hover:scale-105 bg-white p-2 md:p-3 rounded-lg shadow-sm" onClick={() => setOpen(false)}>
-          <img
-            src="/veetech-logo.png"
-            alt="Veetech Automation FZE Logo"
-            className="h-10 md:h-14 w-auto object-contain transition-opacity hover:opacity-100"
-          />
-        </Link>
-
-        {/* Removed inline desktop navigation, now relies entirely on the Menu button */}
-
-        <div className="flex items-center gap-6 sm:gap-8">
-          <Link
-            to="/contact"
-            className="hidden sm:flex items-center gap-2 text-sm font-medium transition-opacity hover:opacity-75"
-            aria-label="Contact Us"
-          >
-            <Phone className="size-5" strokeWidth={1.5} />
-            <span className="hidden md:inline-block">Contact</span>
+        className="sticky inset-x-0 top-0 z-50 transition-all duration-300 bg-accent/95 backdrop-blur-md shadow-lg text-[#212C5F]"
+      >
+        <div className="container-vt flex items-center justify-between transition-all duration-300 h-16 md:h-20">
+          <Link to="/" className="flex items-center h-full" onClick={() => setOpen(false)}>
+            <img
+              src="/veetech-logo.png"
+              alt="Veetech Automation FZE Logo"
+              className="h-[3.5rem] md:h-[4.5rem] w-auto object-contain scale-[1.15] md:scale-[1.2] origin-left"
+            />
           </Link>
 
-          <button
-            type="button"
-            aria-label={open ? "Close menu" : "Open menu"}
-            aria-expanded={open}
-            onClick={() => setOpen((v) => !v)}
-            className="flex items-center gap-2.5 font-medium tracking-wide transition-opacity hover:opacity-75 text-sm"
-          >
-            <span className="hidden sm:inline-block">Menu</span>
-            {open ? <X className="size-6" strokeWidth={1.5} /> : <Menu className="size-6" strokeWidth={1.5} />}
-          </button>
+          {/* Removed inline desktop navigation, now relies entirely on the Menu button */}
+
+          <div className="flex items-center gap-6 sm:gap-8">
+            <Link
+              to="/contact"
+              className="hidden sm:flex items-center gap-2 text-sm font-bold transition-opacity hover:opacity-75"
+              aria-label="Contact Us"
+            >
+              <Phone className="size-5 animate-phone-ring" strokeWidth={1.5} />
+              <span className="hidden md:inline-block">Contact</span>
+            </Link>
+
+            <button
+              type="button"
+              aria-label={open ? "Close menu" : "Open menu"}
+              aria-expanded={open}
+              onClick={() => setOpen((v) => !v)}
+              className="flex items-center gap-2.5 font-bold tracking-wide transition-opacity hover:opacity-75 text-sm"
+            >
+              <span className="hidden sm:inline-block">Menu</span>
+              {open ? <X className="size-6" strokeWidth={1.5} /> : <Menu className="size-6" strokeWidth={1.5} />}
+            </button>
+          </div>
         </div>
-      </div>
-    </header>
+      </header>
 
       {open ? (
         <div className="fixed inset-x-0 top-[4.5rem] md:top-20 bottom-0 z-40 overflow-y-auto bg-white text-navy transition-all">

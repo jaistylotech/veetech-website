@@ -1,4 +1,4 @@
-﻿import { useState } from "react";
+import { useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Settings, Wrench, ShieldCheck, Activity, RefreshCw } from "lucide-react";
 
@@ -26,25 +26,26 @@ const TABS_DATA = [
     id: "installation",
     title: "Installation & Commissioning",
     icon: Settings,
-    image: "/client-media/after-market/installation.jpg",
+    image: "/client-media/after-market/installation-commissioning-new.webp",
     mainText: "Veetech Automation has the in-house capabilities to provide its valued customers with all the necessary services related to onsite installation, pre-commissioning, and commissioning activities for the entire range of products and solution packages.",
     highlightText: "Veetech Automation's dedicated team is highly proficient and has all the necessary skills and expertise to manage all the project activities at the site competently and at the same time working in a safe and efficient manner.",
     bgNumber: "01",
   },
   {
-    id: "spares",
-    title: "Spare Parts Management",
-    icon: Wrench,
-    image: "/client-media/after-market/spare-parts.jpg",
-    mainText: "Veetech Automation specializes in supporting all the customers in every part of the world by providing the required spares at competitive prices and with minimum lead time possible.",
-    highlightText: "Spare parts are highly critical for the necessary maintenance and safe operation of all equipment. The company also stocks some special spares for easy availability for its customers. Customized spare parts management solutions can be offered on request.",
+    id: "refurbishment",
+    title: "Refurbishment & Recertification",
+    icon: RefreshCw,
+    image: "/client-media/after-market/after_market_service_white_bg_clear_hd_cropped.jpg",
+    objectFit: "contain",
+    mainText: "We offer complete refurbishment of existing panels and skids, including control upgrades to modern PLC/RTU and SCADA systems.",
+    highlightText: "Revitalize your legacy equipment with our recertification programs, ensuring compliance with current industry standards while maximizing return on investment.",
     bgNumber: "02",
   },
   {
     id: "preventive",
     title: "Preventive Maintenance",
     icon: ShieldCheck,
-    image: "/client-media/after-market/preventive-maintenance.jpg",
+    image: "/client-media/after-market/preventive-maintanace-2-new-blurred.webp",
     mainText: "Planned maintenance programs are essential to keep safety-critical control systems available and functioning strictly within specification.",
     highlightText: "Our preventive maintenance services minimize downtime and extend the lifespan of your mission-critical assets through systematic inspections and timely interventions.",
     bgNumber: "03",
@@ -53,26 +54,27 @@ const TABS_DATA = [
     id: "troubleshooting",
     title: "Troubleshooting & Field Repairing",
     icon: Activity,
-    image: "/client-media/after-market/troubleshooting.jpg",
+    image: "/client-media/after-market/troubleshooting_white_bg_clear_hd_cropped.png",
+    objectFit: "contain",
     mainText: "Veetech Automation provides rapid troubleshooting and repair services for hydraulic, pneumatic, and electrical control systems directly at the client site.",
     highlightText: "Our field engineers are equipped with the expertise and tools necessary to diagnose complex issues quickly, ensuring swift restoration of your operations.",
     bgNumber: "04",
   },
   {
-    id: "refurbishment",
-    title: "Refurbishment & Recertification",
-    icon: RefreshCw,
-    image: "/client-media/after-market/refurbishment.jpg",
-    mainText: "We offer complete refurbishment of existing panels and skids, including control upgrades to modern PLC/RTU and SCADA systems.",
-    highlightText: "Revitalize your legacy equipment with our recertification programs, ensuring compliance with current industry standards while maximizing return on investment.",
+    id: "spares",
+    title: "Spare Parts Management",
+    icon: Wrench,
+    image: "/client-media/after-market/spareparts-management-3-new.webp",
+    mainText: "Veetech Automation specializes in supporting all the customers in every part of the world by providing the required spares at competitive prices and with minimum lead time possible.",
+    highlightText: "Spare parts are highly critical for the necessary maintenance and safe operation of all equipment. The company also stocks some special spares for easy availability for its customers. Customized spare parts management solutions can be offered on request.",
     bgNumber: "05",
   },
 ];
 
 function AfterMarketServicesPage() {
-  const [activeTab, setActiveTab] = useState(TABS_DATA[0].id);
+  const [activeTab, setActiveTab] = useState(TABS_DATA[0]?.id || "installation");
 
-  const currentTabData = TABS_DATA.find((t) => t.id === activeTab) || TABS_DATA[0];
+  const currentTabData = TABS_DATA.find((t) => t.id === activeTab) || TABS_DATA[0]!;
 
   return (
     <>
@@ -80,7 +82,7 @@ function AfterMarketServicesPage() {
         eyebrow="After Market Services"
         title="Delivering Operational Excellence"
         lead="Dedicated support for installation, commissioning, and lifecycle maintenance worldwide."
-        image="/client-media/after-market/hero.jpg"
+        image="/client-media/banners/hero-services.webp"
         imageAlt="After Market Services Banner"
         breadcrumbs={[
           { label: "Home", to: "/" },
@@ -123,7 +125,7 @@ function AfterMarketServicesPage() {
               <Reveal delay={150}>
                 <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white bg-slate-50">
                   <img
-                    src="/client-media/after-market/intro.jpg"
+                    src="/client-media/after-market/intro.png"
                     alt="Technician working on electrical panel"
                     className="w-full h-auto max-h-[500px] object-cover hover:scale-105 transition-transform duration-700"
                     loading="lazy"
@@ -191,7 +193,10 @@ function AfterMarketServicesPage() {
                 <img 
                   src={currentTabData.image} 
                   alt={currentTabData.title}
-                  className="w-full h-full object-cover opacity-45 mix-blend-luminosity"
+                  className={`w-full h-full opacity-45 mix-blend-luminosity ${
+                    // @ts-ignore
+                    currentTabData.objectFit === "contain" ? "object-contain" : "object-cover"
+                  }`}
                 />
                 <div className="absolute inset-0 bg-gradient-to-r from-navy via-navy/70 to-navy/20"></div>
               </div>
@@ -217,7 +222,7 @@ function AfterMarketServicesPage() {
                 </div>
 
                 {/* Overlapping Highlight Box */}
-                <div className="mt-10 lg:ml-auto lg:-mr-8 max-w-xl bg-white text-navy p-6 lg:p-8 rounded-2xl shadow-2xl relative overflow-hidden group border border-border/50">
+                <div className="mt-10 mr-auto max-w-xl bg-white text-navy p-6 lg:p-8 rounded-2xl shadow-2xl relative overflow-hidden group border border-border/50">
                   <div className="relative z-10 flex gap-4 items-start">
                     <div className="w-1 h-full absolute left-0 top-0 bg-accent rounded-full"></div>
                     <p className="text-[0.95rem] md:text-base leading-relaxed text-slate-700 pl-4 font-medium italic">

@@ -149,17 +149,17 @@ export const ENGINEERED_SOLUTIONS = [
 export const SERVICES = [
   {
     title: "Installation & Commissioning",
-    image: "/client-media/after-market/installation.jpg",
+    image: "/client-media/after-market/installation-commissioning-new.webp",
     body: "Veetech Automation has the in-house capabilities to provide its valued customers with all the necessary services related to onsite installation, pre-commissioning, and commissioning activities for the entire range of products and solution packages.",
   },
   {
-    title: "Spare Parts Management",
-    image: "/client-media/after-market/spare-parts.jpg",
-    body: "Supply of required spares at competitive prices with the minimum lead time possible. Special spares are stocked for easy availability, and customized spare parts management solutions can be offered on request.",
+    title: "Refurbishment & Recertification",
+    image: "/client-media/after-market/refurbishment.jpg",
+    body: "Restoration of aged equipment including complete revamp: inspection, testing, repairing, replacing and upgrading worn components, followed by recertification - at our facility or at the customer site.",
   },
   {
     title: "Preventive Maintenance",
-    image: "/client-media/after-market/preventive-maintenance.jpg",
+    image: "/client-media/after-market/preventive-maintanace-2-new-blurred.webp",
     body: "Timely preventive maintenance is key to proper and safe site operations. Well-trained personnel carry out the necessary health checks, repair and periodic maintenance.",
   },
   {
@@ -168,9 +168,9 @@ export const SERVICES = [
     body: "A qualified team of service engineers and technicians equipped for troubleshooting and site repair works with minimum equipment downtime, onshore and offshore, including equipment supplied by other manufacturers.",
   },
   {
-    title: "Refurbishment & Recertification",
-    image: "/client-media/after-market/refurbishment.jpg",
-    body: "Restoration of aged equipment including complete revamp: inspection, testing, repairing, replacing and upgrading worn components, followed by recertification - at our facility or at the customer site.",
+    title: "Spare Parts Management",
+    image: "/client-media/after-market/spareparts-management-3-new.webp",
+    body: "Supply of required spares at competitive prices with the minimum lead time possible. Special spares are stocked for easy availability, and customized spare parts management solutions can be offered on request.",
   },
 ] as const;
 

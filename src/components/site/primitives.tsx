@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import { cn } from "@/lib/utils";
+import { HeroScroller } from "@/components/site/hero-scroller";
 
 /* ---------- Scroll reveal ---------- */
 
@@ -300,18 +301,19 @@ export function PageHero({
   breadcrumbs?: { label: string; to?: string }[];
 }) {
   return (
-    <section className="relative isolate overflow-hidden surface-dark">
+    <section className="relative isolate overflow-hidden surface-dark flex flex-col justify-end min-h-[40vh] md:min-h-[50vh]">
       <img
         src={image}
         alt={imageAlt}
-        className="absolute inset-0 -z-10 size-full object-cover opacity-30"
+        className="absolute inset-0 -z-10 size-full object-cover mix-blend-screen opacity-60"
         loading="eager"
         width={1600}
         height={900}
       />
-      <div className="absolute inset-0 -z-10 bg-gradient-to-r from-navy-deep via-navy-deep/85 to-navy-deep/40" />
-      <div className="absolute inset-0 -z-10 tech-grid opacity-40" aria-hidden="true" />
-      <div className="container-vt pt-28 pb-16 md:pt-40 md:pb-24">
+      <div className="absolute inset-0 -z-10 bg-navy-deep/80" />
+      <div className="absolute inset-0 -z-10 bg-gradient-to-r from-navy-deep via-navy-deep/60 to-transparent" />
+      <div className="absolute inset-0 -z-10 tech-grid opacity-20" aria-hidden="true" />
+      <div className="container-vt w-full pt-12 pb-8 md:pt-16 md:pb-12 mt-auto relative z-10">
         {breadcrumbs && breadcrumbs.length > 0 ? (
           <nav aria-label="Breadcrumb" className="mb-6 flex items-center gap-2 text-sm text-on-navy-muted">
             {breadcrumbs.map((crumb, idx) => {
@@ -344,6 +346,7 @@ export function PageHero({
           </p>
         ) : null}
       </div>
+      <HeroScroller />
     </section>
   );
 }

@@ -83,11 +83,11 @@ function AboutPage() {
   return (
     <>
       <PageHero
-        eyebrow=""
-        title="Engineering dependable control systems for critical energy operations"
-        lead="Veetech Automation FZE designs, manufactures, tests and supports wellhead control, chemical injection and modular automation packages from our facility in the UAE."
-        image={heroFacility}
-        imageAlt="Veetech industrial fabrication facility"
+        eyebrow="About Us"
+        title="Engineering the Future of Energy"
+        lead="A legacy of innovation, precision, and reliable control solutions since 2003."
+        image="/client-media/banners/hero-about.webp"
+        imageAlt="Veetech Automation Facility"
         breadcrumbs={[
           { label: "Home", to: "/" },
           { label: "About Us" }
@@ -139,19 +139,18 @@ function AboutPage() {
             <SectionHeading eyebrow="Our History" title="From Versatech to Veetech" />
           </Reveal>
           
-          <div className="mt-14 grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            {/* Left Image Column */}
-            <Reveal className="relative h-full min-h-[300px] lg:min-h-[500px] w-full rounded-2xl overflow-hidden shadow-2xl border border-border/50">
+          <div className="mt-14 flex flex-col gap-12 lg:gap-16">
+            {/* Top Image */}
+            <Reveal className="relative w-full flex items-center justify-center">
                <img 
                  src="/client-media/about/factory_building.jpg" 
                  alt="Veetech History" 
-                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                 className="w-full h-auto rounded-2xl shadow-xl object-contain"
                />
-               <div className="absolute inset-0 bg-gradient-to-t from-navy-deep/80 via-transparent to-transparent opacity-60" />
             </Reveal>
 
-            {/* Right Timeline Column */}
-            <ol className="grid gap-px border border-border bg-border sm:grid-cols-2 h-full">
+            {/* Bottom Timeline Row */}
+            <ol className="grid gap-px border border-border bg-border sm:grid-cols-2 lg:grid-cols-4 w-full">
               {timeline.map((t, i) => (
                 <Reveal as="li" key={t.marker} delay={i * 60}>
                   <div className="h-full bg-background p-8 hover:bg-accent/5 transition-colors">

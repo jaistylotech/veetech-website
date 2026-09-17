@@ -1,5 +1,5 @@
 import { useRef, useState, useEffect } from "react";
-import { Link } from "@tanstack/react-router";
+import { Link, useLocation } from "@tanstack/react-router";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { QUICK_LINKS } from "@/lib/site-data";
 import { cn } from "@/lib/utils";
@@ -8,6 +8,8 @@ export function HeroScroller() {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(true);
+  const location = useLocation();
+  const isHomePage = location.pathname === "/";
 
   const checkScroll = () => {
     if (scrollContainerRef.current) {
@@ -36,8 +38,8 @@ export function HeroScroller() {
   };
 
   return (
-    <div className="z-20 flex w-full justify-end self-end lg:w-[85%] xl:w-3/4">
-      <div className="flex w-full items-stretch bg-navy-deep/90 backdrop-blur-md shadow-2xl text-on-navy border-t-2 border-accent md:rounded-tl-2xl overflow-hidden">
+    <div className="z-20 flex w-full justify-end self-end lg:w-auto max-w-full">
+      <div className="flex w-full lg:w-auto items-stretch bg-navy-deep/90 backdrop-blur-md shadow-2xl text-on-navy border-t-2 border-accent md:rounded-tl-2xl overflow-hidden">
         {/* Scroller Container */}
         <div className="relative flex min-w-0 flex-1 items-center">
           <button
@@ -55,7 +57,7 @@ export function HeroScroller() {
           <div
             ref={scrollContainerRef}
             onScroll={checkScroll}
-            className="hero-scroll-container flex w-full items-center gap-8 overflow-x-auto px-6 py-3 scroll-smooth"
+            className="hero-scroll-container flex w-full lg:w-auto items-center gap-8 overflow-x-auto px-6 py-3 scroll-smooth"
             style={{ msOverflowStyle: 'none', scrollbarWidth: 'none' }}
           >
             <style>{`
@@ -64,14 +66,24 @@ export function HeroScroller() {
               }
             `}</style>
             
-            {QUICK_LINKS.map((link, i) => (
+            {!isHomePage && (
+              <Link
+                to="/"
+                activeProps={{ className: "text-accent scale-105" }}
+                inactiveProps={{ className: "text-on-navy-muted hover:text-accent" }}
+                className="shrink-0 text-sm font-bold tracking-wide transition-all duration-300 whitespace-nowrap uppercase transform hover:scale-110 hover:-translate-y-0.5"
+              >
+                HOME
+              </Link>
+            )}
+            
+            {QUICK_LINKS.map((link) => (
               <Link
                 key={link.label}
                 to={link.to}
-                className={cn(
-                  "shrink-0 text-sm font-bold tracking-wide transition-colors whitespace-nowrap uppercase",
-                  i === 0 ? "text-accent" : "text-on-navy-muted hover:text-white"
-                )}
+                activeProps={{ className: "text-accent scale-105" }}
+                inactiveProps={{ className: "text-on-navy-muted hover:text-accent" }}
+                className="shrink-0 text-sm font-bold tracking-wide transition-all duration-300 whitespace-nowrap uppercase transform hover:scale-110 hover:-translate-y-0.5"
               >
                 {link.label}
               </Link>
