@@ -73,7 +73,7 @@ export function ScrollToTop() {
           />
           {/* Progress circle */}
           <circle
-            className="text-accent transition-all duration-200 ease-out"
+            className="text-accent"
             stroke="currentColor"
             fill="transparent"
             strokeWidth="2.5"
