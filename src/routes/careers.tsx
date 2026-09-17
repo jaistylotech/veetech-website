@@ -1,9 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, Briefcase, PlayCircle, Star, Users } from "lucide-react";
+import { ArrowRight, Briefcase, PlayCircle, Star, Users, Mail } from "lucide-react";
 
 import { PageHero, Reveal, CtaSection } from "@/components/site/primitives";
 import engineeringImg from "@/assets/engineering.jpg";
-import ctaPlant from "@/assets/cta-plant.jpg";
 
 export const Route = createFileRoute("/careers")({
   head: () => ({
@@ -224,30 +223,38 @@ function CareersPage() {
         </div>
       </section>
 
-      <section className="relative isolate overflow-hidden py-16 sm:py-24 lg:py-32">
+      <section className="relative isolate overflow-hidden py-24 sm:py-32 lg:py-40">
         <img
-          src={ctaPlant}
-          alt="Engineering plant"
-          className="absolute inset-0 -z-10 h-full w-full object-cover"
+          src="/client-media/careers/careers-cta-bg.png"
+          alt="Careers at Veetech Automation"
+          className="absolute inset-0 -z-10 h-full w-full object-cover object-right"
         />
-        <div className="absolute inset-0 -z-10 bg-navy/80 mix-blend-multiply" />
+        {/* Dark gradient overlay for text readability on the left */}
+        <div className="absolute inset-0 -z-10 bg-gradient-to-r from-navy/95 via-navy/80 to-transparent" />
         
-        <div className="container-vt text-center">
-          <div className="mx-auto max-w-2xl">
-            <h2 className="font-display text-3xl font-bold tracking-tight text-white sm:text-4xl">
+        <div className="container-vt relative z-10">
+          <div className="max-w-2xl text-left">
+            {/* Eyebrow */}
+            <div className="flex items-center gap-4 mb-6">
+              <div className="w-12 h-[2px] bg-accent"></div>
+              <span className="text-white tracking-[0.2em] font-semibold text-sm uppercase">Careers</span>
+            </div>
+            
+            <h2 className="font-display text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl mb-6">
               Send Us Your CV
             </h2>
-            <p className="mt-6 text-lg leading-8 text-slate-300">
+            
+            <p className="text-lg leading-relaxed text-slate-300 mb-10 max-w-xl">
               Don't see a role that fits? We review every application from engineers and technicians with energy-sector experience.
             </p>
-            <div className="mt-10 flex items-center justify-center gap-x-6">
-              <a
-                href="mailto:careers@veetech.ae"
-                className="rounded-md bg-accent px-8 py-3.5 text-sm font-semibold text-navy shadow-sm hover:brightness-110 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent transition-all"
-              >
-                Email careers@veetech.ae
-              </a>
-            </div>
+            
+            <a
+              href="mailto:careers@veetech.ae"
+              className="inline-flex items-center justify-center gap-3 rounded-md bg-accent px-8 py-4 text-base font-bold text-navy shadow-lg hover:brightness-110 hover:-translate-y-1 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent transition-all duration-300"
+            >
+              <Mail className="w-5 h-5" />
+              Email careers@veetech.ae
+            </a>
           </div>
         </div>
       </section>
