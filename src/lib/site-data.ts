@@ -50,7 +50,7 @@ export const NAV = [
   { label: "After Market Services", to: "/after-market-services" },
   { label: "Infrastructure", to: "/infrastructure" },
   { label: "Career", to: "/careers" },
-  { label: "Contact Us", to: "/contact-us" },
+  { label: "Contact Us", to: "/contact" },
 ] as const;
 
 export const CAPABILITIES = [
