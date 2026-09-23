@@ -60,7 +60,7 @@ const timeline = [
   {
     marker: "Today",
     title: "A leading solution provider",
-    body: "With the vast knowledge of its people, world-class manufacturing and quality systems, and a track record of successful projects, the company has emerged as a leading solution provider in the energy industry.",
+    body: "With the vast knowledge of its people, world-class manufacturing and quality systems, and a track record of successful projects execution, the company has emerged as a leading solution provider in the energy industry.",
   },
 ];
 
@@ -97,13 +97,13 @@ function AboutPage() {
       <section className="section-y">
         <div className="container-vt grid gap-12 lg:grid-cols-[1.1fr_1fr] lg:gap-20">
           <Reveal>
-            <SectionHeading eyebrow="Company Overview" title="Specialized and reliable solutions for the industry" />
+            <SectionHeading eyebrow="Company Overview" title="Specialized and reliable solutions for the Energy Industry" />
             <div className="mt-6 space-y-5 text-base leading-relaxed text-muted-foreground">
               <p>
                 Veetech Automation FZE has proven expertise over four decades of experience in
                 delivering complex projects, right from concept to successful implementation. Located
                 in Jebel Ali Free Zone, Dubai, UAE, the company offers specialized and reliable
-                solutions for the industry.
+                solutions for the Energy Industry.
               </p>
               <p>
                 Armed with a team of experienced professionals and a world-class manufacturing
@@ -112,7 +112,7 @@ function AboutPage() {
                 become prominent in the energy sector.
               </p>
               <p>
-                Veetech Automation FZE offers capabilities in industrial control automation and packaged
+                Veetech Automation FZE offers capabilities in hydraulic, electric & automation based control systems and Skid packaged
                 solutions to the energy industry. A proven track record of 2000+ projects is a
                 testimony to the company's success.
               </p>

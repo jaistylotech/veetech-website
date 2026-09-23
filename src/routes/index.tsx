@@ -181,9 +181,9 @@ function HomePage() {
               />
               <p className="mt-5 text-base leading-relaxed text-muted-foreground">
                 Located in Jebel Ali Free Zone, Dubai, UAE, the company offers specialized and reliable
-                solutions for the industry. Backed by a team of experienced professionals and a
-                world-class manufacturing facility, its capabilities in industrial control automation
-                and packaged solutions to the energy industry.
+                solutions for the Energy Industry. Backed by a team of experienced professionals and a
+                world-class manufacturing facility, its capabilities in hydraulic, electric & automation based control systems
+                and Skid packaged solutions to the energy industry.
               </p>
             </div>
 
@@ -221,7 +221,7 @@ function HomePage() {
             <SectionHeading
               eyebrow="Capabilities"
               title="From Design to Deployment"
-              lead="At Veetech, Engineering excellence drives everything we do. From design and manufacturing to site installation and commissioning, we deliver reliable solutions for the energy sector."
+              lead="At Veetech, Engineering excellence drives everything we do. From Design and Manufacturing to Site Installation and Commissioning, we deliver reliable solutions for the energy sector."
             />
           </Reveal>
           <Reveal delay={80}>
