@@ -28,7 +28,7 @@ const systemDetails = [
   "Nitrogen receiver (buffer vessel) to stabilize flow and pressure (where applicable)",
   "Instrumentation for monitoring nitrogen purity and system performance",
   "Flow measurement and control devices for regulating production rate.",
-  "Control panel for system operation, alarms, and integration with plant systems"
+  "Control panel for system operation, alarms and integration with plant systems"
 ];
 
 const engineeringCapabilities = [
@@ -82,7 +82,7 @@ function NitrogenGeneratorPackagesPage() {
                 </h2>
                 <div className="mt-6 w-16 h-1 bg-accent rounded-full" />
                 <p className="mt-8 text-base md:text-lg leading-relaxed text-muted-foreground">
-                  A nitrogen generator package is a self-contained system designed to produce high-purity nitrogen gas on-site from compressed air, ensuring a reliable supply for critical industrial applications like purging, blanketing, and safety processes.
+                  A nitrogen generator package is a self-contained system designed to produce high-purity nitrogen gas on-site from compressed air, ensuring a reliable supply for critical industrial applications like purging, blanketing and safety processes.
                 </p>
                 
                 <div className="mt-10 flex">

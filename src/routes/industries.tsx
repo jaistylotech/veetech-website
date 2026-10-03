@@ -8,13 +8,13 @@ import { CtaSection, PageHero, Reveal, SectionHeading } from "@/components/site/
 export const Route = createFileRoute("/industries")({
   head: () => ({
     meta: [
-      { title: "Industries Served â€” Upstream Oil & Gas, Petrochemical, Power & Water" },
+      { title: "Industries Served — Upstream Oil & Gas, Petrochemical, Power & Water" },
       {
         name: "description",
         content:
           "Veetech Automation serves upstream oil and gas, offshore, petrochemical, power generation, water and industrial process markets across the UAE and wider region.",
       },
-      { property: "og:title", content: "Industries Served â€” Veetech Automation FZE" },
+      { property: "og:title", content: "Industries Served — Veetech Automation FZE" },
       {
         property: "og:description",
         content:
@@ -43,7 +43,7 @@ function IndustriesPage() {
       <PageHero
         eyebrow="Industries"
         title="Delivering excellence across the energy value chain"
-        lead="Our custom-engineered packages and control systems support critical operations in upstream, midstream, and downstream sectors worldwide."
+        lead="Our custom-engineered packages and control systems support critical operations in upstream, midstream and downstream sectors worldwide."
         image={offshore}
         imageAlt="Offshore oil platform and industrial facility"
         breadcrumbs={[

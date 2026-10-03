@@ -149,7 +149,7 @@ function InfrastructurePage() {
                   Built for Infinite Scale
                 </h3>
                 <p className="text-slate-300 text-[0.95rem] md:text-base leading-relaxed">
-                  Our facility features dedicated, climate-controlled zones for fabrication, assembly, and rigorous testing, ensuring rapid capacity augmentation for projects of any magnitude.
+                  Our facility features dedicated, climate-controlled zones for fabrication, assembly and rigorous testing, ensuring rapid capacity augmentation for projects of any magnitude.
                 </p>
               </Reveal>
             </div>

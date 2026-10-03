@@ -14,7 +14,7 @@ import { CtaSection, PageHero, Reveal, SectionHeading } from "@/components/site/
 export const Route = createFileRoute("/solutions/")({
   head: () => ({
     meta: [
-      { title: "Products & Solutions â€” Chemical Injection, Wellhead Control & Skids" },
+      { title: "Products & Solutions — Chemical Injection, Wellhead Control & Skids" },
       {
         name: "description",
         content:
@@ -109,7 +109,7 @@ function SolutionsPage() {
       <PageHero
         eyebrow="Products & Solutions"
         title="Solutions Engineered for the Energy Sector"
-        lead="The entire range of chemical injection systems, wellhead control systems, modular skid packages and customized engineered solutions â€” designed, engineered, manufactured and tested to international standards."
+        lead="The entire range of chemical injection systems, wellhead control systems, modular skid packages and customized engineered solutions — designed, engineered, manufactured and tested to international standards."
         image="/client-media/banners/hero-products.webp"
         imageAlt="Offshore oil and gas platform at sunset"
         breadcrumbs={[

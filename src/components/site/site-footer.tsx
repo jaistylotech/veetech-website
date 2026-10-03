@@ -1,4 +1,4 @@
-﻿import { Link } from "@tanstack/react-router";
+import { Link } from "@tanstack/react-router";
 import { Mail, MapPin, Phone, Linkedin } from "lucide-react";
 import { COMPANY } from "@/lib/site-data";
 
@@ -8,7 +8,7 @@ const columns = [
     links: [
       { label: "About Us", to: "/about" },
       { label: "Infrastructure", to: "/infrastructure" },
-      { label: "Careers", to: "/careers" },
+      { label: "CAREERS", to: "/careers" },
       { label: "Contact Us", to: "/contact" },
     ],
   },

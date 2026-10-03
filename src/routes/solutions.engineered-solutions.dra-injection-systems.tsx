@@ -25,7 +25,7 @@ const systemDetails = [
   "Metering pumps for controlled injection into the pipeline",
   "Flow measurement and control devices to regulate dosing rate",
   "Heating system (if required) to maintain suitable fluid properties",
-  "Control panel for operation, monitoring, and system integration"
+  "Control panel for operation, monitoring and system integration"
 ];
 
 const engineeringCapabilities = [

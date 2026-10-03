@@ -5,13 +5,13 @@ import { COMPANY } from "@/lib/site-data";
 export const Route = createFileRoute("/terms")({
   head: () => ({
     meta: [
-      { title: "Terms & Conditions â€” Veetech Automation FZE" },
+      { title: "Terms & Conditions — Veetech Automation FZE" },
       {
         name: "description",
         content:
           "Terms governing the use of the Veetech Automation FZE website and the information published on it.",
       },
-      { property: "og:title", content: "Terms & Conditions â€” Veetech Automation FZE" },
+      { property: "og:title", content: "Terms & Conditions — Veetech Automation FZE" },
       { property: "og:description", content: "Website terms of use and content disclaimer." },
       { property: "og:url", content: "/terms" },
       { property: "og:type", content: "website" },
@@ -34,7 +34,7 @@ function TermsPage() {
         <h2 className="font-display text-lg font-semibold text-foreground">Content and accuracy</h2>
         <p>
           Product and service descriptions are provided for general information. Specifications,
-          configurations and scope are confirmed only in a written quotation or contract, and are
+          configurations and scope are confirmed only in a written quotation or contract and are
           subject to change as designs are developed to customer requirements.
         </p>
         <h2 className="font-display text-lg font-semibold text-foreground">Intellectual property</h2>

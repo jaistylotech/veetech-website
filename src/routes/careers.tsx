@@ -22,14 +22,14 @@ function CareersPage() {
   return (
     <>
       <PageHero
-        eyebrow="Careers"
+        eyebrow="CAREERS"
         title="Achieving Greater Heights Through Innovation"
         lead="Join a team of dedicated professionals delivering mission-critical control systems to the world's leading energy companies."
         image="/client-media/banners/hero-careers.webp"
         imageAlt="Veetech engineering team collaborating"
         breadcrumbs={[
           { label: "Home", to: "/" },
-          { label: "Careers" }
+          { label: "CAREERS" }
         ]}
       />
 
@@ -103,7 +103,7 @@ function CareersPage() {
                     <span className="absolute -top-8 -left-6 text-8xl text-accent/20 font-serif leading-none select-none">"</span>
                     
                     <p className="text-xl md:text-2xl text-slate-700 font-medium leading-relaxed relative z-10">
-                      We believe that true innovation stems from empowering our people, providing them with the right tools, and trusting their expertise on the field.
+                      We believe that true innovation stems from empowering our people, providing them with the right tools and trusting their expertise on the field.
                     </p>
                     
                     <div className="mt-8 flex items-center gap-4">
@@ -165,13 +165,13 @@ function CareersPage() {
                 <p className="text-sm text-slate-500 mb-8 flex-grow">
                   Lead mission-critical Wellhead Control Panel projects from design basis through commissioning.
                 </p>
-                <Link 
-                  to="/contact" 
+                <a 
+                  href="mailto:careers@veetech.ae?subject=Application%20for%20Senior%20Project%20Engineer%20%E2%80%93%20WHCP" 
                   className="inline-flex items-center gap-2 text-navy font-semibold text-sm group-hover:text-accent transition-colors mt-auto"
                 >
-                  More Details
+                  Apply & Details
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </Link>
+                </a>
               </div>
             </Reveal>
 
@@ -187,13 +187,13 @@ function CareersPage() {
                 <p className="text-sm text-slate-500 mb-8 flex-grow">
                   Manage Chemical Injection Systems projects, ensuring compliance with international API and ASME standards.
                 </p>
-                <Link 
-                  to="/contact" 
+                <a 
+                  href="mailto:careers@veetech.ae?subject=Application%20for%20Project%20Engineer%20CIS" 
                   className="inline-flex items-center gap-2 text-navy font-semibold text-sm group-hover:text-accent transition-colors mt-auto"
                 >
-                  More Details
+                  Apply & Details
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </Link>
+                </a>
               </div>
             </Reveal>
 
@@ -207,15 +207,15 @@ function CareersPage() {
                   Sales Coordinators
                 </h3>
                 <p className="text-sm text-slate-500 mb-8 flex-grow">
-                  Support the commercial team in bidding, client coordination, and business development for packaged solutions.
+                  Support the commercial team in bidding, client coordination and business development for packaged solutions.
                 </p>
-                <Link 
-                  to="/contact" 
+                <a 
+                  href="mailto:careers@veetech.ae?subject=Application%20for%20Sales%20Coordinator" 
                   className="inline-flex items-center gap-2 text-navy font-semibold text-sm group-hover:text-accent transition-colors mt-auto"
                 >
-                  More Details
+                  Apply & Details
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </Link>
+                </a>
               </div>
             </Reveal>
 

@@ -33,13 +33,13 @@ import { ClientMarquee } from "@/components/site/client-marquee";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Veetech Automation FZE â€” Industrial Control Automation, Dubai UAE" },
+      { title: "Veetech Automation FZE — Industrial Control Automation, Dubai UAE" },
       {
         name: "description",
         content:
           "Veetech Automation FZE engineers chemical injection systems, wellhead control systems and modular skid packages for the energy sector, from Jebel Ali Free Zone, Dubai.",
       },
-      { property: "og:title", content: "Veetech Automation FZE â€” Engineering Control. Powering Energy." },
+      { property: "og:title", content: "Veetech Automation FZE — Engineering Control. Powering Energy." },
       {
         property: "og:description",
         content:
@@ -272,7 +272,7 @@ function HomePage() {
             <SectionHeading
               eyebrow="After-Market Services"
               title="Engineering Support Beyond Delivery"
-              lead="Veetech Automation's extensive field service along with a dedicated after-market team ensures comprehensive support for onsite installation, commissioning, start-up, and maintenance of the equipment supplied worldwide."
+              lead="Veetech Automation's extensive field service along with a dedicated after-market team ensures comprehensive support for onsite installation, commissioning, start-up and maintenance of the equipment supplied worldwide."
             />
           </Reveal>
 

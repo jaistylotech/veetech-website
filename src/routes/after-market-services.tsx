@@ -14,7 +14,7 @@ export const Route = createFileRoute("/after-market-services")({
       {
         name: "description",
         content:
-          "Comprehensive support for onsite installation, commissioning, start-up, and maintenance of equipment supplied worldwide.",
+          "Comprehensive support for onsite installation, commissioning, start-up and maintenance of equipment supplied worldwide.",
       },
     ],
   }),
@@ -27,7 +27,7 @@ const TABS_DATA = [
     title: "Installation & Commissioning",
     icon: Settings,
     image: "/client-media/after-market/installation-commissioning-new.webp",
-    mainText: "Veetech Automation has the in-house capabilities to provide its valued customers with all the necessary services related to onsite installation, pre-commissioning, and commissioning activities for the entire range of products and solution packages.",
+    mainText: "Veetech Automation has the in-house capabilities to provide its valued customers with all the necessary services related to onsite installation, pre-commissioning and commissioning activities for the entire range of products and solution packages.",
     highlightText: "Veetech Automation's dedicated team is highly proficient and has all the necessary skills and expertise to manage all the project activities at the site competently and at the same time working in a safe and efficient manner.",
     bgNumber: "01",
   },
@@ -56,7 +56,7 @@ const TABS_DATA = [
     icon: Activity,
     image: "/client-media/after-market/troubleshooting_white_bg_clear_hd_cropped.png",
     objectFit: "contain",
-    mainText: "Veetech Automation provides rapid troubleshooting and repair services for hydraulic, pneumatic, and electrical control systems directly at the client site.",
+    mainText: "Veetech Automation provides rapid troubleshooting and repair services for hydraulic, pneumatic and electrical control systems directly at the client site.",
     highlightText: "Our field engineers are equipped with the expertise and tools necessary to diagnose complex issues quickly, ensuring swift restoration of your operations.",
     bgNumber: "04",
   },
@@ -81,7 +81,7 @@ function AfterMarketServicesPage() {
       <PageHero
         eyebrow="After Market Services"
         title="Delivering Operational Excellence"
-        lead="Dedicated support for installation, commissioning, and lifecycle maintenance worldwide."
+        lead="Dedicated support for installation, commissioning and lifecycle maintenance worldwide."
         image="/client-media/banners/hero-services.webp"
         imageAlt="After Market Services Banner"
         breadcrumbs={[
@@ -104,10 +104,10 @@ function AfterMarketServicesPage() {
                 
                 <div className="prose max-w-none text-slate-600 leading-relaxed text-lg mb-10">
                   <p className="mb-6">
-                    Veetech Automation's extensive field service along with a dedicated after-market team ensures comprehensive support for onsite installation, commissioning, start-up, and maintenance of the equipment supplied worldwide.
+                    Veetech Automation's extensive field service along with a dedicated after-market team ensures comprehensive support for onsite installation, commissioning, start-up and maintenance of the equipment supplied worldwide.
                   </p>
                   <p>
-                    Veetech Automation is a one-stop solution provider for commissioning, troubleshooting & repair, refurbishment, and preventive maintenance services for its loyal customers.
+                    Veetech Automation is a one-stop solution provider for commissioning, troubleshooting & repair, refurbishment and preventive maintenance services for its loyal customers.
                   </p>
                 </div>
 

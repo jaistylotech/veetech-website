@@ -13,7 +13,7 @@ export const Route = createFileRoute(
       {
         name: "description",
         content:
-          "Power flushing hydraulic systems to eliminate sludge, varnish, debris, and contaminated or degraded fluid.",
+          "Power flushing hydraulic systems to eliminate sludge, varnish, debris and contaminated or degraded fluid.",
       },
     ],
   }),
@@ -63,7 +63,7 @@ function FlushingPage() {
               <Reveal>
                 <div className="prose max-w-none text-slate-600 leading-relaxed text-lg">
                   <p className="mb-6">
-                    The main objective of Veetech Automation's power flushing hydraulic system is to eliminate sludge, varnish, debris, and contaminated or degraded fluid from conductor walls, other internal surfaces as well as system's dead spots.
+                    The main objective of Veetech Automation's power flushing hydraulic system is to eliminate sludge, varnish, debris and contaminated or degraded fluid from conductor walls, other internal surfaces as well as system's dead spots.
                   </p>
                   <p>
                     Analysis of the flushing fluid is performed regularly during the power flushing operation to determine the point at which the system has been cleaned completely to achieve the optimum level of cleanliness.

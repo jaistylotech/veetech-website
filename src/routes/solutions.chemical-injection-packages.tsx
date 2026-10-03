@@ -11,13 +11,13 @@ import { ImageSlider } from "@/components/site/image-slider";
 export const Route = createFileRoute("/solutions/chemical-injection-packages")({
   head: () => ({
     meta: [
-      { title: "Chemical Injection Packages â€” Chemical Injection Systems, Dubai UAE" },
+      { title: "Chemical Injection Packages — Chemical Injection Systems, Dubai UAE" },
       {
         name: "description",
         content:
           "Customized chemical injection skids for controlled chemical dosing: single and multi-point injection, IRCD, PLC/RTU & SCADA control and solar-powered skids.",
       },
-      { property: "og:title", content: "Chemical Injection Packages â€” Veetech Automation FZE" },
+      { property: "og:title", content: "Chemical Injection Packages — Veetech Automation FZE" },
       {
         property: "og:description",
         content:
@@ -78,7 +78,7 @@ function ChemicalInjectionPage() {
       <PageHero
         eyebrow="Products"
         title="Chemical Injection Packages"
-        lead="Custom-engineered chemical injection packages for accurate and reliable dosing in critical upstream, midstream, and downstream applications."
+        lead="Custom-engineered chemical injection packages for accurate and reliable dosing in critical upstream, midstream and downstream applications."
         image={chemicalSkid}
         imageAlt="Chemical injection skid package at fabrication facility"
         breadcrumbs={[

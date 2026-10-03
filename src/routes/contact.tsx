@@ -154,7 +154,7 @@ function ContactPage() {
             <Reveal delay={80}>
               <SectionHeading 
                 eyebrow="Global Reach" 
-                title="Our Regional Offices" 
+                title="Our Regional Sales Offices" 
                 lead="We support our customers globally through our widespread network of regional offices and dedicated sales teams." 
               />
               

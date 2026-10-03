@@ -30,16 +30,16 @@ const systemDetails = [
 ];
 
 const engineeringCapabilities = [
-  "Overpressure Protection: Protects pipelines, pumps, and downstream equipment from transient overpressure and hydraulic shocks.",
+  "Overpressure Protection: Protects pipelines, pumps and downstream equipment from transient overpressure and hydraulic shocks.",
   "Transient Event Response: Rapidly responds to operational triggers such as sudden pump trips, fast valve closures, or sudden flow changes.",
   "Asset Longevity: Reduces mechanical stress on piping and equipment, extending total system operational life.",
   "Controlled Fluid Handling: Provides safe and controlled containment/handling of relieved fluids."
 ];
 
 const applicationAreas = [
-  "Liquid Pipelines: Hydrocarbon, crude oil, and industrial water pipelines.",
+  "Liquid Pipelines: Hydrocarbon, crude oil and industrial water pipelines.",
   "Pumping & Transfer Stations: Mainline pump stations and fluid transfer facilities.",
-  "Terminal & Storage Facilities: Tank farms, loading/unloading terminals, and marine facilities.",
+  "Terminal & Storage Facilities: Tank farms, loading/unloading terminals and marine facilities.",
   "Process Plants: Industrial facilities experiencing dynamic flow conditions.",
   "Long-Distance Transmission Systems: High-pressure fluid delivery networks."
 ];

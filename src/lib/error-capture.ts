@@ -11,7 +11,7 @@ function record(error: unknown) {
 // h3's HTTPError serializes to {"status":500,"unhandled":true,"message":"HTTPError"} -
 // no stack, no cause - so a plain console.error(error) reaches the log pipeline with
 // the failure detail stripped. Expand Error-like args into a string that keeps the
-// message, stack, and the full cause chain.
+// message, stack and the full cause chain.
 const CAUSE_DEPTH_LIMIT = 5;
 const DESCRIPTION_LENGTH_LIMIT = 8_000;
 

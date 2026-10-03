@@ -21,7 +21,7 @@ import { CERTIFICATIONS, MARKETS } from "@/lib/site-data";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About Veetech Automation FZE â€” Four Decades in the Energy Sector" },
+      { title: "About Veetech Automation FZE — Four Decades in the Energy Sector" },
       {
         name: "description",
         content:
@@ -60,7 +60,7 @@ const timeline = [
   {
     marker: "Today",
     title: "A leading solution provider",
-    body: "With the vast knowledge of its people, world-class manufacturing and quality systems, and a track record of successful projects execution, the company has emerged as a leading solution provider in the energy industry.",
+    body: "With the vast knowledge of its people, world-class manufacturing and quality systems and a track record of successful projects execution, the company has emerged as a leading solution provider in the energy industry.",
   },
 ];
 
@@ -85,7 +85,7 @@ function AboutPage() {
       <PageHero
         eyebrow="About Us"
         title="Engineering the Future of Energy"
-        lead="A legacy of innovation, precision, and reliable control solutions since 2003."
+        lead="A legacy of innovation, precision and reliable control solutions since 2003."
         image="/client-media/banners/hero-about.webp"
         imageAlt="Veetech Automation Facility"
         breadcrumbs={[
@@ -108,7 +108,7 @@ function AboutPage() {
               <p>
                 Armed with a team of experienced professionals and a world-class manufacturing
                 facility, the company has carved a niche in the market. Being responsive, flexible
-                and focused on customer needs are the core values of the company, and have helped it
+                and focused on customer needs are the core values of the company and have helped it
                 become prominent in the energy sector.
               </p>
               <p>

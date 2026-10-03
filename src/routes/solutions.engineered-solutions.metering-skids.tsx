@@ -21,21 +21,21 @@ export const Route = createFileRoute("/solutions/engineered-solutions/metering-s
 });
 
 const systemDetails = [
-  "Meter runs (often dual 100% or 2 Ãƒâ€” 110%) equipped with high-accuracy Coriolis flow meters for direct mass measurement",
+  "Meter runs (often dual 100% or 2 Ãƒ— 110%) equipped with high-accuracy Coriolis flow meters for direct mass measurement",
   "Pressure & Temperature transmitters to Monitor Process parameters",
-  "Flow computers to calculate standardized flow, totalization, and diagnostics in compliance with industry standards (e.g., API MPMS)",
+  "Flow computers to calculate standardized flow, totalization and diagnostics in compliance with industry standards (e.g., API MPMS)",
   "Inlet filtration (basket filters/strainers) to protect meters and ensure measurement integrity",
   "Piping configuration (often Z-type or parallel streams) to allow continuous operation and meter proving/checking",
   "Sampling system (manual or automatic) for product quality verification",
-  "Control and instrumentation panels for data acquisition, communication (Modbus/SCADA), and audit logging"
+  "Control and instrumentation panels for data acquisition, communication (Modbus/SCADA) and audit logging"
 ];
 
 const engineeringCapabilities = [
   "Designed for single-phase liquid hydrocarbons, ensuring operation above bubble point to avoid flashing",
   "Handles light hydrocarbons with potential gas breakout, incorporating venting and safeguards against two-phase flow",
-  "Achieves high accuracy (Ã¢â€°Ë† Ã‚Â±0.15%) and repeatability, suitable for fiscal metering systems",
+  "Achieves high accuracy (≈ ±0.15%) and repeatability, suitable for fiscal metering systems",
   "Supports redundancy and verification through parallel meter runs (duty + check stream)",
-  "Integrates with facility systems for real-time monitoring, reporting, and fiscal metering compliance"
+  "Integrates with facility systems for real-time monitoring, reporting and fiscal metering compliance"
 ];
 
 function MeteringSkidsPage() {

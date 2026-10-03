@@ -10,13 +10,13 @@ import { ImageSlider } from "@/components/site/image-slider";
 export const Route = createFileRoute("/solutions/modular-packages")({
   head: () => ({
     meta: [
-      { title: "Modular Skid Packages â€” Wellsite Packages & Pressure Reduction Stations" },
+      { title: "Modular Skid Packages — Wellsite Packages & Pressure Reduction Stations" },
       {
         name: "description",
         content:
           "Modular wellsite packages for oil, gas and injection wells, plus pressure reduction stations, N2 generator systems, lube oil systems and dry gas seal panels.",
       },
-      { property: "og:title", content: "Modular Wellsite Packages â€” Veetech Automation FZE" },
+      { property: "og:title", content: "Modular Wellsite Packages — Veetech Automation FZE" },
       {
         property: "og:description",
         content:
@@ -41,7 +41,7 @@ const scope = [
   },
   {
     title: "N2 Generator Systems",
-    body: "Nitrogen generator systems using innovative and highly efficient nitrogen membranes that require 10â€“40% less compressed air than other systems available in the market. A purity of 99% or more can be achieved with membrane technology, in a skid-mounted or containerized installation â€” lightweight, portable, completely piped and wired, offered as a turn-key solution.",
+    body: "Nitrogen generator systems using innovative and highly efficient nitrogen membranes that require 10–40% less compressed air than other systems available in the market. A purity of 99% or more can be achieved with membrane technology, in a skid-mounted or containerized installation — lightweight, portable, completely piped and wired, offered as a turn-key solution.",
   },
   {
     title: "Lube Oil Systems",

@@ -30,7 +30,7 @@ const LIST_COLUMN_1 = [
 
 const LIST_COLUMN_2 = [
   "Solutions to Emergency Situations",
-  "Technical Advice, Support, and Consultations",
+  "Technical Advice, Support and Consultations",
   "Spare Parts In-Stock Management",
   "Emergency Spare Parts Management",
 ];

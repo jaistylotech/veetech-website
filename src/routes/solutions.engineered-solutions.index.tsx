@@ -11,13 +11,13 @@ import { CtaSection, PageHero, Reveal, SectionHeading } from "@/components/site/
 export const Route = createFileRoute("/solutions/engineered-solutions/")({
   head: () => ({
     meta: [
-      { title: "Engineered Solutions â€” Customized Engineering for Upstream Energy" },
+      { title: "Engineered Solutions — Customized Engineering for Upstream Energy" },
       {
         name: "description",
         content:
           "Bespoke engineered solutions for upstream energy-sector applications: design to customer specification, detailed engineering, manufacturing, testing and commissioning.",
       },
-      { property: "og:title", content: "Engineered Solutions â€” Veetech Automation FZE" },
+      { property: "og:title", content: "Engineered Solutions — Veetech Automation FZE" },
       {
         property: "og:description",
         content:
@@ -113,7 +113,7 @@ function EngineeredPage() {
       <CtaSection
         image={ctaPlant}
         title="Discuss Your Requirement"
-        lead="Bring us the application â€” our engineering team will develop the solution around it."
+        lead="Bring us the application — our engineering team will develop the solution around it."
       />
     </>
   );

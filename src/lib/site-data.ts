@@ -49,7 +49,7 @@ export const NAV = [
   },
   { label: "After Market Services", to: "/after-market-services" },
   { label: "Infrastructure", to: "/infrastructure" },
-  { label: "Career", to: "/careers" },
+  { label: "Careers", to: "/careers" },
   { label: "Contact Us", to: "/contact" },
 ] as const;
 
@@ -132,7 +132,7 @@ export const ENGINEERED_SOLUTIONS = [
   {
     slug: "/solutions/engineered-solutions/nitrogen-generator-packages",
     title: "Nitrogen Generator Packages",
-    short: "On-site nitrogen generation for purging, blanketing, and other applications.",
+    short: "On-site nitrogen generation for purging, blanketing and other applications.",
   },
   {
     slug: "/solutions/engineered-solutions/surge-relief-skids",
@@ -150,7 +150,7 @@ export const SERVICES = [
   {
     title: "Installation & Commissioning",
     image: "/client-media/after-market/installation-commissioning-new.webp",
-    body: "Veetech Automation has the in-house capabilities to provide its valued customers with all the necessary services related to onsite installation, pre-commissioning, and commissioning activities for the entire range of products and solution packages.",
+    body: "Veetech Automation has the in-house capabilities to provide its valued customers with all the necessary services related to onsite installation, pre-commissioning and commissioning activities for the entire range of products and solution packages.",
   },
   {
     title: "Refurbishment & Recertification",
@@ -170,7 +170,7 @@ export const SERVICES = [
   {
     title: "Spare Parts Management",
     image: "/client-media/after-market/spareparts-management-3-new.webp",
-    body: "Supply of required spares at competitive prices with the minimum lead time possible. Special spares are stocked for easy availability, and customized spare parts management solutions can be offered on request.",
+    body: "Supply of required spares at competitive prices with the minimum lead time possible. Special spares are stocked for easy availability and customized spare parts management solutions can be offered on request.",
   },
 ] as const;
 
@@ -193,7 +193,7 @@ export const SUPERIOR_VALUE_CREATION_SERVICES = [
   {
     slug: "/superior-value-creation/flushing",
     title: "Flushing",
-    short: "Power flushing hydraulic systems to eliminate sludge, varnish, and debris.",
+    short: "Power flushing hydraulic systems to eliminate sludge, varnish and debris.",
   },
   {
     slug: "/superior-value-creation/pressure-testing",
@@ -255,6 +255,7 @@ export const REGIONAL_OFFICES = [
   "Algeria",
   "France",
   "Spain",
+  "Malaysia",
 ] as const;
 
 export const CERTIFICATIONS = [
@@ -274,13 +275,13 @@ export const OPENINGS = [
     location: "Jebel Ali Free Zone, Dubai, UAE",
   },
   {
-    title: "Project Engineer â€“ CIS",
+    title: "Project Engineer – CIS",
     summary:
       "The ideal candidate should have exposure to Chemical Injection Systems with relevant experience.",
     location: "Jebel Ali Free Zone, Dubai, UAE",
   },
   {
-    title: "Senior Project Engineer â€“ WHCP",
+    title: "Senior Project Engineer – WHCP",
     summary:
       "10 years of experience with a minimum of 5 years overseas, preferably in the Middle East.",
     location: "Jebel Ali Free Zone, Dubai, UAE",
@@ -293,7 +294,7 @@ export const QUICK_LINKS = [
   { label: "SUPERIOR VALUE CREATION", to: "/superior-value-creation" },
   { label: "AFTER MARKET SERVICES", to: "/after-market-services" },
   { label: "INFRASTRUCTURE", to: "/infrastructure" },
-  { label: "CAREER", to: "/careers" },
+  { label: "CAREERS", to: "/careers" },
 ] as const;
 
 

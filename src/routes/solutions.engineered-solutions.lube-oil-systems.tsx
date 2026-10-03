@@ -26,7 +26,7 @@ const systemDetails = [
   "Filtration system for removal of contaminants",
   "Oil coolers to maintain operating temperature",
   "Pressure control and relief devices for system protection",
-  "Instrumentation for monitoring pressure, temperature, flow, and level",
+  "Instrumentation for monitoring pressure, temperature, flow and level",
   "Distribution piping to supply oil to equipment"
 ];
 
@@ -39,7 +39,7 @@ const engineeringCapabilities = [
 ];
 
 const applicationAreas = [
-  "Compressors, turbines, and pumps",
+  "Compressors, turbines and pumps",
   "Power generation facilities",
   "Oil & gas processing plants",
   "Refineries and petrochemical units"
@@ -92,7 +92,7 @@ function LubeOilSystemsPage() {
                 </h2>
                 <div className="mt-6 w-16 h-1 bg-accent rounded-full" />
                 <p className="mt-8 text-base md:text-lg leading-relaxed text-muted-foreground">
-                  A lube oil system is an auxiliary package designed to supply clean, pressurized lubricating oil to critical rotating equipment, ensuring proper lubrication, cooling, and sealing of bearings and moving parts.
+                  A lube oil system is an auxiliary package designed to supply clean, pressurized lubricating oil to critical rotating equipment, ensuring proper lubrication, cooling and sealing of bearings and moving parts.
                 </p>
                 
                 <div className="mt-10 flex">

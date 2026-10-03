@@ -75,7 +75,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Veetech Automation FZE â€” Industrial Control Automation, Dubai" },
+      { title: "Veetech Automation FZE — Industrial Control Automation, Dubai" },
       {
         name: "description",
         content:

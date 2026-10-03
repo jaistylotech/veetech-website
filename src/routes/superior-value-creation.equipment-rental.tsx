@@ -13,7 +13,7 @@ export const Route = createFileRoute(
       {
         name: "description",
         content:
-          "Veetech Automation offers mission critical equipment like Flushing equipment, pressure testing equipment, and nitrogen booster units on a rental basis.",
+          "Veetech Automation offers mission critical equipment like Flushing equipment, pressure testing equipment and nitrogen booster units on a rental basis.",
       },
     ],
   }),
