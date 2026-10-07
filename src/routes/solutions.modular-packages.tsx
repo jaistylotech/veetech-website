@@ -1,4 +1,4 @@
-﻿import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 
 import modularSkid from "@/assets/modular-skid.jpg";
 import manufacturing from "@/assets/manufacturing.jpg";
@@ -63,7 +63,7 @@ function ModularPage() {
   return (
     <>
       <PageHero
-        eyebrow="Products"
+        eyebrow="Solutions"
         title="Modular Packages"
         lead="Fully integrated, plug-and-play modular process and utility packages that minimize onsite construction and accelerate project delivery."
         image={modularSkid}

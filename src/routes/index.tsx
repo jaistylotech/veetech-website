@@ -27,7 +27,14 @@ import {
 } from "@/components/site/primitives";
 import { ProcessTrack } from "@/components/site/process-track";
 import { HeroScroller } from "@/components/site/hero-scroller";
+import { ImageSlider } from "@/components/site/image-slider";
 import { CERTIFICATIONS, MARKETS, SERVICES } from "@/lib/site-data";
+
+const HOME_ABOUT_SLIDER_IMAGES = [
+  { src: "/client-media/infra/infra-1.webp", alt: "Veetech Automation Facility Main View" },
+  { src: "/client-media/infra/infra-2.webp", alt: "Manufacturing Facility Storage Tanks and Chemical Skids" },
+  { src: "/client-media/infra/infra-3.webp", alt: "Control Panel Assembly Yard and Skid Systems" },
+];
 import { ClientMarquee } from "@/components/site/client-marquee";
 
 export const Route = createFileRoute("/")({
@@ -95,32 +102,8 @@ function HomePage() {
   useEffect(() => {
     if (videoRef.current) {
       videoRef.current.muted = isMuted;
-      videoRef.current.playbackRate = 1.0;
     }
   }, [isMuted]);
-
-  useEffect(() => {
-    const video = videoRef.current;
-    if (!video) return;
-
-    // Yahan hum set kar rahe hain ki audio kitne seconds par khatam ho jani chahiye
-    // User requirement: Audio 9.0 sec tak full volume pe rakhein, fir achanak mute kar dein.
-    const AUDIO_CUTOFF_TIME = 9.0; 
-
-    const handleTimeUpdate = () => {
-      // Agar video cutoff time cross kar chuki hai (8 to 10 seconds), toh volume 0 (mute).
-      if (video.currentTime > AUDIO_CUTOFF_TIME) {
-        video.volume = 0;
-      } 
-      // Shuruwat me (0 to 8 seconds), full volume bina kisi fade ke.
-      else {
-        video.volume = 1;
-      }
-    };
-
-    video.addEventListener("timeupdate", handleTimeUpdate);
-    return () => video.removeEventListener("timeupdate", handleTimeUpdate);
-  }, []);
 
   return (
     <>
@@ -202,14 +185,12 @@ function HomePage() {
           </Reveal>
 
           <Reveal className="w-full">
-            <img
-              src={whoWeAreImg}
-              alt="Veetech Automation Team and Facility"
-              className="w-full h-auto aspect-video md:aspect-[21/9] object-cover rounded-2xl shadow-xl"
-              loading="lazy"
-              width={1600}
-              height={1008}
-            />
+            <div className="relative w-full rounded-2xl overflow-hidden shadow-xl border-4 border-white bg-slate-50">
+              <ImageSlider 
+                images={HOME_ABOUT_SLIDER_IMAGES} 
+                aspectRatio="aspect-video md:aspect-[21/9]" 
+              />
+            </div>
           </Reveal>
         </div>
       </section>
@@ -303,42 +284,29 @@ function HomePage() {
         </div>
       </section>
 
-      {/* GLOBAL PRESENCE */}
+      {/* OUR STORY */}
       <section className="relative isolate overflow-hidden surface-dark">
         <div className="absolute inset-0 -z-10 tech-grid opacity-40" aria-hidden="true" />
         <div className="container-vt section-y">
           <Reveal>
             <SectionHeading
               tone="dark"
-              eyebrow="Global Presence"
+              eyebrow="Our Story"
               title="Supporting Energy Operations Across Global Markets"
               lead="Veetech Automation FZE's clientele includes reputed names in the energy sector across the Middle East, Asia, Africa, the CIS region and Europe."
             />
           </Reveal>
 
-          <div className="mt-14 grid gap-12 lg:grid-cols-[1.25fr_1fr] lg:items-center">
-            <Reveal>
-              <WorldMap />
-            </Reveal>
-            <Reveal delay={80}>
-              <ul className="flex flex-wrap gap-2">
-                {MARKETS.map((m) => (
-                  <li
-                    key={m}
-                    className="border border-hairline px-3 py-1.5 font-mono text-[0.68rem] tracking-wide text-on-navy-muted transition-colors hover:border-accent/60 hover:text-on-navy"
-                  >
-                    {m}
-                  </li>
-                ))}
-              </ul>
-              <p className="mt-7 text-sm text-on-navy-muted">
-                Head office and manufacturing facility: Jebel Ali Free Zone, Dubai, UAE.
-              </p>
-              <div className="mt-8">
-                <ArrowLink to="/about">Read the company story</ArrowLink>
-              </div>
-            </Reveal>
-          </div>
+          <Reveal className="mt-10">
+            <WorldMap />
+          </Reveal>
+
+          <Reveal delay={80} className="mt-8 flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-white/10 pt-6">
+            <p className="text-sm text-on-navy-muted text-center sm:text-left">
+              Head office and manufacturing facility: <span className="text-white font-medium">Jebel Ali Free Zone, Dubai, UAE.</span>
+            </p>
+            <ArrowLink to="/about">Read our story</ArrowLink>
+          </Reveal>
         </div>
       </section>
 
@@ -351,30 +319,93 @@ function HomePage() {
   );
 }
 
-/* Stylised world map focused on UAE â†’ Middle East â†’ Asia â†’ Africa */
+/* Stylised world map focused on UAE, Middle East, Europe, Africa, CIS & Asia with premium radar pin markers */
 const geoUrl = "https://unpkg.com/world-atlas@2.0.2/countries-110m.json";
 
-function WorldMap() {
-  const nodes = [
-    { coordinates: [55.2708, 25.2048] as [number, number], label: "UAE", primary: true, dy: 45, dx: 0 },
-    { coordinates: [42.0, 25.0] as [number, number], label: "Middle East", dy: -25, dx: -35 },
-    { coordinates: [90.0, 30.0] as [number, number], label: "Asia", dy: -25, dx: 35 },
-    { coordinates: [115.0, 0.0] as [number, number], label: "South East Asia", dy: 35, dx: 0 },
-    { coordinates: [20.0, 5.0] as [number, number], label: "Africa", dy: 35, dx: 0 },
-    { coordinates: [15.0, 50.0] as [number, number], label: "Europe", dy: -35, dx: 0 },
-    { coordinates: [65.0, 55.0] as [number, number], label: "CIS", dy: -35, dx: 0 },
-  ];
-  const hub = nodes[0]!;
+/* Exact 29 countries from the client box image */
+const COUNTRY_MARKERS = [
+  // Middle East & GCC (9)
+  { name: "UAE", coordinates: [54.37, 24.45] as [number, number], primary: true, dy: 14, dx: 22 },
+  { name: "Saudi Arabia", coordinates: [44.20, 23.88] as [number, number], dy: 14, dx: -26 },
+  { name: "Qatar", coordinates: [51.18, 25.35] as [number, number], dy: 14, dx: -12 },
+  { name: "Oman", coordinates: [57.00, 20.50] as [number, number], dy: 14, dx: 14 },
+  { name: "Kuwait", coordinates: [47.48, 29.31] as [number, number], dy: -28, dx: -18 },
+  { name: "Bahrain", coordinates: [50.55, 26.07] as [number, number], dy: -28, dx: -4 },
+  { name: "Iraq", coordinates: [43.68, 33.22] as [number, number], dy: -28, dx: -14 },
+  { name: "Kurdistan", coordinates: [44.50, 36.50] as [number, number], dy: -28, dx: 12 },
+  { name: "Egypt", coordinates: [30.80, 26.82] as [number, number], dy: 14, dx: 0 },
 
+  // CIS & Central Asia (5)
+  { name: "Turkmenistan", coordinates: [59.55, 38.96] as [number, number], dy: 14, dx: 22 },
+  { name: "Azerbaijan", coordinates: [47.57, 40.14] as [number, number], dy: -28, dx: 22 },
+  { name: "Kazakhstan", coordinates: [66.92, 48.01] as [number, number], dy: -28, dx: 0 },
+  { name: "Russia", coordinates: [55.00, 56.00] as [number, number], dy: -28, dx: 0 },
+  { name: "India", coordinates: [78.96, 20.59] as [number, number], dy: 14, dx: 0 },
+
+  // Asia & SEA (2)
+  { name: "Malaysia", coordinates: [101.97, 4.21] as [number, number], dy: -28, dx: 0 },
+  { name: "Singapore", coordinates: [103.81, 1.35] as [number, number], dy: 14, dx: 12 },
+
+  // Europe (5)
+  { name: "Greece", coordinates: [21.82, 39.07] as [number, number], dy: 14, dx: 0 },
+  { name: "Albania", coordinates: [20.17, 41.15] as [number, number], dy: -28, dx: -22 },
+  { name: "Romania", coordinates: [24.96, 45.94] as [number, number], dy: -28, dx: 0 },
+  { name: "Spain", coordinates: [-3.70, 40.41] as [number, number], dy: 14, dx: 0 },
+  { name: "France", coordinates: [2.21, 46.22] as [number, number], dy: 14, dx: 0 },
+
+  // Africa (8)
+  { name: "Algeria", coordinates: [3.05, 28.03] as [number, number], dy: 14, dx: 0 },
+  { name: "Libya", coordinates: [17.23, 26.33] as [number, number], dy: 14, dx: 0 },
+  { name: "Sudan", coordinates: [30.22, 12.86] as [number, number], dy: 14, dx: 0 },
+  { name: "Nigeria", coordinates: [8.67, 9.08] as [number, number], dy: 14, dx: 0 },
+  { name: "Ghana", coordinates: [-1.02, 7.94] as [number, number], dy: 14, dx: -18 },
+  { name: "Angola", coordinates: [17.87, -11.20] as [number, number], dy: 14, dx: 0 },
+  { name: "Uganda", coordinates: [32.29, 1.37] as [number, number], dy: 14, dx: 18 },
+  { name: "Mozambique", coordinates: [35.53, -18.66] as [number, number], dy: 14, dx: 0 },
+];
+
+function WorldMap() {
   return (
-    <div className="relative w-full overflow-hidden rounded-3xl border border-border/50 bg-navy-deep shadow-2xl aspect-square md:aspect-[16/10] xl:aspect-[21/9]">
-      <div className="absolute inset-0 tech-grid opacity-20" aria-hidden="true" />
+    <div className="relative w-full overflow-hidden rounded-3xl border border-white/15 bg-[#041638] shadow-2xl aspect-[16/10] md:aspect-[21/9]">
+      <style>{`
+        @keyframes radarPulse {
+          0% {
+            r: 3px;
+            opacity: 0.95;
+            stroke-width: 1.5px;
+          }
+          60% {
+            opacity: 0.35;
+          }
+          100% {
+            r: 18px;
+            opacity: 0;
+            stroke-width: 0.2px;
+          }
+        }
+        .radar-ring {
+          animation: radarPulse 3.2s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+        }
+      `}</style>
+
+      {/* Tech grid texture & ambient glow */}
+      <div className="absolute inset-0 tech-grid opacity-15 pointer-events-none" aria-hidden="true" />
+      <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-accent/10 rounded-full blur-3xl pointer-events-none" />
+
+      {/* Header Legend */}
+      <div className="absolute top-4 left-6 z-10 hidden sm:flex items-center gap-2 bg-slate-900/80 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-white/10 text-[0.72rem] text-slate-300 font-medium">
+        <span className="relative flex h-2 w-2">
+          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-rose-400 opacity-75"></span>
+          <span className="relative inline-flex rounded-full h-2 w-2 bg-rose-500"></span>
+        </span>
+        <span>29 Active Global Energy Markets</span>
+      </div>
 
       <ComposableMap
         projection="geoMercator"
         projectionConfig={{
-          scale: 400,
-          center: [60, 30]
+          scale: 440,
+          center: [45, 20]
         }}
         className="absolute inset-0 size-full"
       >
@@ -384,12 +415,12 @@ function WorldMap() {
               <Geography
                 key={geo.rsmKey}
                 geography={geo}
-                fill="rgba(255, 255, 255, 0.05)"
-                stroke="rgba(255, 255, 255, 0.15)"
+                fill="#f8fafc"
+                stroke="#cbd5e1"
                 strokeWidth={0.5}
                 style={{
                   default: { outline: "none" },
-                  hover: { outline: "none", fill: "rgba(255,255,255,0.1)" },
+                  hover: { outline: "none", fill: "#e2e8f0" },
                   pressed: { outline: "none" },
                 }}
               />
@@ -397,78 +428,67 @@ function WorldMap() {
           }
         </Geographies>
 
-        {/* Connections */}
-        {nodes.slice(1).map((n) => (
-          <Line
-            key={`line-${n.label}`}
-            from={hub.coordinates}
-            to={n.coordinates}
-            stroke="var(--accent)"
-            strokeWidth={4}
-            strokeOpacity={0.8}
-            strokeDasharray="8 8"
-            className="animate-[dash_3s_linear_infinite]"
-          />
-        ))}
+        {/* Location Markers */}
+        {COUNTRY_MARKERS.map((m, idx) => {
+          const textWidth = Math.max(m.name.length * 6.2 + 16, 36);
+          const rectX = m.dx - textWidth / 2;
+          const rectY = m.dy - 13;
+          const delayStr = `${(idx * 0.11) % 3.2}s`;
 
-        {/* Nodes */}
-        {nodes.map((n) => (
-          <Marker key={n.label} coordinates={n.coordinates}>
-            {/* Ping animation for primary */}
-            {n.primary && (
-              <circle r={36} fill="var(--accent)" opacity={0.3} className="animate-ping" />
-            )}
-            {/* Main Dot */}
-            <circle
-              r={n.primary ? 12 : 8}
-              fill={n.primary ? "var(--accent)" : "rgba(255, 140, 0, 1)"}
-              stroke={n.primary ? "rgba(255, 140, 0, 0.3)" : "none"}
-              strokeWidth={8}
-              className="transition-all duration-300 hover:scale-125 cursor-pointer"
-            />
-            {/* Label Outline */}
-            <text
-              textAnchor="middle"
-              y={n.dy}
-              x={n.dx}
-              stroke="rgba(10,20,40,0.95)"
-              strokeWidth={8}
-              strokeLinejoin="round"
-              style={{
-                fontFamily: "var(--font-display)",
-                fontSize: n.primary ? "24px" : "18px",
-                fontWeight: 800,
-                letterSpacing: "0.5px"
-              }}
-            >
-              {n.label}
-            </text>
-            {/* Label Fill */}
-            <text
-              textAnchor="middle"
-              y={n.dy}
-              x={n.dx}
-              fill={n.primary ? "var(--accent)" : "#ffffff"}
-              style={{
-                fontFamily: "var(--font-display)",
-                fontSize: n.primary ? "24px" : "18px",
-                fontWeight: 800,
-                letterSpacing: "0.5px"
-              }}
-            >
-              {n.label}
-            </text>
-          </Marker>
-        ))}
+          return (
+            <Marker key={m.name} coordinates={m.coordinates}>
+              <g className="group cursor-pointer">
+                {/* Premium Staggered Radar Pulse Ring */}
+                <circle
+                  r={3}
+                  fill="none"
+                  stroke={m.primary ? "#f59e0b" : "#f43f5e"}
+                  className="radar-ring origin-center pointer-events-none"
+                  style={{ animationDelay: delayStr }}
+                />
+
+                {/* Red Pin Icon */}
+                <path
+                  d="M 0 0 C -3 -5 -7 -9 -7 -14 C -7 -18 -4 -21 0 -21 C 4 -21 7 -18 7 -14 C 7 -9 3 -5 0 0 Z"
+                  fill={m.primary ? "#b91c1c" : "#dc2626"}
+                  stroke="#ffffff"
+                  strokeWidth={1.2}
+                />
+                <circle cx={0} cy={-14} r={2.8} fill="#ffffff" />
+
+                {/* White Badge Pill */}
+                <g>
+                  <rect
+                    x={rectX}
+                    y={rectY}
+                    width={textWidth}
+                    height={17}
+                    rx={8.5}
+                    fill="#ffffff"
+                    stroke={m.primary ? "#dc2626" : "#e2e8f0"}
+                    strokeWidth={m.primary ? 1.5 : 1}
+                    className="drop-shadow-md"
+                  />
+                  <text
+                    x={m.dx}
+                    y={rectY + 11.5}
+                    textAnchor="middle"
+                    fill={m.primary ? "#b91c1c" : "#0f172a"}
+                    style={{
+                      fontFamily: "var(--font-sans)",
+                      fontSize: "9.5px",
+                      fontWeight: 700,
+                      letterSpacing: "0.2px"
+                    }}
+                  >
+                    {m.name}
+                  </text>
+                </g>
+              </g>
+            </Marker>
+          );
+        })}
       </ComposableMap>
-
-      <div className="absolute left-1/2 top-1/2 -z-10 h-3/4 w-3/4 -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent/5 blur-[100px] pointer-events-none" />
-
-      <style>{`
-        @keyframes dash {
-          to { stroke-dashoffset: -20; }
-        }
-      `}</style>
     </div>
   );
 }

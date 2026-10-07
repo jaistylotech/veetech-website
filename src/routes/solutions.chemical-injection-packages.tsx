@@ -1,4 +1,4 @@
-﻿import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 
 import chemicalSkid from "@/assets/chemical-skid.jpg";
 import testing from "@/assets/testing.jpg";
@@ -76,7 +76,7 @@ function ChemicalInjectionPage() {
   return (
     <>
       <PageHero
-        eyebrow="Products"
+        eyebrow="Solutions"
         title="Chemical Injection Packages"
         lead="Custom-engineered chemical injection packages for accurate and reliable dosing in critical upstream, midstream and downstream applications."
         image={chemicalSkid}

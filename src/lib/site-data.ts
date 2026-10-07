@@ -14,7 +14,7 @@ export const NAV = [
   { label: "Home", to: "/" },
   { label: "About Us", to: "/about" },
   { 
-    label: "Products", 
+    label: "Solutions", 
     to: "/solutions",
     children: [
       { label: "Chemical Injection Packages", to: "/solutions/chemical-injection-packages" },
@@ -40,7 +40,7 @@ export const NAV = [
     children: [
       { label: "Refurbishments & Recertification", to: "/superior-value-creation/refurbishments-recertification" },
       { label: "Maintenance Contracts", to: "/superior-value-creation/maintenance-contracts" },
-      { label: "Long Term Service Agreement", to: "/superior-value-creation/long-term-service-agreement" },
+      { label: "Long Term Service Agreements", to: "/superior-value-creation/long-term-service-agreement" },
       { label: "Flushing", to: "/superior-value-creation/flushing" },
       { label: "Pressure Testing", to: "/superior-value-creation/pressure-testing" },
       { label: "Equipment Rental", to: "/superior-value-creation/equipment-rental" },
@@ -187,8 +187,8 @@ export const SUPERIOR_VALUE_CREATION_SERVICES = [
   },
   {
     slug: "/superior-value-creation/long-term-service-agreement",
-    title: "Long Term Service Agreement",
-    short: "LTSAs help to prevent system faults and boost overall plant reliability.",
+    title: "Long Term Service Agreements",
+    short: "LTSAs & MAS help to prevent system faults and boost overall plant reliability.",
   },
   {
     slug: "/superior-value-creation/flushing",
@@ -264,7 +264,7 @@ export const CERTIFICATIONS = [
   { title: "ISO 45001: 2018", note: "Occupational health & safety", link: "https://veetech.ae/wp-content/uploads/2025/01/ISO-45001-2018-Certificate-Veetech_page-0001.jpg" },
   { title: "API Spec Q1", note: "Petroleum industry quality specification", link: "/certificates/API-Q1.pdf" },
   { title: "Quality Policy", note: "Company policy document", link: "/certificates/Quality-Policy.pdf" },
-  { title: "HSE Policy", note: "Company policy document", link: "https://veetech.ae/wp-content/uploads/2022/04/HSE-Policy-2.jpg" },
+  { title: "Ethics Policy", note: "Company policy document", link: "#" },
 ] as const;
 
 export const OPENINGS = [
@@ -290,7 +290,7 @@ export const OPENINGS = [
 
 export const QUICK_LINKS = [
   { label: "ABOUT US", to: "/about" },
-  { label: "PRODUCTS", to: "/solutions" },
+  { label: "SOLUTIONS", to: "/solutions" },
   { label: "SUPERIOR VALUE CREATION", to: "/superior-value-creation" },
   { label: "AFTER MARKET SERVICES", to: "/after-market-services" },
   { label: "INFRASTRUCTURE", to: "/infrastructure" },

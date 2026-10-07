@@ -1,4 +1,4 @@
-﻿import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 
 import wellheadPanel from "@/assets/wellhead-panel.jpg";
 import hpu from "@/assets/hpu.jpg";
@@ -54,7 +54,7 @@ function WellheadPage() {
   return (
     <>
       <PageHero
-        eyebrow="Products"
+        eyebrow="Solutions"
         title="Wellhead Control Panels"
         lead="High-integrity Wellhead Control Panels (WHCP) for safe, reliable control and shutdown of surface and subsurface safety valves in onshore and offshore fields."
         image={wellheadPanel}

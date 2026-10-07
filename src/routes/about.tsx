@@ -229,7 +229,7 @@ function AboutPage() {
                   </button>
                 </div>
                 
-                <div className="flex-1 w-full h-full bg-muted/20 flex items-center justify-center p-4 lg:p-8 relative overflow-hidden">
+                <div className="flex-1 w-full h-full bg-slate-950/40 flex flex-col items-center justify-center p-3 sm:p-6 overflow-hidden relative">
                   {/* Watermark Overlay for anti-screenshot */}
                   <div className="absolute inset-0 z-10 pointer-events-none flex flex-wrap items-center justify-center overflow-hidden opacity-[0.03] select-none">
                     {Array.from({ length: 40 }).map((_, i) => (
@@ -238,19 +238,26 @@ function AboutPage() {
                   </div>
 
                   {/* Secure Viewer (Pointer events disabled to prevent long press save on mobile) */}
-                  <div className="relative z-0 max-w-full max-h-full overflow-auto pointer-events-none flex items-center justify-center">
-                    {activeCert.toLowerCase().endsWith(".pdf") ? (
-                      <Suspense fallback={<div className="animate-pulse flex space-x-4"><div className="h-4 w-48 bg-slate-300 rounded"></div></div>}>
-                        <PdfViewer url={activeCert} />
-                      </Suspense>
-                    ) : (
-                      <img 
-                        src={activeCert} 
-                        alt="Certificate" 
-                        className="max-w-full max-h-[70vh] object-contain rounded-xl shadow-sm"
-                        draggable="false"
+                  <div className="relative z-0 max-w-full max-h-full pointer-events-none flex items-center justify-center my-auto overflow-hidden">
+                    <div className="relative inline-block max-w-full max-h-full">
+                      {activeCert.toLowerCase().endsWith(".pdf") ? (
+                        <Suspense fallback={<div className="animate-pulse flex space-x-4"><div className="h-4 w-48 bg-slate-300 rounded"></div></div>}>
+                          <PdfViewer url={activeCert} />
+                        </Suspense>
+                      ) : (
+                        <img 
+                          src={activeCert} 
+                          alt="Certificate" 
+                          className="max-w-full max-h-[72vh] object-contain rounded-xl shadow-sm"
+                          draggable="false"
+                        />
+                      )}
+                      
+                      {/* Smooth Frosted Glass Blurred Mask over both Expiration Dates & Signatures */}
+                      <div 
+                        className="absolute bottom-[16%] left-[12%] w-[76%] h-[17%] backdrop-blur-[18px] bg-white/45 rounded-lg border border-white/30 z-20 pointer-events-none shadow-sm"
                       />
-                    )}
+                    </div>
                   </div>
                 </div>
               </div>
@@ -263,7 +270,7 @@ function AboutPage() {
         <div className="container-vt grid gap-12 lg:grid-cols-[1fr_1.2fr] lg:gap-20">
           <Reveal>
             <SectionHeading
-              eyebrow="Global Presence"
+              eyebrow="Our Story"
               title="Clients across the Middle East, Asia, Africa and Europe"
             />
             <div className="mt-10 grid grid-cols-2 gap-6">

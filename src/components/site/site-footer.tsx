@@ -15,7 +15,7 @@ const columns = [
   {
     heading: "Our Offerings",
     links: [
-      { label: "Products", to: "/solutions" },
+      { label: "Solutions", to: "/solutions" },
       { label: "Superior Value Creation", to: "/superior-value-creation" },
       { label: "After Market Services", to: "/after-market-services" },
       { label: "Engineered Solutions", to: "/solutions/engineered-solutions" },

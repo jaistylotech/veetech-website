@@ -1,4 +1,4 @@
-﻿import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import { CheckCircle2 } from "lucide-react";
 
 import { PageHero, Reveal, CtaSection } from "@/components/site/primitives";
@@ -33,6 +33,7 @@ const LIST_COLUMN_2 = [
   "Technical Advice, Support and Consultations",
   "Spare Parts In-Stock Management",
   "Emergency Spare Parts Management",
+  "Maintenance & Assistance Services (MAS)",
 ];
 
 function LTSAPage() {
@@ -40,14 +41,14 @@ function LTSAPage() {
     <>
       <PageHero
         eyebrow="Superior Value Creation"
-        title="Long Term Service Agreement"
-        lead="Systematic monitoring and regular maintenance to increase reliability and reduce unplanned repairs."
+        title="Long Term Service Agreements"
+        lead="Systematic monitoring, Maintenance & Assistance Services (MAS), and regular maintenance to increase reliability and reduce unplanned repairs."
         image="/client-media/superior-value-creation/sub-pages/ltsa-hero.jpg"
-        imageAlt="Long Term Service Agreement Banner"
+        imageAlt="Long Term Service Agreements Banner"
         breadcrumbs={[
           { label: "Home", to: "/" },
           { label: "Superior Value Creation", to: "/superior-value-creation" },
-          { label: "Long Term Service Agreement" },
+          { label: "Long Term Service Agreements" },
         ]}
       />
 
