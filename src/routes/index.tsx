@@ -34,6 +34,9 @@ const HOME_ABOUT_SLIDER_IMAGES = [
   { src: "/client-media/infra/infra-1.webp", alt: "Veetech Automation Facility Main View" },
   { src: "/client-media/infra/infra-2.webp", alt: "Manufacturing Facility Storage Tanks and Chemical Skids" },
   { src: "/client-media/infra/infra-3.webp", alt: "Control Panel Assembly Yard and Skid Systems" },
+  { src: "/client-media/infra/infra-4.webp", alt: "Assembly and Testing Area for Industrial Control Packages" },
+  { src: "/client-media/infra/infra-5.webp", alt: "State-of-the-Art Manufacturing Facility Jebel Ali Free Zone" },
+  { src: "/client-media/infra/infra-6.webp", alt: "Integrated Modular Skid Systems Production Facility" },
 ];
 import { ClientMarquee } from "@/components/site/client-marquee";
 
@@ -361,7 +364,7 @@ const COUNTRY_MARKERS = [
   { name: "Ghana", coordinates: [-1.02, 7.94] as [number, number], dy: 14, dx: -18 },
   { name: "Angola", coordinates: [17.87, -11.20] as [number, number], dy: 14, dx: 0 },
   { name: "Uganda", coordinates: [32.29, 1.37] as [number, number], dy: 14, dx: 18 },
-  { name: "Mozambique", coordinates: [35.53, -18.66] as [number, number], dy: 14, dx: 0 },
+  { name: "Mozambique", coordinates: [35.53, -18.66] as [number, number], dy: -28, dx: 0 },
 ];
 
 function WorldMap() {
@@ -404,8 +407,8 @@ function WorldMap() {
       <ComposableMap
         projection="geoMercator"
         projectionConfig={{
-          scale: 440,
-          center: [45, 20]
+          scale: 330,
+          center: [48, 14]
         }}
         className="absolute inset-0 size-full"
       >
