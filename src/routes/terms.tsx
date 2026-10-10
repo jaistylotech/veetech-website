@@ -21,7 +21,11 @@ export const Route = createFileRoute("/terms")({
 
 function TermsPage() {
   return (
-    <article className="container-vt section-y max-w-4xl">
+    <article 
+      className="container-vt section-y max-w-4xl select-none no-copy"
+      onCopy={(e) => e.preventDefault()}
+      onContextMenu={(e) => e.preventDefault()}
+    >
       <nav aria-label="Breadcrumb" className="mb-6">
         <ol className="flex items-center gap-2 text-sm text-muted-foreground">
           <li>

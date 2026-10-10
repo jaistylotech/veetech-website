@@ -264,7 +264,7 @@ export const CERTIFICATIONS = [
   { title: "ISO 45001: 2018", note: "Occupational health & safety", link: "https://veetech.ae/wp-content/uploads/2025/01/ISO-45001-2018-Certificate-Veetech_page-0001.jpg" },
   { title: "API Spec Q1", note: "Petroleum industry quality specification", link: "/certificates/API-Q1.pdf" },
   { title: "Quality Policy", note: "Company policy document", link: "/certificates/Quality-Policy.pdf" },
-  { title: "Ethics Policy", note: "Company policy document", link: "#" },
+  { title: "Ethics Policy", note: "Company policy document", link: "/certificates/Veetech_Business_Ethics_Code_of_Conduct-1.pdf" },
 ] as const;
 
 export const OPENINGS = [

@@ -61,7 +61,7 @@ export function SiteFooter() {
                     <li key={l.label}>
                       <Link
                         to={l.to as any}
-                        className="text-sm text-on-navy-muted transition-colors hover:text-on-navy"
+                        className="inline-block text-sm text-on-navy-muted transition-all duration-300 hover:text-accent hover:translate-x-1.5"
                       >
                         {l.label}
                       </Link>
@@ -85,16 +85,16 @@ export function SiteFooter() {
                     {COMPANY.city}
                   </span>
                 </li>
-                <li className="flex gap-2.5">
-                  <Mail className="mt-0.5 size-4 shrink-0 text-steel" />
-                  <a className="transition-colors hover:text-on-navy" href={`mailto:${COMPANY.email}`}>
+                <li className="flex gap-2.5 group">
+                  <Mail className="mt-0.5 size-4 shrink-0 text-steel group-hover:text-accent transition-colors duration-300" />
+                  <a className="transition-all duration-300 hover:text-accent hover:translate-x-1 inline-block" href={`mailto:${COMPANY.email}`}>
                     {COMPANY.email}
                   </a>
                 </li>
-                <li className="flex gap-2.5">
-                  <Phone className="mt-0.5 size-4 shrink-0 text-steel" />
+                <li className="flex gap-2.5 group">
+                  <Phone className="mt-0.5 size-4 shrink-0 text-steel group-hover:text-accent transition-colors duration-300" />
                   <a
-                    className="transition-colors hover:text-on-navy"
+                    className="transition-all duration-300 hover:text-accent hover:translate-x-1 inline-block"
                     href={`tel:${COMPANY.phoneHref}`}
                   >
                     {COMPANY.phone}
@@ -109,10 +109,10 @@ export function SiteFooter() {
       <div className="container-vt flex flex-col gap-4 py-6 text-xs text-on-navy-muted sm:flex-row sm:items-center sm:justify-between">
         <p className="flex-1">© {new Date().getFullYear()} Veetech Automation FZE. All rights reserved.</p>
         <div className="flex flex-1 gap-6 sm:justify-center">
-          <Link to="/privacy-policy" className="transition-colors hover:text-on-navy">
+          <Link to="/privacy-policy" className="transition-all duration-300 hover:text-accent hover:translate-y-[-1px]">
             Privacy Policy
           </Link>
-          <Link to="/terms" className="transition-colors hover:text-on-navy">
+          <Link to="/terms" className="transition-all duration-300 hover:text-accent hover:translate-y-[-1px]">
             Terms & Conditions
           </Link>
         </div>
@@ -122,7 +122,7 @@ export function SiteFooter() {
             href="https://stylotech.in"
             target="_blank"
             rel="noopener noreferrer"
-            className="font-medium hover:underline"
+            className="font-medium hover:underline transition-opacity hover:opacity-80"
             style={{ color: "#ed2424" }}
           >
             Stylotech

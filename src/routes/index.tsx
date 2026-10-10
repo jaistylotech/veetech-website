@@ -53,12 +53,17 @@ export const Route = createFileRoute("/")({
       {
         property: "og:description",
         content:
-          "Industrial control automation and packaged solutions for oil & gas: design, engineering, manufacturing, testing, commissioning and after-market support.",
+          "Industrial control automation and packaged solutions for oil & gas: design, engineering, manufacturing, testing, commissioning and after-market support in Dubai, UAE.",
       },
-      { property: "og:url", content: "/" },
+      { property: "og:url", content: "https://www.veetech.ae/" },
       { property: "og:type", content: "website" },
+      { property: "og:image", content: "https://www.veetech.ae/client-media/infra/infra-1.webp" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Veetech Automation FZE — Industrial Control Automation, Dubai UAE" },
+      { name: "twitter:description", content: "Chemical injection systems, wellhead control systems and modular skid packages engineered in Jebel Ali Free Zone, Dubai." },
+      { name: "twitter:image", content: "https://www.veetech.ae/client-media/infra/infra-1.webp" },
     ],
-    links: [{ rel: "canonical", href: "/" }],
+    links: [{ rel: "canonical", href: "https://www.veetech.ae/" }],
   }),
   component: HomePage,
 });
@@ -191,7 +196,7 @@ function HomePage() {
             <div className="relative w-full rounded-2xl overflow-hidden shadow-xl border-4 border-white bg-slate-50">
               <ImageSlider 
                 images={HOME_ABOUT_SLIDER_IMAGES} 
-                aspectRatio="aspect-video md:aspect-[21/9]" 
+                aspectRatio="aspect-video md:aspect-[2.35/1]" 
               />
             </div>
           </Reveal>

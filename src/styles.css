@@ -319,3 +319,20 @@
   0% { transform: translateX(0%); }
   100% { transform: translateX(-50%); }
 }
+
+/* ---------- Media & Content Protection ---------- */
+img {
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  user-drag: none;
+}
+
+.no-copy {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+

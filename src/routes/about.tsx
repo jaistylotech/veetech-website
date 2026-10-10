@@ -27,16 +27,21 @@ export const Route = createFileRoute("/about")({
         content:
           "Veetech Automation FZE, formerly Versatech Automation FZE, has over four decades of energy-sector experience, a COE Middle East presence from 2009 and 2000+ projects delivered.",
       },
-      { property: "og:title", content: "About Veetech Automation FZE" },
+      { property: "og:title", content: "About Veetech Automation FZE — Four Decades of Energy Sector Excellence" },
       {
         property: "og:description",
         content:
           "Over four decades of experience in industrial control automation and packaged solutions, from Jebel Ali Free Zone, Dubai.",
       },
-      { property: "og:url", content: "/about" },
+      { property: "og:url", content: "https://www.veetech.ae/about" },
       { property: "og:type", content: "website" },
+      { property: "og:image", content: "https://www.veetech.ae/client-media/about/about-banner.jpg" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "About Veetech Automation FZE" },
+      { name: "twitter:description", content: "Industrial control automation and packaged skid solutions engineered in Jebel Ali Free Zone, Dubai." },
+      { name: "twitter:image", content: "https://www.veetech.ae/client-media/about/about-banner.jpg" },
     ],
-    links: [{ rel: "canonical", href: "/about" }],
+    links: [{ rel: "canonical", href: "https://www.veetech.ae/about" }],
   }),
   component: AboutPage,
 });
@@ -118,11 +123,11 @@ function AboutPage() {
               </p>
             </div>
           </Reveal>
-          <Reveal delay={80} className="relative h-full min-h-[300px]">
+          <Reveal delay={80} className="relative h-full min-h-[350px] lg:min-h-[400px]">
             <img
               src="/client-media/about/about-banner.jpg"
               alt="Veetech Automation FZE Company Overview"
-              className="absolute inset-0 h-full w-full object-cover rounded-2xl"
+              className="absolute inset-0 h-full w-full object-cover rounded-2xl shadow-xl"
               loading="lazy"
               width={1600}
               height={1008}

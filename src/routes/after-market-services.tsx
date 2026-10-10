@@ -94,14 +94,14 @@ function AfterMarketServicesPage() {
       <section className="section-y bg-white relative overflow-hidden">
         <div className="container-vt">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-            
+
             <div className="order-2 lg:order-1">
               <Reveal>
                 <h2 className="font-display text-3xl md:text-4xl font-bold uppercase tracking-wide mb-8">
                   <span className="text-navy">After Market</span>{" "}
                   <span className="text-accent">Services</span>
                 </h2>
-                
+
                 <div className="prose max-w-none text-slate-600 leading-relaxed text-lg mb-10">
                   <p className="mb-6">
                     Veetech Automation's extensive field service along with a dedicated after-market team ensures comprehensive support for onsite installation, commissioning, start-up and maintenance of the equipment supplied worldwide.
@@ -111,8 +111,8 @@ function AfterMarketServicesPage() {
                   </p>
                 </div>
 
-                <Link 
-                  to="/contact" 
+                <Link
+                  to="/contact"
                   className="inline-flex items-center gap-2 text-navy font-semibold hover:text-accent transition-colors group"
                 >
                   Partner With Us
@@ -143,7 +143,7 @@ function AfterMarketServicesPage() {
       {/* Interactive Tabs Section */}
       <section className="section-y bg-slate-50 border-t border-border/50">
         <div className="container-vt">
-          
+
           <Reveal>
             <div className="text-center max-w-3xl mx-auto mb-16">
               <h2 className="font-display text-3xl font-bold text-navy uppercase tracking-wide">
@@ -155,7 +155,7 @@ function AfterMarketServicesPage() {
 
           {/* Interactive Component Container */}
           <div className="bg-white rounded-3xl shadow-xl border border-border/40 overflow-hidden flex flex-col lg:flex-row min-h-[600px]">
-            
+
             {/* Left: Tab Menu */}
             <div className="w-full lg:w-1/3 bg-slate-100/50 border-b lg:border-b-0 lg:border-r border-border/50 p-4 lg:p-8 flex flex-row lg:flex-col overflow-x-auto lg:overflow-x-visible gap-2 snap-x hide-scrollbar">
               {TABS_DATA.map((tab) => {
@@ -165,11 +165,10 @@ function AfterMarketServicesPage() {
                   <button
                     key={tab.id}
                     onClick={() => setActiveTab(tab.id)}
-                    className={`flex items-center gap-4 text-left p-4 rounded-xl transition-all duration-300 snap-center min-w-[280px] lg:min-w-0 flex-shrink-0 ${
-                      isActive 
-                        ? "bg-white shadow-md border-l-4 border-l-accent" 
+                    className={`flex items-center gap-4 text-left p-4 rounded-xl transition-all duration-300 snap-center min-w-[280px] lg:min-w-0 flex-shrink-0 ${isActive
+                        ? "bg-white shadow-md border-l-4 border-l-accent"
                         : "hover:bg-slate-200/50 text-slate-500 border-l-4 border-l-transparent"
-                    }`}
+                      }`}
                   >
                     <div className={`p-2 rounded-lg ${isActive ? 'bg-accent/10 text-accent' : 'bg-slate-200 text-slate-400'}`}>
                       <Icon className="w-5 h-5" />
@@ -184,19 +183,19 @@ function AfterMarketServicesPage() {
 
             {/* Right: Active Tab Content with Dynamic Image Background */}
             <div className="w-full lg:w-2/3 relative flex items-center bg-navy overflow-hidden">
-              
+
               {/* Dynamic Image Background */}
-              <div 
+              <div
                 key={`img-${activeTab}`}
                 className="absolute inset-0 z-0 animate-in fade-in duration-700"
               >
-                <img 
-                  src={currentTabData.image} 
+                <img
+                  src={currentTabData.image}
                   alt={currentTabData.title}
                   className={`w-full h-full opacity-45 mix-blend-luminosity ${
                     // @ts-ignore
                     currentTabData.objectFit === "contain" ? "object-contain" : "object-cover"
-                  }`}
+                    }`}
                 />
                 <div className="absolute inset-0 bg-gradient-to-r from-navy via-navy/70 to-navy/20"></div>
               </div>
@@ -205,7 +204,7 @@ function AfterMarketServicesPage() {
               <div className="absolute top-0 right-0 w-64 h-64 bg-[radial-gradient(#ffffff_2px,transparent_2px)] [background-size:20px_20px] opacity-10 z-0"></div>
 
               {/* Content Wrapper */}
-              <div 
+              <div
                 key={activeTab} // Forces re-render animation when tab changes
                 className="relative z-10 w-full p-8 lg:p-16 animate-in fade-in slide-in-from-bottom-4 duration-500"
               >

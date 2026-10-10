@@ -9,13 +9,27 @@ import manufacturing from "@/assets/manufacturing.jpg";
 export const Route = createFileRoute("/infrastructure")({
   head: () => ({
     meta: [
-      { title: "Infrastructure & Manufacturing - Veetech Automation FZE" },
+      { title: "Manufacturing Facility & Infrastructure — Veetech Automation FZE" },
       {
         name: "description",
         content:
-          "Veetech Automation operates from a world-class manufacturing facility in Jebel Ali Free Zone, Dubai, equipped with modern technology.",
+          "Veetech Automation operates a 95,000+ sq. ft. manufacturing and testing facility in Jebel Ali Free Zone, Dubai, equipped for skid packages, HPUs and control panels.",
       },
+      { property: "og:title", content: "World-Class Manufacturing Facility — Jebel Ali Free Zone, Dubai" },
+      {
+        property: "og:description",
+        content:
+          "State-of-the-art manufacturing, assembly and testing facility in JAFZA, Dubai for chemical injection skids, wellhead control panels and automated packages.",
+      },
+      { property: "og:url", content: "https://www.veetech.ae/infrastructure" },
+      { property: "og:type", content: "website" },
+      { property: "og:image", content: "https://www.veetech.ae/client-media/infra/main.jpg" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Manufacturing Facility & Infrastructure — Veetech Automation FZE" },
+      { name: "twitter:description", content: "95,000+ Sq. Ft. manufacturing and testing facility in Jebel Ali Free Zone, Dubai." },
+      { name: "twitter:image", content: "https://www.veetech.ae/client-media/infra/main.jpg" },
     ],
+    links: [{ rel: "canonical", href: "https://www.veetech.ae/infrastructure" }],
   }),
   component: InfrastructurePage,
 });
@@ -28,7 +42,7 @@ function AnimatedCounter({ end, suffix = "", duration = 2000 }: { end: number, s
 
   useEffect(() => {
     const observer = new IntersectionObserver(([entry]) => {
-      if (entry.isIntersecting) setInView(true);
+      if (entry?.isIntersecting) setInView(true);
     }, { threshold: 0.1 });
     
     if (ref.current) observer.observe(ref.current);

@@ -15,6 +15,7 @@ import { Toaster } from "@/components/ui/sonner";
 import { SiteHeader } from "@/components/site/site-header";
 import { SiteFooter } from "@/components/site/site-footer";
 import { ScrollToTop } from "@/components/site/scroll-to-top";
+import { ContentProtection } from "@/components/site/content-protection";
 
 function NotFoundComponent() {
   return (
@@ -98,23 +99,65 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     scripts: [
       {
         type: "application/ld+json",
-        children: JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "Organization",
-          name: "Veetech Automation FZE",
-          alternateName: "Versatech Automation FZE",
-          email: "sales@Veetech.ae",
-          telephone: "+971 4 881 1214",
-          address: {
-            "@type": "PostalAddress",
-            streetAddress: "Plot Number S30913, Jebel Ali Free Zone",
-            addressLocality: "Dubai",
-            addressCountry: "AE",
-            postOfficeBoxNumber: "18642",
+        children: JSON.stringify([
+          {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "@id": "https://www.veetech.ae/#organization",
+            name: "Veetech Automation FZE",
+            alternateName: "Versatech Automation FZE",
+            url: "https://www.veetech.ae",
+            logo: "https://www.veetech.ae/veetech-logo.png",
+            email: "sales@veetech.ae",
+            telephone: "+971 4 881 1214",
+            sameAs: [
+              "https://www.linkedin.com/company/versatech-automation-fze/"
+            ],
+            address: {
+              "@type": "PostalAddress",
+              streetAddress: "Plot Number S30913, Jebel Ali Free Zone",
+              addressLocality: "Dubai",
+              addressCountry: "AE",
+              postOfficeBoxNumber: "18642"
+            }
           },
-        }),
-      },
-    ],
+          {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "@id": "https://www.veetech.ae/#localbusiness",
+            name: "Veetech Automation FZE",
+            image: "https://www.veetech.ae/veetech-logo.png",
+            url: "https://www.veetech.ae",
+            telephone: "+971 4 881 1214",
+            email: "sales@veetech.ae",
+            priceRange: "$$$$",
+            address: {
+              "@type": "PostalAddress",
+              streetAddress: "Plot Number S30913, Jebel Ali Free Zone",
+              addressLocality: "Dubai",
+              addressRegion: "Dubai",
+              postalCode: "18642",
+              addressCountry: "AE"
+            },
+            geo: {
+              "@type": "GeoCoordinates",
+              latitude: 24.971167,
+              longitude: 55.116694
+            }
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "@id": "https://www.veetech.ae/#website",
+            url: "https://www.veetech.ae",
+            name: "Veetech Automation FZE",
+            publisher: {
+              "@id": "https://www.veetech.ae/#organization"
+            }
+          }
+        ])
+      }
+    ]
   }),
   shellComponent: RootShell,
   component: RootComponent,
@@ -141,6 +184,7 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
+      <ContentProtection />
       <SiteHeader />
       <main>
         {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
