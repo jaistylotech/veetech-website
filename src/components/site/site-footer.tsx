@@ -8,7 +8,7 @@ const columns = [
     links: [
       { label: "About Us", to: "/about" },
       { label: "Infrastructure", to: "/infrastructure" },
-      { label: "CAREERS", to: "/careers" },
+      { label: "Careers", to: "/careers" },
       { label: "Contact Us", to: "/contact" },
     ],
   },

@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState, lazy, Suspense } from "react";
-import { X, Eye } from "lucide-react";
+import { X, Eye, Globe2 } from "lucide-react";
 
 const PdfViewer = lazy(() => import('@/components/PdfViewer'));
 
@@ -16,7 +16,7 @@ import {
   SectionHeading,
   Stat,
 } from "@/components/site/primitives";
-import { CERTIFICATIONS, MARKETS } from "@/lib/site-data";
+import { CERTIFICATIONS, MARKETS, MARKET_REGIONS } from "@/lib/site-data";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -84,6 +84,13 @@ const values = [
 
 function AboutPage() {
   const [activeCert, setActiveCert] = useState<string | null>(null);
+  const [selectedMarketRegion, setSelectedMarketRegion] = useState<string>("All");
+
+  const regionTabs = ["All", ...MARKET_REGIONS.map((r) => r.region)];
+  const activeRegions =
+    selectedMarketRegion === "All"
+      ? MARKET_REGIONS
+      : MARKET_REGIONS.filter((r) => r.region === selectedMarketRegion);
 
   return (
     <>
@@ -258,10 +265,18 @@ function AboutPage() {
                         />
                       )}
                       
-                      {/* Smooth Frosted Glass Blurred Mask over both Expiration Dates & Signatures */}
-                      <div 
-                        className="absolute bottom-[16%] left-[12%] w-[76%] h-[17%] backdrop-blur-[18px] bg-white/45 rounded-lg border border-white/30 z-20 pointer-events-none shadow-sm"
-                      />
+                      {/* Tailored Frosted Glass Blurred Mask over Expiration Dates & Signatures */}
+                      {activeCert.toLowerCase().includes("quality-policy") || activeCert.toLowerCase().includes("ethics") ? (
+                        /* Company Policy Director Signature Mask (Bottom-Right) */
+                        <div 
+                          className="absolute bottom-[3.5%] right-[6%] w-[35%] h-[19%] backdrop-blur-[24px] bg-white/70 rounded-lg border border-white/40 z-20 pointer-events-none shadow-sm"
+                        />
+                      ) : (
+                        /* Accreditation Certificates Validity & Signatures Mask */
+                        <div 
+                          className="absolute bottom-[16%] left-[12%] w-[76%] h-[17%] backdrop-blur-[18px] bg-white/45 rounded-lg border border-white/30 z-20 pointer-events-none shadow-sm"
+                        />
+                      )}
                     </div>
                   </div>
                 </div>
@@ -272,7 +287,7 @@ function AboutPage() {
       </section>
 
       <section className="section-y">
-        <div className="container-vt grid gap-12 lg:grid-cols-[1fr_1.2fr] lg:gap-20">
+        <div className="container-vt grid gap-12 lg:grid-cols-[1fr_1.15fr] lg:items-center lg:gap-16">
           <Reveal>
             <SectionHeading
               eyebrow="Our Story"
@@ -281,23 +296,93 @@ function AboutPage() {
             <div className="mt-10 grid grid-cols-2 gap-6">
               {values.map((v) => (
                 <div key={v.title} className="border-l-2 border-accent/70 pl-4">
-                  <h3 className="font-display text-base font-semibold">{v.title}</h3>
+                  <h3 className="font-display text-base font-semibold text-navy">{v.title}</h3>
                   <p className="mt-2 text-sm text-muted-foreground">{v.body}</p>
                 </div>
               ))}
             </div>
           </Reveal>
           <Reveal delay={80}>
-            <ul className="flex flex-wrap gap-2">
-              {MARKETS.map((m) => (
-                <li
-                  key={m}
-                  className="border border-border px-3 py-1.5 font-mono text-[0.68rem] tracking-wide text-graphite"
-                >
-                  {m}
-                </li>
-              ))}
-            </ul>
+            <div className="rounded-2xl border border-border/80 bg-slate-50/50 p-6 sm:p-7 shadow-xs">
+              {/* Card Header */}
+              <div className="flex items-center justify-between pb-4 border-b border-border/60">
+                <div className="flex items-center gap-2.5">
+                  <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-navy text-white shadow-2xs">
+                    <Globe2 className="h-4 w-4 text-accent" />
+                  </span>
+                  <div>
+                    <h3 className="font-display text-sm font-bold tracking-tight text-navy">
+                      Global Footprint
+                    </h3>
+                    <p className="text-[0.75rem] text-muted-foreground">
+                      29 active energy markets across 4 continents
+                    </p>
+                  </div>
+                </div>
+                <span className="hidden sm:inline-flex items-center rounded-full bg-accent/15 px-2.5 py-0.5 text-xs font-semibold text-navy">
+                  29 Countries
+                </span>
+              </div>
+
+              {/* Region Filter Tabs */}
+              <div className="mt-4 flex flex-wrap gap-1.5 pb-2">
+                {regionTabs.map((tab) => {
+                  const isSelected = selectedMarketRegion === tab;
+                  const count =
+                    tab === "All"
+                      ? MARKETS.length
+                      : MARKET_REGIONS.find((r) => r.region === tab)?.countries.length;
+                  return (
+                    <button
+                      key={tab}
+                      type="button"
+                      onClick={() => setSelectedMarketRegion(tab)}
+                      className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-medium transition-all cursor-pointer ${
+                        isSelected
+                          ? "bg-navy text-white shadow-xs"
+                          : "bg-white border border-border/70 text-muted-foreground hover:border-navy/40 hover:text-navy"
+                      }`}
+                    >
+                      <span>{tab}</span>
+                      <span
+                        className={`text-[0.65rem] font-mono ${
+                          isSelected ? "text-accent" : "text-muted-foreground"
+                        }`}
+                      >
+                        {count}
+                      </span>
+                    </button>
+                  );
+                })}
+              </div>
+
+              {/* Grouped Region List */}
+              <div className="mt-3 space-y-4">
+                {activeRegions.map((reg) => (
+                  <div key={reg.region} className="space-y-2">
+                    <div className="flex items-center gap-2">
+                      <span className="h-1.5 w-1.5 rounded-full bg-accent" />
+                      <span className="text-[0.7rem] font-bold uppercase tracking-wider text-navy">
+                        {reg.region}
+                      </span>
+                      <span className="text-[0.68rem] text-muted-foreground font-mono">
+                        ({reg.countries.length})
+                      </span>
+                    </div>
+                    <div className="flex flex-wrap gap-1.5">
+                      {reg.countries.map((c) => (
+                        <span
+                          key={c}
+                          className="inline-flex items-center rounded-md border border-border/80 bg-white px-2.5 py-1 text-xs font-medium text-graphite shadow-2xs hover:border-accent hover:text-navy transition-colors"
+                        >
+                          {c}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
           </Reveal>
         </div>
       </section>

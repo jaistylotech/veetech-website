@@ -36,3 +36,8 @@ out1/
 .env
 .env.*
 !.env.example
+
+# Temporary Media Backups
+*.tmp.jpg
+*.backup.jpg
+*-original.jpg

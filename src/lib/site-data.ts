@@ -244,6 +244,25 @@ export const MARKETS = [
   "Mozambique",
 ] as const;
 
+export const MARKET_REGIONS = [
+  {
+    region: "Middle East",
+    countries: ["UAE", "Saudi Arabia", "Qatar", "Oman", "Kuwait", "Bahrain", "Iraq", "Kurdistan"],
+  },
+  {
+    region: "Asia",
+    countries: ["India", "Malaysia", "Singapore", "Kazakhstan", "Azerbaijan", "Turkmenistan"],
+  },
+  {
+    region: "Africa",
+    countries: ["Egypt", "Nigeria", "Algeria", "Libya", "Angola", "Ghana", "Sudan", "Uganda", "Mozambique"],
+  },
+  {
+    region: "Europe",
+    countries: ["France", "Spain", "Greece", "Romania", "Albania", "Russia"],
+  },
+] as const;
+
 export const REGIONAL_OFFICES = [
   "Abu Dhabi",
   "Oman",

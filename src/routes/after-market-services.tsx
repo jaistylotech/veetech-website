@@ -65,6 +65,7 @@ const TABS_DATA = [
     title: "Spare Parts Management",
     icon: Wrench,
     image: "/client-media/after-market/spareparts-management-3-new.webp",
+    imageClassName: "scale-[1.18] translate-y-6 lg:translate-y-8",
     mainText: "Veetech Automation specializes in supporting all the customers in every part of the world by providing the required spares at competitive prices and with minimum lead time possible.",
     highlightText: "Spare parts are highly critical for the necessary maintenance and safe operation of all equipment. The company also stocks some special spares for easy availability for its customers. Customized spare parts management solutions can be offered on request.",
     bgNumber: "05",
@@ -192,12 +193,17 @@ function AfterMarketServicesPage() {
                 <img
                   src={currentTabData.image}
                   alt={currentTabData.title}
-                  className={`w-full h-full opacity-45 mix-blend-luminosity ${
+                  className={`w-full h-full opacity-85 ${
                     // @ts-ignore
-                    currentTabData.objectFit === "contain" ? "object-contain" : "object-cover"
-                    }`}
+                    currentTabData.objectFit === "contain"
+                      ? "object-contain mix-blend-multiply"
+                      : "object-cover"
+                  } ${
+                    // @ts-ignore
+                    currentTabData.imageClassName || ""
+                  }`}
                 />
-                <div className="absolute inset-0 bg-gradient-to-r from-navy via-navy/70 to-navy/20"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-navy via-navy/60 lg:via-navy/40 to-navy/20 lg:to-transparent"></div>
               </div>
 
               {/* Decorative elements */}
