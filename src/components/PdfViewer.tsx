@@ -22,7 +22,7 @@ export default function PdfViewer({ url }: { url: string }) {
   return (
     <Document 
       file={url} 
-      className="flex items-center justify-center max-w-full max-h-full"
+      className="inline-flex items-center justify-center max-w-full max-h-full"
       loading={<div className="animate-pulse flex space-x-4"><div className="h-4 w-48 bg-slate-300 rounded"></div></div>}
     >
       <Page 

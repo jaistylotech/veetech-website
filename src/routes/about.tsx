@@ -150,15 +150,15 @@ function AboutPage() {
           <Reveal>
             <SectionHeading eyebrow="Our History" title="From Versatech to Veetech" />
           </Reveal>
-          
+
           <div className="mt-14 flex flex-col gap-12 lg:gap-16">
             {/* Top Image */}
             <Reveal className="relative w-full flex items-center justify-center">
-               <img 
-                 src="/client-media/about/factory_building.jpg" 
-                 alt="Veetech History" 
-                 className="w-full h-auto rounded-2xl shadow-xl object-contain"
-               />
+              <img
+                src="/client-media/about/factory_building.jpg"
+                alt="Veetech History"
+                className="w-full h-auto rounded-2xl shadow-xl object-contain"
+              />
             </Reveal>
 
             {/* Bottom Timeline Row */}
@@ -193,8 +193,8 @@ function AboutPage() {
           </Reveal>
           <div className="mt-12 grid gap-px border border-border bg-border sm:grid-cols-2 lg:grid-cols-3">
             {CERTIFICATIONS.map((c) => (
-              <div 
-                key={c.title} 
+              <div
+                key={c.title}
                 className="group relative bg-background p-8 cursor-pointer hover:bg-accent/5 transition-colors overflow-hidden"
                 onClick={() => setActiveCert(c.link)}
               >
@@ -213,7 +213,7 @@ function AboutPage() {
 
           {/* Certificate Modal */}
           {activeCert && (
-            <div 
+            <div
               className="fixed inset-0 z-50 flex items-center justify-center p-4 lg:p-8 bg-navy-deep/90 backdrop-blur-sm animate-in fade-in duration-300 print:hidden"
               onClick={() => setActiveCert(null)}
               onContextMenu={(e) => e.preventDefault()}
@@ -226,21 +226,21 @@ function AboutPage() {
               tabIndex={0}
               ref={(el) => el?.focus()}
             >
-              <div 
+              <div
                 className="relative max-w-5xl w-full h-full max-h-[90vh] flex flex-col bg-surface rounded-2xl overflow-hidden shadow-2xl animate-in zoom-in-95 duration-300 border border-border"
                 onClick={(e) => e.stopPropagation()}
                 style={{ WebkitTouchCallout: 'none', WebkitUserSelect: 'none', userSelect: 'none' }}
               >
                 <div className="flex items-center justify-between p-4 border-b border-border bg-background relative z-20">
                   <h3 className="font-display font-semibold text-lg">Certificate Viewer</h3>
-                  <button 
+                  <button
                     onClick={() => setActiveCert(null)}
                     className="size-10 flex items-center justify-center rounded-full bg-surface text-foreground hover:bg-accent hover:text-navy-deep transition-colors"
                   >
                     <X className="size-5" />
                   </button>
                 </div>
-                
+
                 <div className="flex-1 w-full h-full bg-slate-950/40 flex flex-col items-center justify-center p-3 sm:p-6 overflow-hidden relative">
                   {/* Watermark Overlay for anti-screenshot */}
                   <div className="absolute inset-0 z-10 pointer-events-none flex flex-wrap items-center justify-center overflow-hidden opacity-[0.03] select-none">
@@ -257,23 +257,60 @@ function AboutPage() {
                           <PdfViewer url={activeCert} />
                         </Suspense>
                       ) : (
-                        <img 
-                          src={activeCert} 
-                          alt="Certificate" 
+                        <img
+                          src={activeCert}
+                          alt="Certificate"
                           className="max-w-full max-h-[72vh] object-contain rounded-xl shadow-sm"
                           draggable="false"
                         />
                       )}
-                      
+
                       {/* Tailored Frosted Glass Blurred Mask over Expiration Dates & Signatures */}
-                      {activeCert.toLowerCase().includes("quality-policy") || activeCert.toLowerCase().includes("ethics") ? (
-                        /* Company Policy Director Signature Mask (Bottom-Right) */
-                        <div 
-                          className="absolute bottom-[3.5%] right-[6%] w-[35%] h-[19%] backdrop-blur-[24px] bg-white/70 rounded-lg border border-white/40 z-20 pointer-events-none shadow-sm"
+                      {activeCert.toLowerCase().includes("quality-policy") ? (
+                        /* Quality Policy: ONLY Director Signature is Hidden */
+                        <div
+                          title="Signature protected for privacy & security"
+                          className="absolute top-[84.5%] left-[70%] w-[20%] h-[8.5%] backdrop-blur-md bg-white/75 rounded-md border border-white/60 z-20 pointer-events-none shadow-xs"
                         />
+                      ) : activeCert.toLowerCase().includes("ethics") ? (
+                        /* Ethics Policy: No signature to hide */
+                        null
+                      ) : activeCert.toLowerCase().includes("iso-9001") ? (
+                        /* ISO 9001: 2015: Tailored masks hiding ONLY the Date block and Signature, leaving all other content visible */
+                        <>
+                          {/* Date Block Mask (Effective Date, Expiration Date, Registered Since) */}
+                          <div
+                            title="Date protected for privacy & security"
+                            className="absolute top-[72.5%] left-[11.5%] w-[39%] h-[13.5%] backdrop-blur-md bg-white/75 rounded-md border border-white/60 z-20 pointer-events-none shadow-xs"
+                          />
+                          {/* Director / VP Signature Mask */}
+                          <div
+                            title="Signature protected for privacy & security"
+                            className="absolute top-[70.8%] left-[59%] w-[30%] h-[12.4%] backdrop-blur-md bg-white/75 rounded-md border border-white/60 z-20 pointer-events-none shadow-xs"
+                          />
+                        </>
+                      ) : activeCert.toLowerCase().includes("iso-14001") || activeCert.toLowerCase().includes("iso-45001") ? (
+                        /* ISO 14001 & ISO 45001: TÜV Rheinland tailored masks */
+                        <>
+                          {/* Validity Dates Line (Hides 'valid from... until...' while keeping 'First certification 2009' visible) */}
+                          <div
+                            title="Validity dates protected for privacy"
+                            className="absolute top-[62.2%] left-[34.5%] w-[48%] h-[2.2%] backdrop-blur-md bg-white/75 rounded-md border border-white/60 z-20 pointer-events-none shadow-xs"
+                          />
+                          {/* Bottom Issue Date */}
+                          <div
+                            title="Issue date protected for privacy"
+                            className="absolute top-[75.0%] left-[34.5%] w-[11.5%] h-[2.6%] backdrop-blur-md bg-white/75 rounded-md border border-white/60 z-20 pointer-events-none shadow-xs"
+                          />
+                          {/* TÜV Auditor Signature */}
+                          <div
+                            title="Signature protected for privacy & security"
+                            className="absolute top-[73.0%] left-[71.0%] w-[18.0%] h-[4.2%] backdrop-blur-md bg-white/75 rounded-md border border-white/60 z-20 pointer-events-none shadow-xs"
+                          />
+                        </>
                       ) : (
-                        /* Accreditation Certificates Validity & Signatures Mask */
-                        <div 
+                        /* Other Certificates: Temporary fallback until configured one-by-one */
+                        <div
                           className="absolute bottom-[16%] left-[12%] w-[76%] h-[17%] backdrop-blur-[18px] bg-white/45 rounded-lg border border-white/30 z-20 pointer-events-none shadow-sm"
                         />
                       )}
@@ -337,17 +374,15 @@ function AboutPage() {
                       key={tab}
                       type="button"
                       onClick={() => setSelectedMarketRegion(tab)}
-                      className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-medium transition-all cursor-pointer ${
-                        isSelected
+                      className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-medium transition-all cursor-pointer ${isSelected
                           ? "bg-navy text-white shadow-xs"
                           : "bg-white border border-border/70 text-muted-foreground hover:border-navy/40 hover:text-navy"
-                      }`}
+                        }`}
                     >
                       <span>{tab}</span>
                       <span
-                        className={`text-[0.65rem] font-mono ${
-                          isSelected ? "text-accent" : "text-muted-foreground"
-                        }`}
+                        className={`text-[0.65rem] font-mono ${isSelected ? "text-accent" : "text-muted-foreground"
+                          }`}
                       >
                         {count}
                       </span>
