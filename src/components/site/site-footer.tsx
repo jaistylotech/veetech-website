@@ -108,16 +108,17 @@ export function SiteFooter() {
 
       <div className="container-vt flex flex-col gap-4 py-6 text-xs text-on-navy-muted sm:flex-row sm:items-center sm:justify-between">
         <p className="flex-1">© {new Date().getFullYear()} Veetech Automation FZE. All rights reserved.</p>
-        <div className="flex flex-1 gap-6 sm:justify-center">
+        <div className="flex flex-1 items-center gap-3 sm:justify-center">
           <Link to="/privacy-policy" className="transition-all duration-300 hover:text-accent hover:translate-y-[-1px]">
             Privacy Policy
           </Link>
+          <span className="opacity-40 select-none" aria-hidden="true">|</span>
           <Link to="/terms" className="transition-all duration-300 hover:text-accent hover:translate-y-[-1px]">
             Terms & Conditions
           </Link>
         </div>
         <p className="flex-1 sm:text-right">
-          Designed and developed by{" "}
+          Designed & Developed By:{" "}
           <a
             href="https://stylotech.in"
             target="_blank"
@@ -125,7 +126,7 @@ export function SiteFooter() {
             className="font-medium hover:underline transition-opacity hover:opacity-80"
             style={{ color: "#ed2424" }}
           >
-            Stylotech
+            StyloTech
           </a>
         </p>
       </div>
