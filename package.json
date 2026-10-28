@@ -1,5 +1,9 @@
 {
-  "name": "tanstack_start_ts",
+  "name": "veetech-automation-web",
+  "version": "1.0.0",
+  "description": "Official Corporate Web Application for VeeTech Automation FZE, Dubai, UAE",
+  "author": "Stylopedia Technology Pvt. Ltd. (StyloTech) <info@stylotech.in>",
+  "homepage": "https://veetech.ae",
   "private": true,
   "sideEffects": false,
   "type": "module",
@@ -71,7 +75,6 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.32.0",
-    "@lovable.dev/vite-tanstack-config": "^2.13.0",
     "@types/node": "^22.16.5",
     "@types/react": "^19.2.0",
     "@types/react-dom": "^19.2.0",
