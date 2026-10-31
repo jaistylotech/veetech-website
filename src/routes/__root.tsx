@@ -16,7 +16,19 @@ import { SiteFooter } from "@/components/site/site-footer";
 import { ScrollToTop } from "@/components/site/scroll-to-top";
 import { ContentProtection } from "@/components/site/content-protection";
 
+import { useEffect } from "react";
+import { getRedirectUrl } from "@/lib/redirects";
+
 function NotFoundComponent() {
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const target = getRedirectUrl(window.location.pathname);
+      if (target) {
+        window.location.replace(target);
+      }
+    }
+  }, []);
+
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">
